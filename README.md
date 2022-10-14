@@ -30,15 +30,15 @@ Aplikacija će imati dvije vrste korisnika sa različitim ovlastima. Imati će o
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup aplikaciji, korisnik se treba prijaviti u sustav | -
-F02 | Upravljanje računima | Aplikacija će korisniku omogućiti kreiranje novog računa, kao i pregledavanje, storniranje i ažuriranje već postojećih | - 
-F03 | Izdavanje računa | Omogućuje da se izabrani račun izda u pdf obliku | -
-F04 | Upravljanje inventarom | Aplikacija će korisniku omogućiti popisivanje proizvoda u inventaru, dodavanje novih proizvoda, te ažuriranje i brisanje postojećih | -
-F05 | Kreiranje narudžbenica | Aplikacija će korisniku omogućiti kreiranje narudžbenica za nabavu novih proizvoda, kao i upravljanje postojećim narudžbenicama | -
-F06 | Izdavanje narudžbenica | Omogućuje da se odabrana narudžbenica izda u pdf obliku | -
-F07 | Dodavanje stavki narudžbenice | Korisnik će moći potvrditi da je zaprimio narudžbu te će se stavke te narudžbenice automatski dodati u inventar | -
-F08 | Kreiranje izvještaja | Omogućuje kreiranje izvještaja o prihodima za odabrani period na temelju računa i narudžbenica | -
-F09 | Obavijest o stanju inventara | Aplikacija će automatski obavijestiti korisnika o niskom stanju količine nekog proizvoda na inventaru | -
+F01 | Login | Za pristup aplikaciji, korisnik se treba prijaviti u sustav | Mladen Kajić
+F02 | Upravljanje računima | Aplikacija će korisniku omogućiti kreiranje novog računa, kao i pregledavanje, storniranje i ažuriranje već postojećih | Mladen Kajić
+F03 | Izdavanje računa | Omogućuje da se izabrani račun izda u pdf obliku | Luka Galjer
+F04 | Upravljanje inventarom | Aplikacija će korisniku omogućiti popisivanje proizvoda u inventaru, dodavanje novih proizvoda, te ažuriranje i brisanje postojećih | Jan Ivančić
+F05 | Kreiranje narudžbenica | Aplikacija će korisniku omogućiti kreiranje narudžbenica za nabavu novih proizvoda, kao i upravljanje postojećim narudžbenicama | Luka Galjer
+F06 | Izdavanje narudžbenica | Omogućuje da se odabrana narudžbenica izda u pdf obliku | Jan Ivančić
+F07 | Dodavanje stavki narudžbenice | Korisnik će moći potvrditi da je zaprimio narudžbu te će se stavke te narudžbenice automatski dodati u inventar | Luka Galjer
+F08 | Kreiranje izvještaja | Omogućuje kreiranje izvještaja o prihodima za odabrani period na temelju računa i narudžbenica | Mladen Kajić
+F09 | Obavijest o stanju inventara | Aplikacija će automatski obavijestiti korisnika o niskom stanju količine nekog proizvoda na inventaru | Jan Ivančić
 
 
 ## Tehnologije i oprema
