@@ -25,12 +25,22 @@ Jan Ivančić | jivancic20@student.foi.hr | 0016150494 | jivancic20
 Ugostiteljski objekti, osim što izdaju račune gostima, zaprimaju robu na skladište i vode inventar vlastitog skladišta prema kojem izdaju narudžbenice za narudžbu nove robe. Softversko rješenje će omogućiti vođenje inventara i izdaju računa gostima.
 
 ## Specifikacija projekta
-Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka koju ćemo za vas mi pripremiti i dati vam pristup naknadno. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
+
+Aplikacija će imati dvije vrste korisnika sa različitim ovlastima. Imati će odvojenu bazu podataka na serveru kojoj će samo ovlašteni korisnici moći pristupiti. Funkcionalnosti, njihovi opisi te članovi odgovorni za njihovu implementaciju su navedeni u tablici ispod.
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
+F01 | Login | Za pristup aplikaciji, korisnik se treba prijaviti u sustav | -
+F02 | Upravljanje računima | Aplikacija će korisniku omogućiti kreiranje novog računa, kao i pregledavanje, storniranje i ažuriranje već postojećih | - 
+F03 | Izdavanje računa | Omogućuje da se izabrani račun izda u pdf obliku | -
+F04 | Upravljanje inventarom | Aplikacija će korisniku omogućiti popisivanje proizvoda u inventaru, dodavanje novih proizvoda, te ažuriranje i brisanje postojećih | -
+F05 | Kreiranje narudžbenica | Aplikacija će korisniku omogućiti kreiranje narudžbenica za nabavu novih proizvoda, kao i upravljanje postojećim narudžbenicama | -
+F06 | Izdavanje narudžbenica | Omogućuje da se odabrana narudžbenica izda u pdf obliku | -
+F07 | Dodavanje stavki narudžbenice | Korisnik će moći potvrditi da je zaprimio narudžbu te će se stavke te narudžbenice automatski dodati u inventar | -
+F08 | Kreiranje izvještaja | Omogućuje kreiranje izvještaja o prihodima za odabrani period na temelju računa i narudžbenica | -
+F09 | Obavijest o stanju inventara | Aplikacija će automatski obavijestiti korisnika o niskom stanju količine nekog proizvoda na inventaru | -
+
 
 ## Tehnologije i oprema
-Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Projekti se razvijaju koristeći .Net Framework ili .Net Core razvojne okvire, a vrsta projekta može biti WinForms, WPF i UWP. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu. Što se tiče zahtjeva nastavnika, obvezno je koristiti git i GitHub za verzioniranje programskog koda, GitHub Wiki za pisanje tehničke i projektne dokumentacije, a projektne zadatke je potrebno planirati i pratiti u alatu GitHub projects. 
+
+Za rad i manipulaciju baze podataka ćemo koristiti Microsoft SQL Server te SQL Server Management Studio. Za verzioniranje projekta koristiti ćemo Git i GitHub. Za implementaciju same aplikacije koristiti ćemo MS Visual Studio, .NET Framework, WinForms te C# programski jezik. Za pisanje dokumentacije projekta koristiti ćemo GitHub Wiki. Za izradu dijagrama služiti ćemo se alatom Visual Paradigm. Za pomoć u izradi projekta koristiti ćemo se dostupnim materijalima sa kolegija Razvoj Programskih Proizvoda te službenom C# dokumentacijom.
