@@ -36,9 +36,9 @@ F03 | Izdavanje računa | Omogućuje kreiranje računa i izdavanje računa u pdf
 F04 | Upravljanje inventarom | Aplikacija će korisniku omogućiti dodavanje novih proizvoda, te ažuriranje i brisanje postojećih. Također će omogućiti definiranje minimalne i optimalne količine proizvoda. | Jan Ivančić
 F05 | Upravljanje narudžbenicama | Aplikacija će korisniku omogućiti ručno kreiranje narudžbenica za nabavu novih proizvoda, upravljanje postojećim narudžbenicama te izdavanje narudžbenica u pdf obliku. | Jan Ivančić
 F06 | Automatsko generiranje narudžbenice | Aplikacija će korisniku omogućiti automatsko kreiranje narudžbenica za nabavu proizvoda čija je količina na skladištu ispod minimalne, te slanje narudžbenice na mail dobavljača. | Jan Ivančić
-F07 | Kreiranje primke | Apliakcija će omogućiti ručno kreiranje primke ili automatsko kreiranje na temelju postojeće narudžbenice. | Luka Galjer
-F08 | Izrada inventurnog zapisnika | Apliakcija će omogućiti provedbu inventure skladišta gdje će se kreirati inventurni zapisnik. | Luka Galjer
-F09 | Grafički prikaz stanja inventara | Apliakcija će omogućiti grafički prikaz stanja inventara uporabom grafova. | Luka Galjer
+F07 | Kreiranje primke | Aplikacija će omogućiti ručno kreiranje primke ili automatsko kreiranje na temelju postojeće narudžbenice. | Luka Galjer
+F08 | Izrada inventurnog zapisnika | Aplikacija će omogućiti provedbu inventure skladišta gdje će se kreirati inventurni zapisnik. | Luka Galjer
+F09 | Grafički prikaz stanja inventara | Aplikacija će omogućiti grafički prikaz stanja inventara uporabom grafova. | Luka Galjer
 
 
 ## Tehnologije i oprema
