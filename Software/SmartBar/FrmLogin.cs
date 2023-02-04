@@ -31,7 +31,10 @@ namespace SmartBar
                 LoginService service = new LoginService();
                 if(service.CheckCredentials(username, password))
                 {
-                    MessageBox.Show("Uspješan login.");
+                    var frm2FA = new Frm2FA();
+                    Hide();
+                    frm2FA.ShowDialog();
+                    Close();
                 }
                 else
                 {

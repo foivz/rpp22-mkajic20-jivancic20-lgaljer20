@@ -12,9 +12,29 @@ namespace SmartBar
 {
     public partial class Frm2FA : Form
     {
-        public Frm2FA()
+        public string Username { get; set; }
+        public Frm2FA(string username)
         {
             InitializeComponent();
+            Username = username;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var frmLogin = new FrmLogin();
+            Hide();
+            frmLogin.ShowDialog();
+            Close();
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm2FA_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

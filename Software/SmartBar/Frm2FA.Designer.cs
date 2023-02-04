@@ -51,6 +51,7 @@
             this.btnCheck.TabIndex = 1;
             this.btnCheck.Text = "Provjeri";
             this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // btnCancel
             // 
@@ -60,6 +61,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Odustani";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtMFA
             // 
@@ -79,6 +81,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Frm2FA";
             this.Text = "Dvofaktorska autentifikacija";
+            this.Load += new System.EventHandler(this.Frm2FA_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
