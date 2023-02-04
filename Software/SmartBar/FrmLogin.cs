@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,28 @@ namespace SmartBar
         public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            if(username.Length == 0 || password.Length == 0)
+            {
+                MessageBox.Show("Ispunite sva polja podacima!");
+            }
+            else
+            {
+                LoginService service = new LoginService();
+                if(service.CheckCredentials(username, password))
+                {
+                    MessageBox.Show("Uspješan login.");
+                }
+                else
+                {
+                    MessageBox.Show("Uneseni podaci nisu ispravni!");
+                }
+            }
         }
     }
 }

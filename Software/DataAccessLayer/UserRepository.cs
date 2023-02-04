@@ -14,11 +14,14 @@ namespace SmartBar
         {
             using(var context = new DataBaseModel())
             {
-                var result  = from k in context.Users
-                              where k.Username == username
-                              select k;
-
-                return result as User;
+                try
+                {
+                    return context.Users.First(u => u.Username == username);
+                } 
+                catch 
+                {
+                    return null;
+                }
             }
         }
     }
