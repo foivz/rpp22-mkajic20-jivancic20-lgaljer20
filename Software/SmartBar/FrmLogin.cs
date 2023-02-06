@@ -31,7 +31,7 @@ namespace SmartBar
                 LoginService service = new LoginService();
                 if(service.CheckCredentials(username, password))
                 {
-                    var frm2FA = new Frm2FA();
+                    var frm2FA = new Frm2FA(username);
                     Hide();
                     frm2FA.ShowDialog();
                     Close();

@@ -1,24 +1,42 @@
 ﻿using EntitiesLayer.Entities;
 using SmartBar;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicLayer
 {
     public class TwoFactorService
     {
-        public User user { get; set; }
+        public User CurrentUser { get; set; }
         public string Code { get; set; }
         public TwoFactorService(string username) 
         {
             var repo = new UserRepository();
-            user = repo.GetUser(username);
+            CurrentUser = repo.GetUser(username);
         }
+
+        public async void SendEmail()
+        {
+            Code = GenerateCode();
+            string message = "Kod za dvofaktorsku autentifikaciju: " + Code;
+            string apiKey = "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";
+
+            var client = new HttpClient();
+            var content = new StringContent(
+                "{\"sender\":" + 
+                "{\"name\":\"SmartBar\"," +
+                "\"email\":\"mkajic20@student.foi.hr\"}," + 
+                "\"to\":[{\"email\":\"" + CurrentUser.Email + 
+                "\",\"name\":\"" + CurrentUser.Username + 
+                "\"}],\"subject\":\"Dvofaktorska autentifikacija\"," + 
+                "\"htmlContent\":\"" + message + "\"}",
+                Encoding.UTF8, "application/json");
+            client.DefaultRequestHeaders.Add("api-key", apiKey);
+            await client.PostAsync("https://api.sendinblue.com/v3/smtp/email", content);
+        }
+
 
         public string GenerateCode()
         {

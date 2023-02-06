@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,9 @@ namespace SmartBar
 {
     public partial class Frm2FA : Form
     {
-        public string Username { get; set; }
+        private string Username { get; set; }
+        private TwoFactorService service { get; set; }
+
         public Frm2FA(string username)
         {
             InitializeComponent();
@@ -34,7 +37,15 @@ namespace SmartBar
 
         private void Frm2FA_Load(object sender, EventArgs e)
         {
-
+            service = new TwoFactorService(Username);
+            try
+            {
+                service.SendEmail();
+            }
+            catch
+            {
+                MessageBox.Show("Greška prilikom slanja maila");
+            }
         }
     }
 }
