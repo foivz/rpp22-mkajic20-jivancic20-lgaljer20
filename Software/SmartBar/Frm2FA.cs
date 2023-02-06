@@ -32,6 +32,14 @@ namespace SmartBar
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            string code = txtMFA.Text;
+            int status = service.CheckCode(code);
+            switch(status)
+            {
+                case 0: MessageBox.Show("Uneseni kod nije ispravan!"); break;
+                case 1: MessageBox.Show("Prijavljeni ste kao korisnik."); break;
+                case 2: MessageBox.Show("Prijavljeni ste kao admin."); break;
+            }
 
         }
 

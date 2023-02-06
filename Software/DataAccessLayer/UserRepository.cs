@@ -24,5 +24,13 @@ namespace SmartBar
                 }
             }
         }
+
+        public string GetRole(string username)
+        {
+            using (var context = new DataBaseModel())
+            {
+                return context.Users.First(u => u.Username == username).Role.Name;
+            }
+        }
     }
 }

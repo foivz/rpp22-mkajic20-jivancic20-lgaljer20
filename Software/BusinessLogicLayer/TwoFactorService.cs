@@ -9,11 +9,12 @@ namespace BusinessLogicLayer
 {
     public class TwoFactorService
     {
-        public User CurrentUser { get; set; }
-        public string Code { get; set; }
+        private User CurrentUser { get; set; }
+        private string Code { get; set; }
+        private UserRepository repo;
         public TwoFactorService(string username) 
         {
-            var repo = new UserRepository();
+            repo = new UserRepository();
             CurrentUser = repo.GetUser(username);
         }
 
@@ -35,6 +36,26 @@ namespace BusinessLogicLayer
                 Encoding.UTF8, "application/json");
             client.DefaultRequestHeaders.Add("api-key", apiKey);
             await client.PostAsync("https://api.sendinblue.com/v3/smtp/email", content);
+        }
+
+        public int CheckCode(string code)
+        {
+            if(code != Code)
+            {
+                return 0;
+            } 
+            else
+            {
+                string role = repo.GetRole(CurrentUser.Username);
+                if(role == "korisnik")
+                {
+                    return 1;
+                } 
+                else
+                {
+                    return 2;
+                }
+            }
         }
 
 
