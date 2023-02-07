@@ -8,6 +8,8 @@ namespace SmartBar.ViewModels
 {
     public class UpravljanjeInvantaromVM
     {
+        [System.ComponentModel.DisplayName("ID")]
+        public int Id { get; set; }
         [System.ComponentModel.DisplayName("Cijena")]
         public double? Price{ get; set; }
         [System.ComponentModel.DisplayName("Naziv")]

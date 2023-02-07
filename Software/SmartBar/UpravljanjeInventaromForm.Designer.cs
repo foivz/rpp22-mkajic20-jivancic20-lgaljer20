@@ -38,7 +38,7 @@
             this.dgvInventar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventar.Location = new System.Drawing.Point(12, 12);
             this.dgvInventar.Name = "dgvInventar";
-            this.dgvInventar.Size = new System.Drawing.Size(776, 398);
+            this.dgvInventar.Size = new System.Drawing.Size(891, 398);
             this.dgvInventar.TabIndex = 0;
             // 
             // btnCreate
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(915, 450);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dgvInventar);
             this.Name = "UpravljanjeInventaromForm";

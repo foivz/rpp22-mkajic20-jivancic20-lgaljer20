@@ -53,5 +53,64 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public void CreateProduct(Product product)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Product] (Price, Name, Amount, Minimum, Optimal, MeasurementUnit, UserId) VALUES (@Price, @Name, @Amount, @Minimum, @Optimal, @MeasurementUnit, @UserId)", connection))
+                {
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Amount", product.Amount);
+                    command.Parameters.AddWithValue("@Minimum", product.Minimum);
+                    command.Parameters.AddWithValue("@Optimal", product.Optimal);
+                    command.Parameters.AddWithValue("@MeasurementUnit", product.MeasurementUnit);
+                    command.Parameters.AddWithValue("@UserId", product.UserId);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("UPDATE [dbo].[Product] SET Price = @Price, Name = @Name, Amount = @Amount, Minimum = @Minimum, Optimal = @Optimal, MeasurementUnit = @MeasurementUnit, UserId = @UserId WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", product.Id);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Name", product.Name);
+                    command.Parameters.AddWithValue("@Amount", product.Amount);
+                    command.Parameters.AddWithValue("@Minimum", product.Minimum);
+                    command.Parameters.AddWithValue("@Optimal", product.Optimal);
+                    command.Parameters.AddWithValue("@MeasurementUnit", product.MeasurementUnit);
+                    command.Parameters.AddWithValue("@UserId", product.UserId);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void DeleteProduct(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Product] WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        
+
     }
 }
