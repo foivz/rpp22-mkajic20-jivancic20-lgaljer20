@@ -21,15 +21,19 @@ namespace SmartBar
        
         private void btnCreate_Click(object sender, EventArgs e)
         {
-
+            UpravljanjeProizvodomForm upravljanjeInventaromForm = new UpravljanjeProizvodomForm();
+            upravljanjeInventaromForm.ShowDialog();
+            RefreshGUI();
         }
+        
         private void dgvInventar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 7)
             {
                 UpravljanjeInvantaromVM upravljanjeInvantaromVM = (UpravljanjeInvantaromVM)dgvInventar.Rows[e.RowIndex].DataBoundItem;
-                UpravljanjeInventaromForm upravljanjeInventaromForm = new UpravljanjeInventaromForm();
-                upravljanjeInventaromForm.Show();
+                UpravljanjeProizvodomForm upravljanjeInventaromForm = new UpravljanjeProizvodomForm(upravljanjeInvantaromVM);
+                upravljanjeInventaromForm.ShowDialog();
+                RefreshGUI();
             }
             else if (e.ColumnIndex == 8)
             {
@@ -38,8 +42,7 @@ namespace SmartBar
                 if (result==DialogResult.Yes)
                 {
                     _productRepository.DeleteProduct(product.Id);
-                    //dgvInventar.Rows.RemoveAt(e.RowIndex);
-                    UpravljanjeInventaromForm_Load(sender, e);
+                    RefreshGUI();
                 }
                 else if (result == DialogResult.No)
                 {
@@ -48,12 +51,11 @@ namespace SmartBar
             }
             
         }
-        
-        private void UpravljanjeInventaromForm_Load(object sender, EventArgs e)
-        {
+
+        private void RefreshGUI() {
             List<UpravljanjeInvantaromVM> upravljanjeInvantaromVMs = new List<UpravljanjeInvantaromVM>();
             List<Product> products = _productRepository.GetProducts();
-            foreach(Product product in products)
+            foreach (Product product in products)
             {
                 UpravljanjeInvantaromVM upravljanjeInvantaromVM = new UpravljanjeInvantaromVM
                 {
@@ -68,6 +70,12 @@ namespace SmartBar
                 upravljanjeInvantaromVMs.Add(upravljanjeInvantaromVM);
             }
             dgvInventar.DataSource = upravljanjeInvantaromVMs;
+
+        }
+        
+        private void UpravljanjeInventaromForm_Load(object sender, EventArgs e)
+        {
+            RefreshGUI();
             dgvInventar.Columns.Add(new DataGridViewButtonColumn
             {
                 Text = "Uredi",

@@ -43,9 +43,9 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(713, 416);
+            this.btnCreate.Location = new System.Drawing.Point(732, 415);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.Size = new System.Drawing.Size(171, 23);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Kreiraj";
             this.btnCreate.UseVisualStyleBackColor = true;

@@ -72,6 +72,12 @@
     <Compile Include="UpravljanjeInventaromForm.Designer.cs">
       <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpravljanjeProizvodomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravljanjeProizvodomForm.Designer.cs">
+      <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="UpravljanjeInventaromForm.resx">
       <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravljanjeProizvodomForm.resx">
+      <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
