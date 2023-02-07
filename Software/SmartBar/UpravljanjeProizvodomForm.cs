@@ -10,12 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogicLayer.Services;
 
 namespace SmartBar
 {
     public partial class UpravljanjeProizvodomForm : Form
     {
         private readonly ProductRepository _productRepository = new ProductRepository();
+        private readonly ProductService _productService = new ProductService();
 
         public UpravljanjeProizvodomForm()
         {
@@ -41,14 +43,31 @@ namespace SmartBar
         {
             Product product = new Product();
             product.Name = txtName.Text;
-            product.Price = double.Parse(txtPrice.Text);
-            product.Amount = int.Parse(txtAmount.Text);
-            product.Minimum = int.Parse(txtMinimum.Text);
-            product.Optimal = int.Parse(txtOptimal.Text);
+            try
+            {
+                product.Price = double.Parse(txtPrice.Text);
+                product.Amount = int.Parse(txtAmount.Text);
+                product.Minimum = int.Parse(txtMinimum.Text);
+                product.Optimal = int.Parse(txtOptimal.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Provjerite unesene brojeve", "", MessageBoxButtons.OK);
+            }
+            
             product.MeasurementUnit = txtMeasurementUnit.Text;
             product.UserId = 1; //treba maknut
-            _productRepository.CreateProduct(product);
-            this.Close();
+            if (_productService.ValidateData(product))
+            {
+                _productRepository.CreateProduct(product);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Provjerite unos podataka!", "Unos podataka", MessageBoxButtons.OK);
+            }
+            
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
