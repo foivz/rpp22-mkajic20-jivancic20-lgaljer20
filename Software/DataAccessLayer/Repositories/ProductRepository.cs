@@ -110,7 +110,38 @@ namespace DataAccessLayer.Repositories
                 }
             }
         }
-        
+        public Product GetProductById(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Product] WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        Product product = new Product();
+
+                        while (reader.Read())
+                        {
+                            product.Id = reader.GetInt32(0);
+                            product.Price = reader.GetDouble(1);
+                            product.Name = reader.GetString(2);
+                            product.Amount = reader.GetInt32(3);
+                            product.Minimum = reader.GetInt32(4);
+                            product.Optimal = reader.GetInt32(5);
+                            product.MeasurementUnit = reader.GetString(6);
+                            product.UserId = reader.GetInt32(7);
+                        }
+
+                        return product;
+                    }
+                }
+            }
+        }
+
 
     }
 }

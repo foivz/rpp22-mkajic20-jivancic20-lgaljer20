@@ -72,13 +72,28 @@
     <Compile Include="UpravljanjeInventaromForm.Designer.cs">
       <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpravljanjeNarudzbenicamaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravljanjeNarudzbenicamaForm.Designer.cs">
+      <DependentUpon>UpravljanjeNarudzbenicamaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpravljanjeProizvodomForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpravljanjeProizvodomForm.Designer.cs">
       <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpravljanjeStavkomNarudzbeniceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravljanjeStavkomNarudzbeniceForm.Designer.cs">
+      <DependentUpon>UpravljanjeStavkomNarudzbeniceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\NarudzbenicaVM.cs" />
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
+    <Compile Include="ViewModels\KratkiProizvodVM.cs" />
+    <Compile Include="ViewModels\UpravljanjeNarudzbenicamaVM.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,8 +109,14 @@
     <EmbeddedResource Include="UpravljanjeInventaromForm.resx">
       <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UpravljanjeNarudzbenicamaForm.resx">
+      <DependentUpon>UpravljanjeNarudzbenicamaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpravljanjeProizvodomForm.resx">
       <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravljanjeStavkomNarudzbeniceForm.resx">
+      <DependentUpon>UpravljanjeStavkomNarudzbeniceForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
