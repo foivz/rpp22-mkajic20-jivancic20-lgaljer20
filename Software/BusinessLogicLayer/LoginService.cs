@@ -1,4 +1,5 @@
-﻿using SmartBar;
+﻿using EntitiesLayer.Entities;
+using SmartBar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,17 @@ namespace BusinessLogicLayer
         {
             UserRepository repo = new UserRepository();
             var user = repo.GetUser(username);
-            if (user == null)
+            if (user != null && password == user.Password)
             {
-                return false;
+                LoginUser(user);
+                return true;
             }
-            else
-            {
-                return password == user.Password;
-            }
+            return false;
+        }
+
+        private void LoginUser(User user)
+        {
+            CurrentUser.user = user;
         }
     }
 }

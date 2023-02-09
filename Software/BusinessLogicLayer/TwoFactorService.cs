@@ -9,13 +9,14 @@ namespace BusinessLogicLayer
 {
     public class TwoFactorService
     {
-        private User CurrentUser { get; set; }
+        private User LoggedUser { get; set; }
         private string Code { get; set; }
         private UserRepository repo;
-        public TwoFactorService(string username) 
+        public TwoFactorService() 
         {
             repo = new UserRepository();
-            CurrentUser = repo.GetUser(username);
+            LoggedUser = CurrentUser.user;
+
         }
 
         public async void SendEmail()
@@ -29,8 +30,8 @@ namespace BusinessLogicLayer
                 "{\"sender\":" + 
                 "{\"name\":\"SmartBar\"," +
                 "\"email\":\"mkajic20@student.foi.hr\"}," + 
-                "\"to\":[{\"email\":\"" + CurrentUser.Email + 
-                "\",\"name\":\"" + CurrentUser.Username + 
+                "\"to\":[{\"email\":\"" + LoggedUser.Email + 
+                "\",\"name\":\"" + LoggedUser.Username + 
                 "\"}],\"subject\":\"Dvofaktorska autentifikacija\"," + 
                 "\"htmlContent\":\"" + message + "\"}",
                 Encoding.UTF8, "application/json");
@@ -46,7 +47,7 @@ namespace BusinessLogicLayer
             } 
             else
             {
-                string role = repo.GetRole(CurrentUser.Username);
+                string role = repo.GetRole(LoggedUser.Username);
                 if(role == "korisnik")
                 {
                     return 1;

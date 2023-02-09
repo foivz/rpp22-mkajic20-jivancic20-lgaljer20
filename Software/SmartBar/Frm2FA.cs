@@ -45,7 +45,7 @@ namespace SmartBar
 
         private void Frm2FA_Load(object sender, EventArgs e)
         {
-            service = new TwoFactorService(Username);
+            service = new TwoFactorService();
             try
             {
                 service.SendEmail();
