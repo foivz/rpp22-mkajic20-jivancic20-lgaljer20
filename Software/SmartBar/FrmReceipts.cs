@@ -16,5 +16,10 @@ namespace SmartBar
         {
             InitializeComponent();
         }
+
+        private void FrmReceipts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

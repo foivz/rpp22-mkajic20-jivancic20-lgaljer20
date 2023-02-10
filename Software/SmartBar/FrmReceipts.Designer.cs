@@ -72,6 +72,7 @@
             this.Controls.Add(this.dgvReceipts);
             this.Name = "FrmReceipts";
             this.Text = "Računi";
+            this.Load += new System.EventHandler(this.FrmReceipts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReceipts)).EndInit();
             this.ResumeLayout(false);
 
