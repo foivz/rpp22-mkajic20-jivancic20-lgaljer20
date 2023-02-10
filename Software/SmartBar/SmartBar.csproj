@@ -78,6 +78,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="UpravljanjeInventaromForm.cs">
       <SubType>Form</SubType>
     </Compile>
