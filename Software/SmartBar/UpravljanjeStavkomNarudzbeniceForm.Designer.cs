@@ -151,6 +151,11 @@
             // nudAmount
             // 
             this.nudAmount.Location = new System.Drawing.Point(149, 138);
+            this.nudAmount.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.nudAmount.Name = "nudAmount";
             this.nudAmount.Size = new System.Drawing.Size(129, 20);
             this.nudAmount.TabIndex = 20;
@@ -173,7 +178,7 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "Trenutno dodani proizvodi";
             // 
-            // UpravljanjeStavkomNarudzbenice
+            // UpravljanjeStavkomNarudzbeniceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,7 +197,7 @@
             this.Controls.Add(this.dtpOrderDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSave);
-            this.Name = "UpravljanjeStavkomNarudzbenice";
+            this.Name = "UpravljanjeStavkomNarudzbeniceForm";
             this.Text = "UpravljanjeStavkomNarudzbenice";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).EndInit();

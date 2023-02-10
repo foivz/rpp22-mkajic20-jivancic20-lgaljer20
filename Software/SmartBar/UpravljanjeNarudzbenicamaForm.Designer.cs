@@ -40,6 +40,7 @@
             this.dgvNarudzbenice.Name = "dgvNarudzbenice";
             this.dgvNarudzbenice.Size = new System.Drawing.Size(776, 383);
             this.dgvNarudzbenice.TabIndex = 0;
+            this.dgvNarudzbenice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNarudzbenice_CellClick);
             // 
             // btnKreiraj
             // 

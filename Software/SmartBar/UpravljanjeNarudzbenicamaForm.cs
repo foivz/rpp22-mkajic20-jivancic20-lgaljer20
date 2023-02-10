@@ -17,29 +17,44 @@ namespace SmartBar
     public partial class UpravljanjeNarudzbenicamaForm : Form
     {
         private readonly OrderFormRepository _orderFormRepository = new OrderFormRepository();
-
+        private readonly OrderItemRepository _orderItemRepository = new OrderItemRepository();
+        private readonly ProductRepository _productRepository = new ProductRepository();
+        private readonly SupplierRepository _supplierRepository = new SupplierRepository();
         public UpravljanjeNarudzbenicamaForm()
         {
             InitializeComponent();
-            dgvNarudzbenice.CellClick += dgvNarudzbenice_CellClick;
+            //dgvNarudzbenice.CellClick += dgvNarudzbenice_CellClick;
         }
 
         private void dgvNarudzbenice_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
-            {
-                UpravljanjeNarudzbenicamaVM upravljanjeInvantaromVM = (UpravljanjeNarudzbenicamaVM)dgvNarudzbenice.Rows[e.RowIndex].DataBoundItem;
-                UpravljanjeStavkomNarudzbeniceForm upravljanjeStavkomNarudzbenice = new UpravljanjeProizvodomForm(upravljanjeInvantaromVM);
+            string v = sender.ToString();
+            if (e.ColumnIndex == 4)
+            {       
+                NarudzbenicaVM upravljanjeInvantaromVM = (NarudzbenicaVM)dgvNarudzbenice.Rows[e.RowIndex].DataBoundItem;
+                OrderForm orderForm = _orderFormRepository.GetOrderFormById(upravljanjeInvantaromVM.Id);
+                UpravljanjeNarudzbenicamaVM upravljanjeNarudzbenicamaVM = new UpravljanjeNarudzbenicamaVM
+                {
+                    OrderFormId = orderForm.Id,
+                    OrderDate = orderForm.Date,
+                    Amount = _orderItemRepository.GetOrderItemById(orderForm.Id).Amount,
+                    Supplier = _supplierRepository.GetSupplierById(orderForm.Id),
+                    //User = _userRepository.GetUserById(orderForm.Id)
+                    
+                };
+                UpravljanjeStavkomNarudzbeniceForm upravljanjeStavkomNarudzbenice = new UpravljanjeStavkomNarudzbeniceForm(upravljanjeNarudzbenicamaVM);
                 upravljanjeStavkomNarudzbenice.ShowDialog();
                 RefreshGUI();
             }
-            else if (e.ColumnIndex == 6)
+            else if (e.ColumnIndex == 5)
             {
-                UpravljanjeNarudzbenicamaVM product = (UpravljanjeNarudzbenicamaVM)dgvNarudzbenice.Rows[e.RowIndex].DataBoundItem;
-                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite da obrišete ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                NarudzbenicaVM upravljanjeInvantaromVM = (NarudzbenicaVM)dgvNarudzbenice.Rows[e.RowIndex].DataBoundItem;
+                OrderForm orderForm = _orderFormRepository.GetOrderFormById(upravljanjeInvantaromVM.Id);
+                
+                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite da obrišete ovu narudžbenicu?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    _orderFormRepository.DeleteOrderForm(product.Id);
+                    _orderFormRepository.DeleteOrderForm(orderForm.Id);
                     RefreshGUI();
                 }
                 else if (result == DialogResult.No)
@@ -52,19 +67,9 @@ namespace SmartBar
 
         private void UpravljanjeNarudzbenicamaForm_Load(object sender, EventArgs e)
         {
+
             RefreshGUI();
-            dgvNarudzbenice.Columns.Add(new DataGridViewButtonColumn
-            {
-                Text = "Uredi",
-                Width = 60,
-                UseColumnTextForButtonValue = true
-            });
-            dgvNarudzbenice.Columns.Add(new DataGridViewButtonColumn
-            {
-                Text = "Izbriši",
-                Width = 60,
-                UseColumnTextForButtonValue = true
-            });
+
         }
 
         private void btnKreiraj_Click(object sender, EventArgs e)
@@ -76,6 +81,7 @@ namespace SmartBar
 
         private void RefreshGUI()
         {
+            dgvNarudzbenice.Columns.Clear();
             List<NarudzbenicaVM> upravljanjeInvantaromVMs = new List<NarudzbenicaVM>();
             List<OrderForm> products = _orderFormRepository.GetOrderForms();
             foreach (OrderForm product in products)
@@ -91,6 +97,29 @@ namespace SmartBar
                 upravljanjeInvantaromVMs.Add(upravljanjeInvantaromVM);
             }
             dgvNarudzbenice.DataSource = upravljanjeInvantaromVMs;
+            string test = dgvNarudzbenice.Columns.Count.ToString();
+            
+            while (dgvNarudzbenice.Columns.Count > 4)
+            {
+                string v1 = dgvNarudzbenice.Columns.Count.ToString();
+                dgvNarudzbenice.Columns.RemoveAt(4);
+            }
+
+            dgvNarudzbenice.Columns.Add(new DataGridViewButtonColumn
+            {
+                Text = "Uredi",
+                Width = 60,
+                UseColumnTextForButtonValue = true
+            });
+            
+            dgvNarudzbenice.Columns.Add(new DataGridViewButtonColumn
+            {
+                Text = "Izbriši",
+                Width = 60,
+                UseColumnTextForButtonValue = true
+            });
+            
         }
+
     }
 }

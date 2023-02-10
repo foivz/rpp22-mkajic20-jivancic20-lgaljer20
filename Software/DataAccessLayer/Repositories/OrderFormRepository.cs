@@ -89,6 +89,13 @@ namespace DataAccessLayer.Repositories
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
+                
+                using (SqlCommand command = new SqlCommand("DELETE FROM [dbo].[OrderItem] WHERE OrderFormId = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    command.ExecuteNonQuery();
+                }
 
                 using (SqlCommand command = new SqlCommand("DELETE FROM [dbo].[OrderForm] WHERE Id = @Id", connection))
                 {
@@ -99,6 +106,37 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+        public OrderForm GetOrderFormById(int id)
+        {
+            {
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    connection.Open();
 
+                    using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[OrderForm] WHERE Id = @Id", connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            OrderForm product = new OrderForm();
+
+                            while (reader.Read())
+                            {
+                                product.Id = reader.GetInt32(0);
+                                product.Date = reader.GetDateTime(1);
+                                product.UserId = reader.GetInt32(2);
+                                product.Supplier = _supplierRepository.GetSupplierById(reader.GetInt32(3));
+                            }
+
+                            return product;
+                        }
+                    }
+                }
+
+
+            }
+        }
     }
 }
+

@@ -21,19 +21,27 @@ namespace SmartBar
         public UpravljanjeStavkomNarudzbeniceForm()
         {
             InitializeComponent();
+            cbProducts.DataSource = _productRepository.GetProducts().Select(x => x.Name).ToList();
+            cbSuppliers.DataSource = _supplierRepository.GetSuppliers().Select(x => x.Name).ToList();
+            cbProducts.SelectedItem = null;
+            cbSuppliers.SelectedItem = null;
+            dtpOrderDate.Value = DateTime.Now;
         }
         public UpravljanjeStavkomNarudzbeniceForm(UpravljanjeNarudzbenicamaVM model)
         {
             InitializeComponent();
             cbProducts.DataSource = _productRepository.GetProducts().Select(x => x.Name).ToList();
             cbSuppliers.DataSource = _supplierRepository.GetSuppliers().Select(x => x.Name).ToList();
-            nudAmount.Value = model.Amount;
+            nudAmount.Value = (decimal)model.Amount;
+            dtpOrderDate.Value = (DateTime)model.OrderDate;
+            cbProducts.SelectedItem = null;
+            cbSuppliers.SelectedItem = model.Supplier.Name;
 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
