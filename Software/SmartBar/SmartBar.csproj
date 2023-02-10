@@ -43,7 +43,7 @@
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -78,6 +78,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    <Compile Include="UpravljanjeInventaromForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravljanjeInventaromForm.Designer.cs">
+      <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpravljanjeProizvodomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravljanjeProizvodomForm.Designer.cs">
+      <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,6 +103,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpravljanjeInventaromForm.resx">
+      <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravljanjeProizvodomForm.resx">
+      <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +127,14 @@
     <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
       <Project>{e885c9e1-1b3f-4b0e-b6a4-9ce1ca4bfe8f}</Project>
       <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{8C2EFF91-8A11-4C84-90F6-F3EF29FFB69D}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
+      <Project>{23400089-86E5-4EC4-94F3-1F8671FA640F}</Project>
+      <Name>EntitiesLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

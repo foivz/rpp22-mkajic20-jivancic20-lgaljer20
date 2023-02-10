@@ -45,9 +45,14 @@
     <Compile Include="LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwoFactorService.cs" />
+    <Compile Include="Services\ProductService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
+      <Project>{23400089-86E5-4EC4-94F3-1F8671FA640F}</Project>
+      <Name>EntitiesLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
