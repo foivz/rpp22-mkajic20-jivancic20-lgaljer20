@@ -43,7 +43,7 @@ namespace SmartBar
             InventoryRecord newRecord = new InventoryRecord
             {
                 Date = DateTime.Now,
-                UserId = 1
+                UserId = CurrentUser.user.Id
             };
             
             servisiRecord.AddRecord(newRecord);
