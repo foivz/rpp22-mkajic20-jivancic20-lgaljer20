@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,18 @@ namespace SmartBar
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            RefreshGUI();
+            if (dgvReceipts.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = dgvReceipts.SelectedCells[0].RowIndex;
+                Receipt receipt = dgvReceipts.Rows[selectedRowIndex].DataBoundItem as Receipt;
+                Service.DeleteReceipt(receipt);
+                RefreshGUI();
+            }
+            else
+            {
+                MessageBox.Show("Morate odabrati račun!");
+            }
+            
         }
 
         private void RefreshGUI() 

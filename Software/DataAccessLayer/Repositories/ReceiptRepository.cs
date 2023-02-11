@@ -16,5 +16,15 @@ namespace DataAccessLayer.Repositories
                 return context.Receipts.ToList();
             }
         }
+
+        public void Delete(Receipt receipt)
+        {
+            using (var context = new DataBaseModel())
+            {
+                context.Receipts.Attach(receipt);
+                context.Receipts.Remove(receipt);
+                context.SaveChanges();
+            }
+        }
     }
 }

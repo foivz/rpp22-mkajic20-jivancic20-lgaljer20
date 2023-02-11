@@ -19,5 +19,10 @@ namespace BusinessLogicLayer.Services
         {
             return repo.GetReceipts();
         }
+
+        public void DeleteReceipt(Receipt receipt)
+        {
+            repo.Delete(receipt);
+        }
     }
 }
