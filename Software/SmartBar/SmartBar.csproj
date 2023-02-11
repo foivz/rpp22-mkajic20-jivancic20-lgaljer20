@@ -95,11 +95,11 @@
     <Compile Include="FrmPopisIzvjestaja.Designer.cs">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
     </Compile>
-    <Compile Include="Izvjestaj.cs">
+    <Compile Include="FrmInventurniZapisnikProšli.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Izvjestaj.Designer.cs">
-      <DependentUpon>Izvjestaj.cs</DependentUpon>
+    <Compile Include="FrmInventurniZapisnikProšli.Designer.cs">
+      <DependentUpon>FrmInventurniZapisnikProšli.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,8 +132,8 @@
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Izvjestaj.resx">
-      <DependentUpon>Izvjestaj.cs</DependentUpon>
+    <EmbeddedResource Include="FrmInventurniZapisnikProšli.resx">
+      <DependentUpon>FrmInventurniZapisnikProšli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

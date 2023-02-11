@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewerInventura = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -42,9 +42,9 @@
             // reportViewerInventura
             // 
             this.reportViewerInventura.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DsProducts";
-            reportDataSource1.Value = this.productBindingSource;
-            this.reportViewerInventura.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DsProducts";
+            reportDataSource2.Value = this.productBindingSource;
+            this.reportViewerInventura.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerInventura.LocalReport.ReportEmbeddedResource = "SmartBar.reportAllProducts.rdlc";
             this.reportViewerInventura.Location = new System.Drawing.Point(0, 0);
             this.reportViewerInventura.Name = "reportViewerInventura";
@@ -59,7 +59,7 @@
             this.ClientSize = new System.Drawing.Size(740, 414);
             this.Controls.Add(this.reportViewerInventura);
             this.Name = "FrmIzvjestajInventurniZapisnik";
-            this.Text = "TestnaForma";
+            this.Text = "Trenutni inventurni zapisnik";
             this.Load += new System.EventHandler(this.TestnaForma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace SmartBar
 {
-    public partial class Izvjestaj : Form
+    public partial class FrmInventurniZapisnikProšli : Form
     {
         private int selectedInventoryId;
 
         private InventoryRecordService servisiRecord = new InventoryRecordService();
         private InventoryRecordItemService servisiItem= new InventoryRecordItemService();
-        public Izvjestaj(int inventoryRecordId)
+        public FrmInventurniZapisnikProšli(int inventoryRecordId)
         {
             InitializeComponent();
             selectedInventoryId = inventoryRecordId;

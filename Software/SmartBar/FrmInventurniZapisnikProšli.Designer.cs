@@ -1,6 +1,6 @@
 ﻿namespace SmartBar
 {
-    partial class Izvjestaj
+    partial class FrmInventurniZapisnikProšli
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,26 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.inventoryRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryRecordItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventoryRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).BeginInit();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordItemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // inventoryRecordItemBindingSource
+            // 
+            this.inventoryRecordItemBindingSource.DataSource = typeof(EntitiesLayer.Entities.InventoryRecordItem);
+            // 
+            // inventoryRecordBindingSource
+            // 
+            this.inventoryRecordBindingSource.DataSource = typeof(EntitiesLayer.Entities.InventoryRecord);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(EntitiesLayer.Entities.Product);
             // 
             // reportViewer1
             // 
@@ -61,18 +73,6 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // inventoryRecordBindingSource
-            // 
-            this.inventoryRecordBindingSource.DataSource = typeof(EntitiesLayer.Entities.InventoryRecord);
-            // 
-            // inventoryRecordItemBindingSource
-            // 
-            this.inventoryRecordItemBindingSource.DataSource = typeof(EntitiesLayer.Entities.InventoryRecordItem);
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(EntitiesLayer.Entities.Product);
-            // 
             // Izvjestaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -80,10 +80,10 @@
             this.ClientSize = new System.Drawing.Size(823, 477);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Izvjestaj";
-            this.Text = "Izvjestaj";
+            this.Text = "Inventurni zapisnik";
             this.Load += new System.EventHandler(this.Izvjestaj_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordItemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 

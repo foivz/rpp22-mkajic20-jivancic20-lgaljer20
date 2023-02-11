@@ -73,7 +73,7 @@
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.dgIzvjestaji);
             this.Name = "FrmPopisIzvjestaja";
-            this.Text = "FrmPopisIzvjestaja";
+            this.Text = "Popis inventurnih zapisnika";
             this.Load += new System.EventHandler(this.FrmPopisIzvjestaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgIzvjestaji)).EndInit();
             this.ResumeLayout(false);

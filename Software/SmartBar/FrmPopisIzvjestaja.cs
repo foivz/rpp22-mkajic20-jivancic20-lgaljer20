@@ -43,7 +43,7 @@ namespace SmartBar
             InventoryRecord selectedRecord = dgIzvjestaji.CurrentRow.DataBoundItem as InventoryRecord;
             if (selectedRecord != null)
             {
-                var form = new Izvjestaj(selectedRecord.Id);
+                var form = new FrmInventurniZapisnikProšli(selectedRecord.Id);
                 form.ShowDialog();
 
 

@@ -42,7 +42,7 @@ namespace SmartBar
         {
             InventoryRecord newRecord = new InventoryRecord
             {
-                Date = DateTime.UtcNow,
+                Date = DateTime.Now,
                 UserId = 1
             };
             
