@@ -49,14 +49,14 @@
             this.reportViewerInventura.Location = new System.Drawing.Point(0, 0);
             this.reportViewerInventura.Name = "reportViewerInventura";
             this.reportViewerInventura.ServerReport.BearerToken = null;
-            this.reportViewerInventura.Size = new System.Drawing.Size(1122, 618);
+            this.reportViewerInventura.Size = new System.Drawing.Size(740, 414);
             this.reportViewerInventura.TabIndex = 0;
             // 
             // FrmIzvjestajInventurniZapisnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 618);
+            this.ClientSize = new System.Drawing.Size(740, 414);
             this.Controls.Add(this.reportViewerInventura);
             this.Name = "FrmIzvjestajInventurniZapisnik";
             this.Text = "TestnaForma";

@@ -11,6 +11,7 @@
               <TextRun>
                 <Value>Inventurni zapisnik proizvoda</Value>
                 <Style>
+                  <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -24,6 +25,7 @@
               <TextRun>
                 <Value />
                 <Style>
+                  <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -33,9 +35,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.3937cm</Top>
-        <Left>4.69053cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.56917cm</Width>
+        <Left>3.08886cm</Left>
+        <Height>0.7905cm</Height>
+        <Width>8.55367cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -436,7 +438,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Globals!ExecutionTime</Value>
+                <Value>=Format(Globals!ExecutionTime, "MM/dd/yyyy")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -445,7 +447,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>1.57903cm</Top>
-        <Left>2.70087cm</Left>
+        <Left>3.63453cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>2</ZIndex>
@@ -466,7 +468,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Datum:</Value>
+                <Value>Datum provedbe:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -475,10 +477,44 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>1.57903cm</Top>
-        <Left>0.81703cm</Left>
+        <Left>0.54186cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.09267cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SmartBar</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.57903cm</Top>
+        <Left>11.1557cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -493,7 +529,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.68925in</Width>
+  <Width>5.68925in</Width>
   <Page>
     <PageFooter>
       <Height>2.54cm</Height>
@@ -516,7 +552,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.85937cm</Top>
-          <Left>13.96153cm</Left>
+          <Left>11.1557cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>

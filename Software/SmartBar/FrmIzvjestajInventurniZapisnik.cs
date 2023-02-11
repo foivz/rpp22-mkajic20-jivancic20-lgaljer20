@@ -22,6 +22,10 @@ namespace SmartBar
         public FrmIzvjestajInventurniZapisnik()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void TestnaForma_Load(object sender, EventArgs e)

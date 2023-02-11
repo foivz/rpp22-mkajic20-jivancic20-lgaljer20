@@ -19,6 +19,9 @@ namespace SmartBar
         public FrmPopisIzvjestaja()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void FrmPopisIzvjestaja_Load(object sender, EventArgs e)

@@ -11,6 +11,7 @@
               <TextRun>
                 <Value>Inventurni zapisnik proizvoda</Value>
                 <Style>
+                  <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -22,9 +23,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.28787cm</Top>
-        <Left>7.6327cm</Left>
-        <Height>0.6cm</Height>
-        <Width>7.60117cm</Width>
+        <Left>3.00654cm</Left>
+        <Height>0.74817cm</Height>
+        <Width>8.65483cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -51,10 +52,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>1.38853cm</Top>
-        <Left>0.60537cm</Left>
+        <Top>1.5652cm</Top>
+        <Left>0.50654cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>3.09267cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -77,12 +78,14 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Id</rd:DefaultName>
-        <Top>1.38853cm</Top>
-        <Left>3.42053cm</Left>
+        <Top>1.5652cm</Top>
+        <Left>3.63449cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>2</ZIndex>
@@ -111,8 +114,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.38853cm</Top>
-        <Left>17.49637cm</Left>
+        <Top>2.1652cm</Top>
+        <Left>0.50654cm</Left>
         <Height>0.6cm</Height>
         <Width>3.09267cm</Width>
         <ZIndex>3</ZIndex>
@@ -133,7 +136,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Date.Value, "DsRecord")</Value>
+                <Value>=Format(First(Fields!Date.Value, "DsRecord"), "MM/dd/yyyy")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -141,8 +144,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Date</rd:DefaultName>
-        <Top>1.38853cm</Top>
-        <Left>21.05236cm</Left>
+        <Top>2.1652cm</Top>
+        <Left>3.59921cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
@@ -156,17 +159,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Line Name="Line1">
-        <Top>2.6162cm</Top>
-        <Height>0cm</Height>
-        <Width>25.0552cm</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
       <Tablix Name="Tablix5">
         <TablixBody>
           <TablixColumns>
@@ -177,7 +169,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.24983cm</Width>
+              <Width>3.128cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -456,10 +448,10 @@
         </TablixRowHierarchy>
         <DataSetName>DsProduct</DataSetName>
         <Top>3.1242cm</Top>
-        <Left>4.41537cm</Left>
+        <Left>1.03338cm</Left>
         <Height>1.2cm</Height>
-        <Width>11.74983cm</Width>
-        <ZIndex>6</ZIndex>
+        <Width>10.628cm</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -563,37 +555,61 @@
         </TablixRowHierarchy>
         <DataSetName>DsInventory</DataSetName>
         <Top>3.1242cm</Top>
-        <Left>15.93003cm</Left>
+        <Left>11.66138cm</Left>
         <Height>1.2cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SmartBar</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.86886cm</Top>
+        <Left>11.66138cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>4.95546in</Height>
+    <Height>2.11379in</Height>
     <Style />
   </Body>
-  <Width>9.86425in</Width>
+  <Width>6.20592in</Width>
   <Page>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.50383cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Line Name="Line2">
-          <Top>0.39367cm</Top>
-          <Height>0cm</Height>
-          <Width>25.0552cm</Width>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
         <Textbox Name="PageNumber">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -609,11 +625,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.036cm</Top>
-          <Left>22.07304cm</Left>
+          <Top>1.29cm</Top>
+          <Left>11.66138cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

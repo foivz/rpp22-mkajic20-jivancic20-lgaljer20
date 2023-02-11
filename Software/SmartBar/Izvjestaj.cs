@@ -23,6 +23,10 @@ namespace SmartBar
         {
             InitializeComponent();
             selectedInventoryId = inventoryRecordId;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
         }
 
         private void Izvjestaj_Load(object sender, EventArgs e)
