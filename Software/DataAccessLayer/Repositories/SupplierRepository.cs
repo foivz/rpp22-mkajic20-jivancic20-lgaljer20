@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Common;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
@@ -11,72 +13,74 @@ using System.Xml.Linq;
 
 namespace DataAccessLayer.Repositories
 {
-    public class SupplierRepository
+    public class SupplierRepository : IDisposable
     {
-        private readonly string _connectionString = ConfigurationManager.ConnectionStrings["DataBaseModel"].ConnectionString;
+        private readonly SqlConnection connection;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["DataBaseModel"].ConnectionString;
         public SupplierRepository()
         {
-
+            connection = new SqlConnection(connectionString);
+            connection.Open();
         }
 
         public List<Supplier> GetSuppliers()
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Supplier]", connection))
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Supplier]", connection))
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    List<Supplier> products = new List<Supplier>();
+
+                    while (reader.Read())
                     {
-                        List<Supplier> products = new List<Supplier>();
-
-                        while (reader.Read())
+                        Supplier product = new Supplier
                         {
-                            Supplier product = new Supplier
-                            {
-                                Id = reader.GetInt32(0),
-                                Name = reader.GetString(1),
-                                Address = reader.GetString(2),
-                                Email = reader.GetString(3),
-                                PhoneNumber = reader.GetString(4),
+                            Id = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            Address = reader.GetString(2),
+                            Email = reader.GetString(3),
+                            PhoneNumber = reader.GetString(4),
 
-                            };
-                            products.Add(product);
-                        }
-
-                        return products;
+                        };
+                        products.Add(product);
                     }
+
+                    return products;
                 }
             }
         }
         public Supplier GetSupplierById(int id)
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Supplier] WHERE Id = @Id", connection))
             {
-                connection.Open();
+                command.Parameters.AddWithValue("@Id", id);
 
-                using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Supplier] WHERE Id = @Id", connection))
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    command.Parameters.AddWithValue("@Id", id);
+                    Supplier product = new Supplier();
 
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        Supplier product = new Supplier();
-
-                        while (reader.Read())
-                        {
-                            product.Id = reader.GetInt32(0);
-                            product.Name = reader.GetString(1);
-                            product.Address = reader.GetString(2);
-                            product.Email = reader.GetString(3);
-                            product.PhoneNumber = reader.GetString(4);
-                        }
-
-                        return product;
+                        product.Id = reader.GetInt32(0);
+                        product.Name = reader.GetString(1);
+                        product.Address = reader.GetString(2);
+                        product.Email = reader.GetString(3);
+                        product.PhoneNumber = reader.GetString(4);
                     }
+
+                    return product;
                 }
+
             }
+        }
+        public void Dispose()
+        {
+            if (connection.State != ConnectionState.Closed)
+            {
+                connection.Close();
+            }
+
+            connection.Dispose();
         }
     }
 }

@@ -4,14 +4,12 @@ using SmartBar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-
+using BusinessLogicLayer.Services;
 namespace SmartBar
 {
     public partial class UpravljanjeInventaromForm : Form
     {
-        private readonly ProductRepository _productRepository = new ProductRepository();
-
-
+        ProductService _productService = new ProductService();
         public UpravljanjeInventaromForm()
         {
             InitializeComponent();
@@ -41,7 +39,7 @@ namespace SmartBar
                 DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite da obrišete ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result==DialogResult.Yes)
                 {
-                    _productRepository.DeleteProduct(product.Id);
+                    _productService.DeleteProduct(product.Id);
                     RefreshGUI();
                 }
                 else if (result == DialogResult.No)
@@ -55,7 +53,7 @@ namespace SmartBar
         private void RefreshGUI() {
             dgvInventar.Columns.Clear();
             List<UpravljanjeInvantaromVM> upravljanjeInvantaromVMs = new List<UpravljanjeInvantaromVM>();
-            List<Product> products = _productRepository.GetProducts();
+            List<Product> products = _productService.GetProducts();
             foreach (Product product in products)
             {
                 UpravljanjeInvantaromVM upravljanjeInvantaromVM = new UpravljanjeInvantaromVM
@@ -91,8 +89,6 @@ namespace SmartBar
                 Width = 60,
                 UseColumnTextForButtonValue = true
             });
-            
-
         }
         
         private void UpravljanjeInventaromForm_Load(object sender, EventArgs e)

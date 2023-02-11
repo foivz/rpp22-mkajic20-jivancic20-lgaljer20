@@ -11,13 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer.Services;
+using BusinessLogicLayer;
 
 namespace SmartBar
 {
     public partial class UpravljanjeProizvodomForm : Form
     {
-        private readonly ProductRepository _productRepository = new ProductRepository();
-        private readonly ProductService _productService = new ProductService();
+        ProductService _productService = new ProductService();
+        LoginService _loginService = new LoginService();
+
 
         public UpravljanjeProizvodomForm()
         {
@@ -32,11 +34,12 @@ namespace SmartBar
             txtMinimum.Text = model.Minimum.ToString();
             txtOptimal.Text = model.Optimal.ToString();
             txtMeasurementUnit.Text = model.MeasurementUnit;
+            txtId.Text = model.Id.ToString();
         }
 
         private void UpravljanjeProizvodomForm_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -54,20 +57,33 @@ namespace SmartBar
             {
                 MessageBox.Show("Provjerite unesene brojeve", "", MessageBoxButtons.OK);
             }
-            
+
             product.MeasurementUnit = txtMeasurementUnit.Text;
-            product.UserId = 1; //treba maknut
+            
+            if(product.UserId == 0)
+            {
+                MessageBox.Show("Niste prijavljeni", " ", MessageBoxButtons.OKCancel);
+            }
+            product.UserId = CurrentUser.user.Id;
+            product.Id = int.Parse(txtId.Text);
             if (_productService.ValidateData(product))
             {
-                _productRepository.CreateProduct(product);
+                if (product.Id == 0)
+                {
+                    _productService.CreateProduct(product);
+                }
+                else
+                {
+                    _productService.UpdateProduct(product);
+                }
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Provjerite unos podataka!", "Unos podataka", MessageBoxButtons.OK);
             }
-            
-            
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

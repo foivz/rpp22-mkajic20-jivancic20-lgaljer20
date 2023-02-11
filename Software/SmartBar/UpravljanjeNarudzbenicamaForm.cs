@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Repositories;
+﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using SmartBar.ViewModels;
 using System;
@@ -16,10 +17,10 @@ namespace SmartBar
 {
     public partial class UpravljanjeNarudzbenicamaForm : Form
     {
-        private readonly OrderFormRepository _orderFormRepository = new OrderFormRepository();
-        private readonly OrderItemRepository _orderItemRepository = new OrderItemRepository();
-        private readonly ProductRepository _productRepository = new ProductRepository();
-        private readonly SupplierRepository _supplierRepository = new SupplierRepository();
+        SupplierService _supplierService = new SupplierService();
+        OrderFormService _orderFormService = new OrderFormService();
+        OrderItemService _orderItemService = new OrderItemService();
+
         public UpravljanjeNarudzbenicamaForm()
         {
             InitializeComponent();
@@ -32,14 +33,14 @@ namespace SmartBar
             if (e.ColumnIndex == 4)
             {       
                 NarudzbenicaVM upravljanjeInvantaromVM = (NarudzbenicaVM)dgvNarudzbenice.Rows[e.RowIndex].DataBoundItem;
-                OrderForm orderForm = _orderFormRepository.GetOrderFormById(upravljanjeInvantaromVM.Id);
+                OrderForm orderForm = _orderFormService.GetOrderFormById(upravljanjeInvantaromVM.Id);
                 UpravljanjeNarudzbenicamaVM upravljanjeNarudzbenicamaVM = new UpravljanjeNarudzbenicamaVM
                 {
                     OrderFormId = orderForm.Id,
                     OrderDate = orderForm.Date,
-                    Amount = _orderItemRepository.GetOrderItemById(orderForm.Id).Amount,
-                    Supplier = _supplierRepository.GetSupplierById(orderForm.Id),
-                    //User = _userRepository.GetUserById(orderForm.Id)
+                    Amount = _orderItemService.GetOrderItemById(orderForm.Id).Amount,
+                    Supplier = _supplierService.GetSupplierById(orderForm.Id),
+                    //User = _userService.GetUserById(orderForm.Id)
                     
                 };
                 UpravljanjeStavkomNarudzbeniceForm upravljanjeStavkomNarudzbenice = new UpravljanjeStavkomNarudzbeniceForm(upravljanjeNarudzbenicamaVM);
@@ -49,12 +50,12 @@ namespace SmartBar
             else if (e.ColumnIndex == 5)
             {
                 NarudzbenicaVM upravljanjeInvantaromVM = (NarudzbenicaVM)dgvNarudzbenice.Rows[e.RowIndex].DataBoundItem;
-                OrderForm orderForm = _orderFormRepository.GetOrderFormById(upravljanjeInvantaromVM.Id);
+                OrderForm orderForm = _orderFormService.GetOrderFormById(upravljanjeInvantaromVM.Id);
                 
                 DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite da obrišete ovu narudžbenicu?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    _orderFormRepository.DeleteOrderForm(orderForm.Id);
+                    _orderFormService.DeleteOrderForm(orderForm.Id);
                     RefreshGUI();
                 }
                 else if (result == DialogResult.No)
@@ -83,7 +84,7 @@ namespace SmartBar
         {
             dgvNarudzbenice.Columns.Clear();
             List<NarudzbenicaVM> upravljanjeInvantaromVMs = new List<NarudzbenicaVM>();
-            List<OrderForm> products = _orderFormRepository.GetOrderForms();
+            List<OrderForm> products = _orderFormService.GetOrderForms();
             foreach (OrderForm product in products)
             {
                 NarudzbenicaVM upravljanjeInvantaromVM = new NarudzbenicaVM

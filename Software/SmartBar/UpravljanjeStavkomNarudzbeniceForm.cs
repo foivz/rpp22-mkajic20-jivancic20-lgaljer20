@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Repositories;
+﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Repositories;
 using SmartBar.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,14 @@ namespace SmartBar
 {
     public partial class UpravljanjeStavkomNarudzbeniceForm : Form
     {
-        private readonly OrderFormRepository _orderFormRepository = new OrderFormRepository();
-        private readonly ProductRepository _productRepository = new ProductRepository();
-        private readonly SupplierRepository _supplierRepository = new SupplierRepository();
+        SupplierService _supplierService = new SupplierService();
+        OrderFormService _orderFormService = new OrderFormService();
+        ProductService _productService = new ProductService();
         public UpravljanjeStavkomNarudzbeniceForm()
         {
             InitializeComponent();
-            cbProducts.DataSource = _productRepository.GetProducts().Select(x => x.Name).ToList();
-            cbSuppliers.DataSource = _supplierRepository.GetSuppliers().Select(x => x.Name).ToList();
+            cbProducts.DataSource = _productService.GetProducts().Select(x => x.Name).ToList();
+            cbSuppliers.DataSource = _supplierService.GetSuppliers().Select(x => x.Name).ToList();
             cbProducts.SelectedItem = null;
             cbSuppliers.SelectedItem = null;
             dtpOrderDate.Value = DateTime.Now;
@@ -30,8 +31,8 @@ namespace SmartBar
         public UpravljanjeStavkomNarudzbeniceForm(UpravljanjeNarudzbenicamaVM model)
         {
             InitializeComponent();
-            cbProducts.DataSource = _productRepository.GetProducts().Select(x => x.Name).ToList();
-            cbSuppliers.DataSource = _supplierRepository.GetSuppliers().Select(x => x.Name).ToList();
+            cbProducts.DataSource = _productService.GetProducts().Select(x => x.Name).ToList();
+            cbSuppliers.DataSource = _supplierService.GetSuppliers().Select(x => x.Name).ToList();
             nudAmount.Value = (decimal)model.Amount;
             dtpOrderDate.Value = (DateTime)model.OrderDate;
             cbProducts.SelectedItem = null;
