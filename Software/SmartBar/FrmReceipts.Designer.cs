@@ -52,6 +52,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Storniraj";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShow
             // 

@@ -37,8 +37,8 @@ namespace SmartBar
             switch(status)
             {
                 case 0: MessageBox.Show("Uneseni kod nije ispravan!"); break;
-                case 1: MessageBox.Show("Prijavljeni ste kao korisnik."); break;
-                case 2: MessageBox.Show("Prijavljeni ste kao admin."); break;
+                case 1: Redirect(); break;
+                case 2: Redirect(); break;
             }
 
         }
@@ -54,6 +54,14 @@ namespace SmartBar
             {
                 MessageBox.Show("Greška prilikom slanja maila");
             }
+        }
+
+        private void Redirect()
+        {
+            var frmReceipts = new FrmReceipts();
+            Hide();
+            frmReceipts.ShowDialog();
+            Close();
         }
     }
 }
