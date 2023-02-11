@@ -62,6 +62,7 @@
             this.btnShow.TabIndex = 2;
             this.btnShow.Text = "Ispiši";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // FrmReceipts
             // 
