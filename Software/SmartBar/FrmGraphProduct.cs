@@ -31,27 +31,28 @@ namespace SmartBar
             GraphProductService service = new GraphProductService();
             var products = service.GetAllGraph();
 
-            List<Tuple<string, int>> data = new List<Tuple<string, int>>();
+            List<Tuple<string, int, string>> data = new List<Tuple<string, int, string>>();
 
             foreach (var product in products)
             {
-                data.Add(new Tuple<string, int>(product.Name, (int)product.Amount));
+                data.Add(new Tuple<string, int, string>(product.Name, (int)product.Amount, product.MeasurementUnit));
             }
 
             MakeChart(data);
          
         }
 
-        private void MakeChart(List<Tuple<string, int>> data)
+        private void MakeChart(List<Tuple<string, int, string>> data)
         {
             chartProducts.Series[0].Points.DataBindXY(data, "Item1", data, "Item2");
             chartProducts.Series[0].XValueMember = "ProductName";
             chartProducts.Series[0].YValueMembers = "ProductAmount";
             chartProducts.Series[0].Label = "#VALX";
 
-            foreach (DataPoint point in chartProducts.Series[0].Points)
+            for (int i = 0; i < chartProducts.Series[0].Points.Count; i++)
             {
-                point.ToolTip = string.Format("Količina: {0}",point.YValues[0]);
+                DataPoint point = chartProducts.Series[0].Points[i];
+                point.ToolTip = string.Format("Količina: {0}", point.YValues[0]+" "+data[i].Item3);
             }
 
             chartProducts.Series[0].ChartType = SeriesChartType.Pie;
