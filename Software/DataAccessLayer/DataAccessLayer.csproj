@@ -68,7 +68,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Repositories\GraphProductRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="DataBaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

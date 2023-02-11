@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,8 @@ namespace SmartBar
 {
     public partial class FrmGraphProduct : Form
     {
-       
+
+        private ProductRepository repo = new ProductRepository();
    
         public FrmGraphProduct()
         {
@@ -27,9 +29,8 @@ namespace SmartBar
 
         private void FrmGraphProduct_Load(object sender, EventArgs e)
         {
-
-            GraphProductService service = new GraphProductService();
-            var products = service.GetAllGraph();
+           
+            var products = repo.GetProducts();
 
             List<Tuple<string, int, string>> data = new List<Tuple<string, int, string>>();
 
