@@ -25,7 +25,7 @@ namespace BusinessLogicLayer.Services
         public bool RemoveDocket(Docket docket)
         {
             bool uspjesno = false;
-
+        
             bool mozeObrisati = ProvjeraBrisanje(docket);
             if(mozeObrisati == true)
             {          
@@ -39,7 +39,7 @@ namespace BusinessLogicLayer.Services
         private bool ProvjeraBrisanje(Docket docket)
         {
             var count = repo.GetCount(docket);
-           
+         
                 if (count > 0)
                 {
                     return false;

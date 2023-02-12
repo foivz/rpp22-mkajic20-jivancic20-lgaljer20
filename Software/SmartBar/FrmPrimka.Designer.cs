@@ -34,9 +34,9 @@
             this.btnAddStavka = new System.Windows.Forms.Button();
             this.btnDeleteStavka = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnIzbrišiPrimku = new System.Windows.Forms.Button();
             this.cmbSuppliers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnIzbrišiPrimku = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrimke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimke)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -51,6 +51,7 @@
             this.dgvPrimke.RowTemplate.Height = 24;
             this.dgvPrimke.Size = new System.Drawing.Size(600, 195);
             this.dgvPrimke.TabIndex = 0;
+            this.dgvPrimke.SelectionChanged += new System.EventHandler(this.dgvPrimke_SelectionChanged);
             // 
             // btnNovaPrimka
             // 
@@ -80,6 +81,7 @@
             this.btnAddStavka.TabIndex = 3;
             this.btnAddStavka.Text = "Dodaj stavku";
             this.btnAddStavka.UseVisualStyleBackColor = true;
+            this.btnAddStavka.Click += new System.EventHandler(this.btnAddStavka_Click);
             // 
             // btnDeleteStavka
             // 
@@ -89,6 +91,7 @@
             this.btnDeleteStavka.TabIndex = 4;
             this.btnDeleteStavka.Text = "Obriši stavku";
             this.btnDeleteStavka.UseVisualStyleBackColor = true;
+            this.btnDeleteStavka.Click += new System.EventHandler(this.btnDeleteStavka_Click);
             // 
             // groupBox1
             // 
@@ -102,6 +105,16 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nova primka";
+            // 
+            // btnIzbrišiPrimku
+            // 
+            this.btnIzbrišiPrimku.Location = new System.Drawing.Point(35, 166);
+            this.btnIzbrišiPrimku.Name = "btnIzbrišiPrimku";
+            this.btnIzbrišiPrimku.Size = new System.Drawing.Size(132, 32);
+            this.btnIzbrišiPrimku.TabIndex = 4;
+            this.btnIzbrišiPrimku.Text = "Izbriši primku";
+            this.btnIzbrišiPrimku.UseVisualStyleBackColor = true;
+            this.btnIzbrišiPrimku.Click += new System.EventHandler(this.btnIzbrišiPrimku_Click);
             // 
             // cmbSuppliers
             // 
@@ -123,16 +136,6 @@
             this.label1.Size = new System.Drawing.Size(135, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Izaberite dobavljača: ";
-            // 
-            // btnIzbrišiPrimku
-            // 
-            this.btnIzbrišiPrimku.Location = new System.Drawing.Point(35, 166);
-            this.btnIzbrišiPrimku.Name = "btnIzbrišiPrimku";
-            this.btnIzbrišiPrimku.Size = new System.Drawing.Size(132, 32);
-            this.btnIzbrišiPrimku.TabIndex = 4;
-            this.btnIzbrišiPrimku.Text = "Izbriši primku";
-            this.btnIzbrišiPrimku.UseVisualStyleBackColor = true;
-            this.btnIzbrišiPrimku.Click += new System.EventHandler(this.btnIzbrišiPrimku_Click);
             // 
             // FrmPrimka
             // 

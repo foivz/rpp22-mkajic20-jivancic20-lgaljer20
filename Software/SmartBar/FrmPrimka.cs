@@ -16,6 +16,7 @@ namespace SmartBar
     public partial class FrmPrimka : Form
     {
         private DocketService servisiPrimke = new DocketService();
+        private DocketItemService servisiStavkePrimke = new DocketItemService();
         public FrmPrimka()
         {
             InitializeComponent();
@@ -24,6 +25,21 @@ namespace SmartBar
         private void FrmPrimka_Load(object sender, EventArgs e)
         {
             OsvjeziPrimke();
+            OsvjeziStavke();
+           
+        }
+
+        private void OsvjeziStavke()
+        {
+            var primka = dohvatiSelektiranuPrimku();
+            if(primka != null)
+            {
+                dgvStavkePrimke.DataSource = servisiStavkePrimke.GetDocketsById(primka.Id);
+                dgvStavkePrimke.Columns[3].Visible = false;
+                dgvStavkePrimke.Columns[4].Visible = false;
+            }
+          
+           
         }
 
         private void OsvjeziPrimke()
@@ -60,14 +76,14 @@ namespace SmartBar
             IzbrišiDocket();
         }
 
-        private Docket dohvatiSelktiranog()
+        private Docket dohvatiSelektiranuPrimku()
         {
             return dgvPrimke.CurrentRow.DataBoundItem as Docket;
         }
 
         private void IzbrišiDocket()
         {
-            Docket docket = dohvatiSelktiranog();
+            Docket docket = dohvatiSelektiranuPrimku();
             if (docket != null)
             {
                 bool uspjesno = servisiPrimke.RemoveDocket(docket);
@@ -77,6 +93,21 @@ namespace SmartBar
                 }
                 OsvjeziPrimke();
             }
+        }
+
+        private void dgvPrimke_SelectionChanged(object sender, EventArgs e)
+        {
+            OsvjeziStavke();
+        }
+
+        private void btnAddStavka_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteStavka_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
