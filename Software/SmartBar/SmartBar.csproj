@@ -147,6 +147,7 @@
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInventurniZapisnikProšli.resx">
       <DependentUpon>FrmInventurniZapisnikProšli.cs</DependentUpon>
