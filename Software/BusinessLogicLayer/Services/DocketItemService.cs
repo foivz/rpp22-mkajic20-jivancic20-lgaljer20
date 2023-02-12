@@ -26,5 +26,9 @@ namespace BusinessLogicLayer.Services
   
             return repo.CheckIfProductsExists(docket, product);
         }
+        public void RemoveDocketItem(DocketItem docketItem)
+        {
+            repo.RemoveDocketItem(docketItem);
+        }
     }
 }

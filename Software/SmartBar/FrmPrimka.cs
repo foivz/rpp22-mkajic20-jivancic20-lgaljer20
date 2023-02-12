@@ -40,9 +40,7 @@ namespace SmartBar
                 dgvStavkePrimke.DataSource = servisiStavkePrimke.GetDocketsById(primka.Id);
                 dgvStavkePrimke.Columns[3].Visible = false;
                
-            }
-          
-           
+            }       
         }
 
         private void OsvjeziPrimke()
@@ -118,7 +116,22 @@ namespace SmartBar
 
         private void btnDeleteStavka_Click(object sender, EventArgs e)
         {
+            IzbrisiStavku();
+        }
 
+        private void IzbrisiStavku()
+        {
+            DocketItem selectedStavka = dohvatiSelektiranuStavku();
+            if(selectedStavka != null)
+            {
+                servisiStavkePrimke.RemoveDocketItem(selectedStavka);
+                OsvjeziStavke();
+            }
+        }
+
+        private DocketItem dohvatiSelektiranuStavku()
+        {
+            return dgvStavkePrimke.CurrentRow.DataBoundItem as DocketItem;
         }
     }
 }

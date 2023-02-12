@@ -42,5 +42,14 @@ namespace DataAccessLayer
                 context.SaveChanges();
             }
         }
+        public void RemoveDocketItem(DocketItem docketItem)
+        {
+            using (var context = new DataBaseModel())
+            {
+                context.DocketItems.Attach(docketItem);
+                context.DocketItems.Remove(docketItem);
+                context.SaveChanges();
+            }
+        }
     }
 }
