@@ -58,7 +58,7 @@
               <Width>2.20367cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.8175cm</Width>
+              <Width>3.34667cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.98683cm</Width>
@@ -84,7 +84,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox2</rd:DefaultName>
@@ -114,7 +116,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox4</rd:DefaultName>
@@ -144,7 +148,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox6</rd:DefaultName>
@@ -174,7 +180,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
@@ -204,7 +212,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                         <Paragraph>
                           <TextRuns>
@@ -213,7 +223,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                         <Paragraph>
                           <TextRuns>
@@ -257,7 +269,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Id</rd:DefaultName>
@@ -287,7 +301,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Name</rd:DefaultName>
@@ -317,7 +333,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>MeasurementUnit1</rd:DefaultName>
@@ -379,7 +397,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Price</rd:DefaultName>
@@ -421,9 +441,9 @@
         </TablixRowHierarchy>
         <DataSetName>DsProducts</DataSetName>
         <Top>2.53153cm</Top>
-        <Left>1.13453cm</Left>
+        <Left>0.6477cm</Left>
         <Height>1.2cm</Height>
-        <Width>12.52117cm</Width>
+        <Width>13.05034cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -447,7 +467,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
         <Top>1.57903cm</Top>
-        <Left>3.63453cm</Left>
+        <Left>3.74037cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>2</ZIndex>
@@ -477,7 +497,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>1.57903cm</Top>
-        <Left>0.54186cm</Left>
+        <Left>0.6477cm</Left>
         <Height>0.6cm</Height>
         <Width>3.09267cm</Width>
         <ZIndex>3</ZIndex>
@@ -506,12 +526,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>1.57903cm</Top>
-        <Left>11.1557cm</Left>
+        <Left>11.19804cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
@@ -529,7 +551,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>5.68925in</Width>
+  <Width>5.71425in</Width>
   <Page>
     <PageFooter>
       <Height>2.54cm</Height>
