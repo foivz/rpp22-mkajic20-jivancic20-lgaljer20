@@ -39,7 +39,7 @@ namespace SmartBar
             {
                 dgvStavkePrimke.DataSource = servisiStavkePrimke.GetDocketsById(primka.Id);
                 dgvStavkePrimke.Columns[3].Visible = false;
-                dgvStavkePrimke.Columns[4].Visible = false;
+               
             }
           
            
@@ -94,7 +94,11 @@ namespace SmartBar
                 {
                     MessageBox.Show("Primka sadrži stavke i ne može se izbrisati");
                 }
-                OsvjeziPrimke();
+                else
+                {
+                    OsvjeziPrimke();
+                }
+                
             }
         }
 

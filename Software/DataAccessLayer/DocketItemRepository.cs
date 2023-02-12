@@ -14,11 +14,22 @@ namespace DataAccessLayer
         {
             using (var context = new DataBaseModel())
             {
-                var query = from d in context.DocketItems
+                var query = from d in context.DocketItems.Include("Product")
                             where d.DocketId == id
                             select d;
 
                 return query.ToList();
+            }
+        }
+        public int CheckIfProductsExists(Docket docket, Product product)
+        {
+            using (var context = new DataBaseModel())
+            {
+                var query = from d in context.DocketItems
+                           where d.DocketId == docket.Id &&  d.ProductId == product.Id
+                            select d;
+
+                return query.Count();
             }
         }
 

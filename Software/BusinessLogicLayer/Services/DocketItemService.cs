@@ -20,5 +20,11 @@ namespace BusinessLogicLayer.Services
         {
             repo.AddDocketItem(docketItem); 
         }
+
+        public int CheckIfProductExists(Docket docket, Product product)
+        {
+  
+            return repo.CheckIfProductsExists(docket, product);
+        }
     }
 }
