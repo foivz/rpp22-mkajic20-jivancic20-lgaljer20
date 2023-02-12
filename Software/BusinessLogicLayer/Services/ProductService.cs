@@ -1,4 +1,5 @@
-﻿using EntitiesLayer.Entities;
+﻿using DataAccessLayer.Repositories;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace BusinessLogicLayer.Services
 {
     public class ProductService
     {
+        private ProductRepository repo = new ProductRepository();
         public bool ValidateData(Product product) 
         {
             double test1;
@@ -37,6 +39,24 @@ namespace BusinessLogicLayer.Services
             
             
             
+        }
+        //Luka Galjer
+        public void DodajProizvode(int id, int kolicina)
+        {
+            Product selectedProduct = repo.GetProductFromId(id);
+            int trenutnaKolicina = (int)selectedProduct.Amount;
+            int novaKolicina = trenutnaKolicina + kolicina;
+            selectedProduct.Amount = novaKolicina;
+            repo.UpdateProduct(selectedProduct);
+            
+        }
+        public void OduzmiProizvode(int id, int kolicina)
+        {
+            Product selectedProduct = repo.GetProductFromId(id);
+            int trenutnaKolicina = (int)selectedProduct.Amount;
+            int novaKolicina = trenutnaKolicina - kolicina;
+            selectedProduct.Amount = novaKolicina;
+            repo.UpdateProduct(selectedProduct);
         }
     }
 }

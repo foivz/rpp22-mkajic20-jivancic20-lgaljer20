@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace BusinessLogicLayer.Services
     public class DocketItemService
     {
         private DocketItemRepository repo = new DocketItemRepository();
+
+        private ProductService productServis = new ProductService();
         public List<DocketItem> GetDocketsById(int id)
         {
             return repo.GetDocketsById(id);
@@ -18,7 +21,10 @@ namespace BusinessLogicLayer.Services
 
         public void AddDocketItem(DocketItem docketItem)
         {
-            repo.AddDocketItem(docketItem); 
+            repo.AddDocketItem(docketItem);
+           
+            productServis.DodajProizvode(docketItem.ProductId, docketItem.Amount);
+
         }
 
         public int CheckIfProductExists(Docket docket, Product product)
@@ -29,6 +35,7 @@ namespace BusinessLogicLayer.Services
         public void RemoveDocketItem(DocketItem docketItem)
         {
             repo.RemoveDocketItem(docketItem);
+            productServis.OduzmiProizvode(docketItem.ProductId, docketItem.Amount);
         }
     }
 }
