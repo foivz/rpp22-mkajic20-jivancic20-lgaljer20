@@ -20,6 +20,9 @@ namespace SmartBar
         public FrmPrimka()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void FrmPrimka_Load(object sender, EventArgs e)
@@ -102,7 +105,11 @@ namespace SmartBar
 
         private void btnAddStavka_Click(object sender, EventArgs e)
         {
+            Docket docket = dohvatiSelektiranuPrimku();
+            var forma = new FrmNovaStavkaPrimke(docket);
+            forma.ShowDialog();
 
+            OsvjeziStavke();
         }
 
         private void btnDeleteStavka_Click(object sender, EventArgs e)

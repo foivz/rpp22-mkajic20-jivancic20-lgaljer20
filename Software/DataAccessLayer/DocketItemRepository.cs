@@ -21,5 +21,15 @@ namespace DataAccessLayer
                 return query.ToList();
             }
         }
+
+        public void AddDocketItem(DocketItem docketItem)
+        {
+            using (var context = new DataBaseModel())
+            {
+                context.DocketItems.Attach(docketItem);
+                context.DocketItems.Add(docketItem);
+                context.SaveChanges();
+            }
+        }
     }
 }

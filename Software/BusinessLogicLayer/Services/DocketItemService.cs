@@ -15,5 +15,10 @@ namespace BusinessLogicLayer.Services
         {
             return repo.GetDocketsById(id);
         }
+
+        public void AddDocketItem(DocketItem docketItem)
+        {
+            repo.AddDocketItem(docketItem); 
+        }
     }
 }
