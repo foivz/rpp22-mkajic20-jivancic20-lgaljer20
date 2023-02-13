@@ -48,6 +48,7 @@
     <Compile Include="Services\DocketService.cs" />
     <Compile Include="Services\InventoryRecordItemService.cs" />
     <Compile Include="Services\InventoryRecordService.cs" />
+    <Compile Include="Services\TestniService.cs" />
     <Compile Include="TwoFactorService.cs" />
     <Compile Include="Services\ProductService.cs" />
   </ItemGroup>

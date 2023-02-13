@@ -1,0 +1,89 @@
+﻿namespace SmartBar
+{
+    partial class TestnaForma
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dgNarudzbenice = new System.Windows.Forms.DataGridView();
+            this.btnAutomatski = new System.Windows.Forms.Button();
+            this.btnRučno = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dgNarudzbenice
+            // 
+            this.dgNarudzbenice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgNarudzbenice.Location = new System.Drawing.Point(39, 27);
+            this.dgNarudzbenice.Name = "dgNarudzbenice";
+            this.dgNarudzbenice.RowHeadersWidth = 51;
+            this.dgNarudzbenice.RowTemplate.Height = 24;
+            this.dgNarudzbenice.Size = new System.Drawing.Size(600, 230);
+            this.dgNarudzbenice.TabIndex = 0;
+            // 
+            // btnAutomatski
+            // 
+            this.btnAutomatski.Location = new System.Drawing.Point(372, 287);
+            this.btnAutomatski.Name = "btnAutomatski";
+            this.btnAutomatski.Size = new System.Drawing.Size(123, 71);
+            this.btnAutomatski.TabIndex = 1;
+            this.btnAutomatski.Text = "Automatsko generiranje primke";
+            this.btnAutomatski.UseVisualStyleBackColor = true;
+            this.btnAutomatski.Click += new System.EventHandler(this.btnAutomatski_Click);
+            // 
+            // btnRučno
+            // 
+            this.btnRučno.Location = new System.Drawing.Point(516, 287);
+            this.btnRučno.Name = "btnRučno";
+            this.btnRučno.Size = new System.Drawing.Size(123, 71);
+            this.btnRučno.TabIndex = 2;
+            this.btnRučno.Text = "Ručno generiranje primke";
+            this.btnRučno.UseVisualStyleBackColor = true;
+            this.btnRučno.Click += new System.EventHandler(this.btnRučno_Click);
+            // 
+            // TestnaForma
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(679, 391);
+            this.Controls.Add(this.btnRučno);
+            this.Controls.Add(this.btnAutomatski);
+            this.Controls.Add(this.dgNarudzbenice);
+            this.Name = "TestnaForma";
+            this.Text = "TestnaForma";
+            this.Load += new System.EventHandler(this.TestnaForma_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dgNarudzbenice;
+        private System.Windows.Forms.Button btnAutomatski;
+        private System.Windows.Forms.Button btnRučno;
+    }
+}
