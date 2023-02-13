@@ -22,6 +22,7 @@ namespace DataAccessLayer.Repositories
             using (var context = new DataBaseModel())
             {
                 context.Receipts.Attach(receipt);
+                context.ReceiptItems.RemoveRange(context.ReceiptItems.Where(ri => ri.ReceiptId == receipt.Id));
                 context.Receipts.Remove(receipt);
                 context.SaveChanges();
             }
@@ -36,7 +37,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
-        public List<ReceiptListItem> GetReceiptItems(Receipt receipt)
+        public List<ReceiptListItem> GetReceiptListItems(Receipt receipt)
         {
             using (var context = new DataBaseModel())
             {
@@ -54,6 +55,24 @@ namespace DataAccessLayer.Repositories
                 }
 
                 return listItems;
+            }
+        }
+
+        public List<ReceiptItem> GetReceiptItems(Receipt receipt) 
+        {
+            using (var context = new DataBaseModel())
+            {
+                context.Receipts.Attach(receipt);
+                return receipt.ReceiptItems.ToList();
+            }
+        }
+
+        public Product GetProduct(ReceiptItem receiptItem)
+        {
+            using (var context = new DataBaseModel())
+            {
+                context.ReceiptItems.Attach(receiptItem);
+                return receiptItem.Product as Product;
             }
         }
     }

@@ -22,6 +22,17 @@ namespace BusinessLogicLayer.Services
 
         public void DeleteReceipt(Receipt receipt)
         {
+            List<ReceiptItem> receiptItems;
+            receiptItems = repo.GetReceiptItems(receipt);
+
+            ProductRepository productRepository = new ProductRepository();
+
+            foreach(ReceiptItem receiptItem in receiptItems)
+            {
+                var product = repo.GetProduct(receiptItem);
+                int newAmount = (int)(product.Amount + receiptItem.Amount);
+                productRepository.UpdateAmount(product, newAmount);
+            }
             repo.Delete(receipt);
         }
 
@@ -32,7 +43,7 @@ namespace BusinessLogicLayer.Services
 
         public List<ReceiptListItem> GetReceiptItems(Receipt receipt)
         {
-            return repo.GetReceiptItems(receipt);
+            return repo.GetReceiptListItems(receipt);
         }
     }
 }
