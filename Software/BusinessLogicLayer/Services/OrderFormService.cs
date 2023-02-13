@@ -33,6 +33,25 @@ namespace BusinessLogicLayer.Services
         {
             return new OrderFormRepository().GetOrderFormById(id);
         }
+
+        public bool ValidateData(OrderForm orderForm)
+        {
+            if (orderForm.Date < DateTime.Now)
+            {
+                return false;
+            }
+
+            if (orderForm.OrderItems.Count() < 1)
+            {
+                return false;
+            }
+            foreach(OrderItem item in orderForm.OrderItems)
+            {
+                if (item.Amount <= 0) return false;
+            }
+            return true;
+
+        }
     }
 }
 

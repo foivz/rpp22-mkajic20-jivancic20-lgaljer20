@@ -73,6 +73,30 @@ namespace DataAccessLayer.Repositories
 
             }
         }
+        public Supplier GetSupplierByName(string v)
+        {
+            using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Supplier] WHERE Name = @Name", connection))
+            {
+                command.Parameters.AddWithValue("@Name", v);
+                
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    Supplier product = new Supplier();
+
+                    while (reader.Read())
+                    {
+                        product.Id = reader.GetInt32(0);
+                        product.Name = reader.GetString(1);
+                        product.Address = reader.GetString(2);
+                        product.Email = reader.GetString(3);
+                        product.PhoneNumber = reader.GetString(4);
+                    }
+
+                    return product;
+                }
+
+            }
+        }
         public void Dispose()
         {
             if (connection.State != ConnectionState.Closed)
@@ -82,5 +106,7 @@ namespace DataAccessLayer.Repositories
 
             connection.Dispose();
         }
+
+        
     }
 }

@@ -24,5 +24,13 @@ namespace BusinessLogicLayer.Services
                 return supplierRepository.GetSupplierById(id);
             }
         }
+
+        public Supplier GetSupplierByName(string v)
+        {
+            using (SupplierRepository supplierRepository = new SupplierRepository())
+            {
+                return supplierRepository.GetSupplierByName(v);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
 using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using SmartBar.ViewModels;
@@ -30,8 +31,8 @@ namespace SmartBar
             InitializeComponent();
             cbProducts.DataSource = _productService.GetProducts().Select(x => x.Name).ToList();
             cbSuppliers.DataSource = _supplierService.GetSuppliers().Select(x => x.Name).ToList();
-            cbProducts.SelectedItem = null;
-            cbSuppliers.SelectedItem = null;
+            cbProducts.SelectedIndex = 0;
+            cbSuppliers.SelectedIndex = 0;
             dtpOrderDate.Value = DateTime.Now;
             dgvProducts.CellClick += dgvProducts_CellClick;
         }
@@ -48,8 +49,9 @@ namespace SmartBar
 
             nudAmount.Value = (decimal)model.Amount;
             dtpOrderDate.Value = (DateTime)model.OrderDate;
-            cbProducts.SelectedItem = null;
+            cbProducts.SelectedIndex = 0;
             cbSuppliers.SelectedItem = model.Supplier.Name;
+           
             orderFormId = model.OrderFormId;
             dgvProducts.CellClick += dgvProducts_CellClick;
         }
@@ -61,7 +63,41 @@ namespace SmartBar
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            OrderForm ord = new OrderForm();
+            ord.Date = dtpOrderDate.Value;
+            ord.Supplier = _supplierService.GetSupplierByName(cbSuppliers.SelectedItem.ToString());
+            List<OrderItem> orderItems = new List<OrderItem>();
+            foreach (var item in proizvodi)
+            {
+                OrderItem oi = new OrderItem();
+                oi.OrderFormId = orderFormId;
+                oi.ProductId = _productService.GetProductByName(item.Name).Id;
+                oi.Amount = item.OrderAmount;
+                oi.Product = _productService.GetProductByName(item.Name);
+                orderItems.Add(oi);
+            }
+            ord.OrderItems = orderItems;
 
+            //ord.UserId = CurrentUser.user.Id;
+            ord.UserId = 1;
+            ord.SupplierId = _supplierService.GetSupplierByName(cbSuppliers.SelectedItem.ToString()).Id;
+            ord.Id = orderFormId;
+            if (!_orderFormService.ValidateData(ord))
+            {
+                MessageBox.Show("Provjerite unesene podatke", "", MessageBoxButtons.OK);
+            }
+            else
+            {
+                if (ord.Id != 0)
+                {
+                    _orderFormService.UpdateOrderForm(ord);
+                }
+                else
+                {
+                    _orderFormService.CreateOrderForm(ord);
+                }
+                this.Close();
+            }
         }
 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,7 +138,6 @@ namespace SmartBar
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            
             KratkiProizvodVM kratkiProizvodVM = new KratkiProizvodVM();
             kratkiProizvodVM.Name = cbProducts.SelectedItem.ToString();
             kratkiProizvodVM.OrderAmount = (int)nudAmount.Value;
