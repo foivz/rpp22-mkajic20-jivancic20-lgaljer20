@@ -22,6 +22,20 @@ namespace BusinessLogicLayer
             return false;
         }
 
+        public int CheckUserRole()
+        {
+            UserRepository repo = new UserRepository();
+            string role = repo.GetRole(CurrentUser.user.Username);
+            if(role == "admin")
+            {
+                return 2;
+            } 
+            else
+            {
+                return 1;
+            }
+        }
+
         private void LoginUser(User user)
         {
             CurrentUser.user = user;
