@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+      </Compile>
     <Compile Include="FrmGrafickiPrikazInventara.cs">
       <SubType>Form</SubType>
     </Compile>
