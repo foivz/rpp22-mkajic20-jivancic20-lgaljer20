@@ -33,6 +33,7 @@ namespace SmartBar
             cbSuppliers.DataSource = _supplierService.GetSuppliers().Select(x => x.Name).ToList();
             cbProducts.SelectedIndex = 0;
             cbSuppliers.SelectedIndex = 0;
+            nudAmount.Value = 1;
             dtpOrderDate.Value = DateTime.Now;
             dgvProducts.CellClick += dgvProducts_CellClick;
         }
@@ -45,9 +46,7 @@ namespace SmartBar
 
             cbSuppliers.DataSource = _supplierService.GetSuppliers().Select(x => x.Name).ToList();
 
-            if (model.Amount == null) model.Amount = 0;
-
-            nudAmount.Value = (decimal)model.Amount;
+            nudAmount.Value = 1;
             dtpOrderDate.Value = (DateTime)model.OrderDate;
             cbProducts.SelectedIndex = 0;
             cbSuppliers.SelectedItem = model.Supplier.Name;

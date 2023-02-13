@@ -17,6 +17,13 @@ namespace BusinessLogicLayer.Services
                 return orderItemRepository.GetOrderItems();
             }
         }
+        public List<OrderItem> GetOrderItemsById(int id)
+        {
+            using (OrderItemRepository orderItemRepository = new OrderItemRepository())
+            {
+                return orderItemRepository.GetOrderItemsById(id);
+            }
+        }
         public OrderItem GetOrderItemById(int id)
         {
             using (OrderItemRepository orderItemRepository = new OrderItemRepository())

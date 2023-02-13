@@ -44,8 +44,27 @@ namespace DataAccessLayer.Repositories
                 }
             }
         }
+        public List<OrderItem> GetOrderItemsById(int id)
+        {
+            using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[OrderItem] WHERE OrderFormId = @id", connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    List<OrderItem> products = new List<OrderItem>();
+                    OrderItem product = new OrderItem();
 
-
+                    while (reader.Read())
+                    {
+                        product.OrderFormId = reader.GetInt32(0);
+                        product.ProductId = reader.GetInt32(1);
+                        product.Amount = reader.GetInt32(2);
+                        products.Add(product);
+                    }
+                    return products;
+                }
+            }
+        }
         public OrderItem GetOrderItemById(int id)
         {
             using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[OrderItem] WHERE OrderFormId = @id", connection))
@@ -64,7 +83,6 @@ namespace DataAccessLayer.Repositories
                     return product;
                 }
             }
-
         }
         public void Dispose()
         {

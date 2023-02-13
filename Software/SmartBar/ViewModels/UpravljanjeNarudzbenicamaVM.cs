@@ -16,7 +16,6 @@ namespace SmartBar.ViewModels
         public Supplier Supplier { get; set; }
         public User User { get; set; }
         public List<OrderItem> OrderItems { get; set; }
-        public int? Amount { get; set; }
         //public OrderForm OrderForm { get; set; }
         //public Product Product { get; set; }
     }
