@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,27 @@ namespace SmartBar
             else
             {
                 MessageBox.Show("Morate odabrati račun!");
+            }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var loginService = new LoginService();
+            int role = loginService.CheckUserRole();
+
+            if (role == 1)
+            {
+                var frmUser = new FrmUser();
+                Hide();
+                frmUser.ShowDialog();
+                Close();
+            }
+            else
+            {
+                var frmAdmin = new FrmAdmin();
+                Hide();
+                frmAdmin.ShowDialog();
+                Close();
             }
         }
     }

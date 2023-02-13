@@ -37,8 +37,8 @@ namespace SmartBar
             switch(status)
             {
                 case 0: MessageBox.Show("Uneseni kod nije ispravan!"); break;
-                case 1: Redirect(); break;
-                case 2: Redirect(); break;
+                case 1: Redirect(1); break;
+                case 2: Redirect(2); break;
             }
 
         }
@@ -56,12 +56,23 @@ namespace SmartBar
             }
         }
 
-        private void Redirect()
+        private void Redirect(int role)
         {
-            var frmReceipts = new FrmReceipts();
-            Hide();
-            frmReceipts.ShowDialog();
-            Close();
+            if (role == 1) 
+            { 
+                var frmUser = new FrmUser();
+                Hide();
+                frmUser.ShowDialog();
+                Close();
+            }
+            else
+            {
+                var frmAdmin = new FrmAdmin();
+                Hide();
+                frmAdmin.ShowDialog();
+                Close();
+            }
+            
         }
     }
 }

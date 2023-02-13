@@ -121,7 +121,5 @@ namespace DataAccessLayer.Repositories
                 context.SaveChanges();
             }
         }
-        
-
     }
 }
