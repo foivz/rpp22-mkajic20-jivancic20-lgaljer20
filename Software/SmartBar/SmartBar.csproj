@@ -137,6 +137,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGrafickiPrikazInventara.resx">
       <DependentUpon>FrmGrafickiPrikazInventara.cs</DependentUpon>
     </EmbeddedResource>
