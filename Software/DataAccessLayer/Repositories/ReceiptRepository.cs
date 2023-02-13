@@ -26,5 +26,35 @@ namespace DataAccessLayer.Repositories
                 context.SaveChanges();
             }
         }
+
+        public string GetReceiptEmployee(Receipt receipt)
+        {
+            using (var context = new DataBaseModel())
+            {
+                context.Receipts.Attach(receipt);
+                return receipt.User.Username;
+            }
+        }
+
+        public List<ReceiptListItem> GetReceiptItems(Receipt receipt)
+        {
+            using (var context = new DataBaseModel())
+            {
+                List<ReceiptListItem> listItems = new List<ReceiptListItem>(); 
+                context.Receipts.Attach(receipt);
+
+                foreach(var i in receipt.ReceiptItems)
+                {
+                    listItems.Add(new ReceiptListItem
+                    {
+                        Name = i.Product.Name,
+                        Price = i.Product.Price,
+                        Amount = i.Amount
+                    }) ;
+                }
+
+                return listItems;
+            }
+        }
     }
 }

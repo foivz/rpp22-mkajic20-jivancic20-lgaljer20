@@ -24,5 +24,15 @@ namespace BusinessLogicLayer.Services
         {
             repo.Delete(receipt);
         }
+
+        public string GetReceiptUsername(Receipt receipt)
+        {
+            return repo.GetReceiptEmployee(receipt);
+        }
+
+        public List<ReceiptListItem> GetReceiptItems(Receipt receipt)
+        {
+            return repo.GetReceiptItems(receipt);
+        }
     }
 }

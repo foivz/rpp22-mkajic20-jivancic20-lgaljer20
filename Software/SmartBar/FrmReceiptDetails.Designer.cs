@@ -37,8 +37,9 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtPDV = new System.Windows.Forms.TextBox();
-            this.lvReceiptItems = new System.Windows.Forms.ListView();
             this.btnBack = new System.Windows.Forms.Button();
+            this.dgvReceiptItems = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReceiptItems)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,16 +119,6 @@
             this.txtPDV.Size = new System.Drawing.Size(272, 22);
             this.txtPDV.TabIndex = 8;
             // 
-            // lvReceiptItems
-            // 
-            this.lvReceiptItems.HideSelection = false;
-            this.lvReceiptItems.Location = new System.Drawing.Point(12, 180);
-            this.lvReceiptItems.Name = "lvReceiptItems";
-            this.lvReceiptItems.Size = new System.Drawing.Size(776, 224);
-            this.lvReceiptItems.TabIndex = 9;
-            this.lvReceiptItems.UseCompatibleStateImageBehavior = false;
-            this.lvReceiptItems.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(692, 410);
@@ -138,13 +129,23 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // dgvReceiptItems
+            // 
+            this.dgvReceiptItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReceiptItems.Location = new System.Drawing.Point(12, 180);
+            this.dgvReceiptItems.Name = "dgvReceiptItems";
+            this.dgvReceiptItems.RowHeadersWidth = 51;
+            this.dgvReceiptItems.RowTemplate.Height = 24;
+            this.dgvReceiptItems.Size = new System.Drawing.Size(776, 224);
+            this.dgvReceiptItems.TabIndex = 11;
+            // 
             // FrmReceiptDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvReceiptItems);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.lvReceiptItems);
             this.Controls.Add(this.txtPDV);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtDate);
@@ -156,6 +157,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmReceiptDetails";
             this.Text = "Račun";
+            this.Load += new System.EventHandler(this.FrmReceiptDetails_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReceiptItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +175,7 @@
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtPDV;
-        private System.Windows.Forms.ListView lvReceiptItems;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DataGridView dgvReceiptItems;
     }
 }
