@@ -1,6 +1,6 @@
 ﻿namespace SmartBar
 {
-    partial class FrmGraphProduct
+    partial class FrmGrafičkiPrikazInventara
     {
         /// <summary>
         /// Required designer variable.

@@ -13,12 +13,12 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SmartBar
 {
-    public partial class FrmGraphProduct : Form
+    public partial class FrmGrafičkiPrikazInventara : Form
     {
 
         private ProductRepository repo = new ProductRepository();
    
-        public FrmGraphProduct()
+        public FrmGrafičkiPrikazInventara()
         {
             InitializeComponent();
          

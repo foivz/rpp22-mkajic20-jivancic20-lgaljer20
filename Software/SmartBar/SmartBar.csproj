@@ -84,11 +84,11 @@
     <Compile Include="Frm2FA.Designer.cs">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmGraphProduct.cs">
+    <Compile Include="FrmGrafickiPrikazInventara.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmGraphProduct.Designer.cs">
-      <DependentUpon>FrmGraphProduct.cs</DependentUpon>
+    <Compile Include="FrmGrafickiPrikazInventara.Designer.cs">
+      <DependentUpon>FrmGrafickiPrikazInventara.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -113,8 +113,8 @@
     <EmbeddedResource Include="Frm2FA.resx">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmGraphProduct.resx">
-      <DependentUpon>FrmGraphProduct.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGrafickiPrikazInventara.resx">
+      <DependentUpon>FrmGrafickiPrikazInventara.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
