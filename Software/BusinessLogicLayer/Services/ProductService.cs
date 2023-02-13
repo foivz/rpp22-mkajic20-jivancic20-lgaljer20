@@ -34,6 +34,10 @@ namespace BusinessLogicLayer.Services
         {
             return new ProductRepository().GetProductById(id);
         }
+        public Product GetProductByName(string v)
+        {
+            return new ProductRepository().GetProductByName(v);
+        }
 
 
         public bool ValidateData(Product product)

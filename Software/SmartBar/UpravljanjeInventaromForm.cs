@@ -36,7 +36,7 @@ namespace SmartBar
             else if (e.ColumnIndex == 8)
             {
                 UpravljanjeInvantaromVM product = (UpravljanjeInvantaromVM)dgvInventar.Rows[e.RowIndex].DataBoundItem;
-                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite da obrišete ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite obrisati ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result==DialogResult.Yes)
                 {
                     _productService.DeleteProduct(product.Id);

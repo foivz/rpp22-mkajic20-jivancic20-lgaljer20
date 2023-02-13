@@ -138,6 +138,32 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        public Product GetProductByName(string v)
+        {
+            using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[Product] WHERE Name = @Name", connection))
+            {
+                command.Parameters.AddWithValue("@Name", v);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    Product product = new Product();
+
+                    while (reader.Read())
+                    {
+                        product.Id = reader.GetInt32(0);
+                        product.Price = reader.GetDouble(1);
+                        product.Name = reader.GetString(2);
+                        product.Amount = reader.GetInt32(3);
+                        product.Minimum = reader.GetInt32(4);
+                        product.Optimal = reader.GetInt32(5);
+                        product.MeasurementUnit = reader.GetString(6);
+                        product.UserId = reader.GetInt32(7);
+                    }
+
+                    return product;
+                }
+            }
+        }
         public void Dispose()
         {
             if (connection.State != ConnectionState.Closed)
@@ -147,5 +173,7 @@ namespace DataAccessLayer.Repositories
 
             connection.Dispose();
         }
+
+        
     }
 }

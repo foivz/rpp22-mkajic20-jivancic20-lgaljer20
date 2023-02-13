@@ -52,7 +52,7 @@ namespace SmartBar
                 NarudzbenicaVM upravljanjeInvantaromVM = (NarudzbenicaVM)dgvNarudzbenice.Rows[e.RowIndex].DataBoundItem;
                 OrderForm orderForm = _orderFormService.GetOrderFormById(upravljanjeInvantaromVM.Id);
                 
-                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite da obrišete ovu narudžbenicu?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite obrisati ovu narudžbenicu?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     _orderFormService.DeleteOrderForm(orderForm.Id);

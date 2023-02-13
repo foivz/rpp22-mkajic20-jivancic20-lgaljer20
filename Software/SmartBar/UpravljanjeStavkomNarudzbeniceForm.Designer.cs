@@ -135,7 +135,7 @@
             this.dgvProducts.Location = new System.Drawing.Point(410, 96);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
-            this.dgvProducts.Size = new System.Drawing.Size(313, 185);
+            this.dgvProducts.Size = new System.Drawing.Size(470, 208);
             this.dgvProducts.TabIndex = 18;
             // 
             // btnAddProduct
@@ -172,7 +172,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(505, 80);
+            this.label6.Location = new System.Drawing.Point(599, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 13);
             this.label6.TabIndex = 22;
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 382);
+            this.ClientSize = new System.Drawing.Size(892, 382);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.nudAmount);

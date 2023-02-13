@@ -64,6 +64,7 @@ namespace SmartBar
             {
                 MessageBox.Show("Niste prijavljeni", " ", MessageBoxButtons.OKCancel);
             }
+            
             product.UserId = CurrentUser.user.Id;
             product.Id = int.Parse(txtId.Text);
             if (_productService.ValidateData(product))
