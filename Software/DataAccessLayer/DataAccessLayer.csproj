@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Repositories\ReceiptRepository.cs" />
+    <Compile Include="InventoryRecordItemRepository.cs" />
+    <Compile Include="InventoryRecordRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="DataBaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
