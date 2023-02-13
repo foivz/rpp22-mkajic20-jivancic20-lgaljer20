@@ -171,6 +171,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
     </EmbeddedResource>
