@@ -84,6 +84,12 @@
     <Compile Include="Frm2FA.Designer.cs">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+      </Compile>
     <Compile Include="FrmGrafickiPrikazInventara.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,24 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReceiptDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceiptDetails.Designer.cs">
+      <DependentUpon>FrmReceiptDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReceipts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceipts.Designer.cs">
+      <DependentUpon>FrmReceipts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPopisIzvjestaja.cs">
       <SubType>Form</SubType>
@@ -112,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm2FA.resx">
       <DependentUpon>Frm2FA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGrafickiPrikazInventara.resx">
       <DependentUpon>FrmGrafickiPrikazInventara.cs</DependentUpon>
@@ -139,6 +166,15 @@
       <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
+    <EmbeddedResource Include="FrmReceiptDetails.resx">
+      <DependentUpon>FrmReceiptDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReceipts.resx">
+      <DependentUpon>FrmReceipts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
     </EmbeddedResource>
