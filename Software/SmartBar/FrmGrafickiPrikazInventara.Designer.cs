@@ -59,7 +59,7 @@
             this.Controls.Add(this.chartProducts);
             this.Name = "FrmGraphProduct";
             this.Text = "Grafički prikaz stanja inventara";
-            this.Load += new System.EventHandler(this.FrmGraphProduct_Load);
+            this.Load += new System.EventHandler(this.FrmGrafickiPrikazInventara_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartProducts)).EndInit();
             this.ResumeLayout(false);
 

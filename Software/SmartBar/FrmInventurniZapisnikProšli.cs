@@ -29,7 +29,7 @@ namespace SmartBar
 
         }
 
-        private void Izvjestaj_Load(object sender, EventArgs e)
+        private void FrmInventurniZapisnikProšli_Load(object sender, EventArgs e)
         {
             inventoryRecordBindingSource.DataSource= servisiRecord.GetRecordById(selectedInventoryId);
             inventoryRecordItemBindingSource.DataSource = servisiItem.GetRecordById(selectedInventoryId);
@@ -64,12 +64,9 @@ namespace SmartBar
             
 
            // }
-            this.reportViewer1.RefreshReport();
+            this.rvZapisnik.RefreshReport();
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

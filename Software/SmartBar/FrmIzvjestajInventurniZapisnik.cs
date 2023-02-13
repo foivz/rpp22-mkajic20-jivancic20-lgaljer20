@@ -28,9 +28,9 @@ namespace SmartBar
             this.MinimizeBox = false;
         }
 
-        private void TestnaForma_Load(object sender, EventArgs e)
+        private void FrmIzvjestajInventurniZapisnik_Load(object sender, EventArgs e)
         {
-            ProductRepository repo = new ProductRepository(); 
+            ProductRepository repo = new ProductRepository(); // dodaj private servis ProductServis i zamijeni ovo servisiProduct
             listaProizvoda= repo.GetProducts();
             KreirajRecord();
           
@@ -43,7 +43,7 @@ namespace SmartBar
             InventoryRecord newRecord = new InventoryRecord
             {
                 Date = DateTime.Now,
-                UserId = CurrentUser.user.Id
+                UserId =  1//CurrentUser.user.Id
             };
             
             servisiRecord.AddRecord(newRecord);
@@ -65,9 +65,5 @@ namespace SmartBar
             }
         }
 
-        private void btnDodaj_Click(object sender, EventArgs e)
-        {
-         
-        }
     }
 }

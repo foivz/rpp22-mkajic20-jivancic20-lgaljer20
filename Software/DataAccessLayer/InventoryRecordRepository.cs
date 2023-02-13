@@ -34,7 +34,7 @@ namespace DataAccessLayer
         {
             using (var context = new DataBaseModel())
             {
-                Console.WriteLine("ovo je test");
+               
                 context.InventoryRecords.Attach(record);
                 context.InventoryRecords.Add(record);
                 context.SaveChanges();

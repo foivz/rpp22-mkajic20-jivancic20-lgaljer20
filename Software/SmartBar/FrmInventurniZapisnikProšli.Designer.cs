@@ -35,7 +35,7 @@
             this.inventoryRecordItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvZapisnik = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -55,33 +55,33 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rvZapisnik.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DsInventory";
             reportDataSource1.Value = this.inventoryRecordItemBindingSource;
             reportDataSource2.Name = "DsRecord";
             reportDataSource2.Value = this.inventoryRecordBindingSource;
             reportDataSource3.Name = "DsProduct";
             reportDataSource3.Value = this.productBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SmartBar.reportIzvjestaj.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(823, 477);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.rvZapisnik.LocalReport.DataSources.Add(reportDataSource1);
+            this.rvZapisnik.LocalReport.DataSources.Add(reportDataSource2);
+            this.rvZapisnik.LocalReport.DataSources.Add(reportDataSource3);
+            this.rvZapisnik.LocalReport.ReportEmbeddedResource = "SmartBar.reportIzvjestaj.rdlc";
+            this.rvZapisnik.Location = new System.Drawing.Point(0, 0);
+            this.rvZapisnik.Name = "reportViewer1";
+            this.rvZapisnik.ServerReport.BearerToken = null;
+            this.rvZapisnik.Size = new System.Drawing.Size(823, 477);
+            this.rvZapisnik.TabIndex = 0;
+         
             // 
             // Izvjestaj
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 477);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.rvZapisnik);
             this.Name = "Izvjestaj";
             this.Text = "Inventurni zapisnik";
-            this.Load += new System.EventHandler(this.Izvjestaj_Load);
+            this.Load += new System.EventHandler(this.FrmInventurniZapisnikProšli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
@@ -91,7 +91,7 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer rvZapisnik;
         private System.Windows.Forms.BindingSource inventoryRecordItemBindingSource;
         private System.Windows.Forms.BindingSource inventoryRecordBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource;

@@ -60,7 +60,7 @@
             this.Controls.Add(this.reportViewerInventura);
             this.Name = "FrmIzvjestajInventurniZapisnik";
             this.Text = "Trenutni inventurni zapisnik";
-            this.Load += new System.EventHandler(this.TestnaForma_Load);
+            this.Load += new System.EventHandler(this.FrmIzvjestajInventurniZapisnik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
