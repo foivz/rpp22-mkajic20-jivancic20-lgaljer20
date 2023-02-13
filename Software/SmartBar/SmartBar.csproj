@@ -118,6 +118,7 @@
     </Compile>
     <Compile Include="FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPopisIzvjestaja.cs">
       <SubType>Form</SubType>
     </Compile>
