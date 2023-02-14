@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Repositories;
+﻿using DataAccessLayer;
+using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace BusinessLogicLayer.Services
 {
     public class ProductService
     {
+        ProductRepository repo = new ProductRepository();
         public List<Product> GetProducts()
         {
             return new ProductRepository().GetProducts();
@@ -61,7 +63,7 @@ namespace BusinessLogicLayer.Services
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -72,7 +74,7 @@ namespace BusinessLogicLayer.Services
         //Luka Galjer
         public void DodajProizvode(int id, int kolicina)
         {
-            Product selectedProduct = repo.GetProductFromId(id); //mozda jan ima getProductById
+            Product selectedProduct = repo.GetProductById(id); //mozda jan ima getProductById
             int trenutnaKolicina = (int)selectedProduct.Amount;
             int novaKolicina = trenutnaKolicina + kolicina;
             selectedProduct.Amount = novaKolicina;
@@ -81,7 +83,7 @@ namespace BusinessLogicLayer.Services
         }
         public void OduzmiProizvode(int id, int kolicina)
         {
-            Product selectedProduct = repo.GetProductFromId(id);
+            Product selectedProduct = repo.GetProductById(id);
             int trenutnaKolicina = (int)selectedProduct.Amount;
             int novaKolicina = trenutnaKolicina - kolicina;
             selectedProduct.Amount = novaKolicina;
