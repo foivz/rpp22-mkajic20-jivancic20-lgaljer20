@@ -102,6 +102,13 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="FrmNovaStavkaPrimke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNovaStavkaPrimke.Designer.cs">
+      <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+
     <Compile Include="FrmReceiptDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +126,7 @@
     </Compile>
     <Compile Include="FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
+
     </Compile>
     <Compile Include="FrmPopisIzvjestaja.cs">
       <SubType>Form</SubType>
@@ -131,6 +139,12 @@
     </Compile>
     <Compile Include="FrmInventurniZapisnikProšli.Designer.cs">
       <DependentUpon>FrmInventurniZapisnikProšli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrimka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrimka.Designer.cs">
+      <DependentUpon>FrmPrimka.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +167,12 @@
     <Compile Include="FrmIzvjestajInventurniZapisnik.Designer.cs">
       <DependentUpon>FrmIzvjestajInventurniZapisnik.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPopisPrimki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopisPrimki.Designer.cs">
+      <DependentUpon>FrmPopisPrimki.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpravljanjeInventaromForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +186,10 @@
       <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
+
+    <EmbeddedResource Include="FrmNovaStavkaPrimke.resx">
+      <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+
     <EmbeddedResource Include="FrmReceiptDetails.resx">
       <DependentUpon>FrmReceiptDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,12 +198,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInventurniZapisnikProšli.resx">
       <DependentUpon>FrmInventurniZapisnikProšli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrimka.resx">
+      <DependentUpon>FrmPrimka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +224,9 @@
       <DependentUpon>FrmIzvjestajInventurniZapisnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportIzvjestaj.rdlc" />
+    <EmbeddedResource Include="FrmPopisPrimki.resx">
+      <DependentUpon>FrmPopisPrimki.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpravljanjeInventaromForm.resx">
       <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,9 +279,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Izvještaji\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

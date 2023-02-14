@@ -111,6 +111,22 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+
+        //Luka Galjer
+        public Product GetProductFromId(int id)
+        {
+            using (var context = new DataBaseModel())
+            {
+                var query = from p in context.Products
+                            where p.Id == id
+                            select p;
+
+                return query.Single();
+            }
+        }
+        
+
+
         //Autor: Mladen Kajić
         public void UpdateAmount(Product product, int amount)
         {

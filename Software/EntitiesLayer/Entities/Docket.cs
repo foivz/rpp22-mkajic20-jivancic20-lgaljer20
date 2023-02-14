@@ -9,6 +9,8 @@ namespace EntitiesLayer.Entities
     [Table("Docket")]
     public partial class Docket
     {
+        public object id;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Docket()
         {

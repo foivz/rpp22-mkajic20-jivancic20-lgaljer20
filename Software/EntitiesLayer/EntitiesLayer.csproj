@@ -49,6 +49,7 @@
     <Compile Include="Entities\OrderForm.cs" />
     <Compile Include="Entities\OrderItem.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Product.ext.cs" />
     <Compile Include="Entities\Receipt.cs" />
     <Compile Include="Entities\ReceiptItem.cs" />
     <Compile Include="Entities\ReceiptListItem.cs" />
