@@ -32,6 +32,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.chartProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,17 +48,22 @@
             series1.Legend = "Legend1";
             series1.Name = "Proizvodi";
             this.chartProducts.Series.Add(series1);
+            this.helpProvider1.SetShowHelp(this.chartProducts, true);
             this.chartProducts.Size = new System.Drawing.Size(677, 511);
             this.chartProducts.TabIndex = 1;
             this.chartProducts.Text = "chartProducts";
             // 
-            // FrmGraphProduct
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\student\\Desktop\\chm\\Graf.chm";
+            // 
+            // FrmGrafickiPrikazInventara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 578);
             this.Controls.Add(this.chartProducts);
-            this.Name = "FrmGraphProduct";
+            this.Name = "FrmGrafickiPrikazInventara";
             this.Text = "Grafički prikaz stanja inventara";
             this.Load += new System.EventHandler(this.FrmGrafickiPrikazInventara_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartProducts)).EndInit();
@@ -67,5 +73,6 @@
 
         #endregion
         private System.Windows.Forms.DataVisualization.Charting.Chart chartProducts;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
