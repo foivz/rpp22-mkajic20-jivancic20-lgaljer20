@@ -24,5 +24,21 @@ namespace SmartBar
             frmReceipts.ShowDialog();
             Close();
         }
+
+        private void btnGraf_Click(object sender, EventArgs e)
+        {
+            FrmGrafickiPrikazInventara frm = new FrmGrafickiPrikazInventara();
+            Hide();
+            frm.ShowDialog();
+            Close();
+        }
+
+        private void btnPrimke_Click(object sender, EventArgs e)
+        {
+            FrmPopisPrimki frm = new FrmPopisPrimki();
+            Hide();
+            frm.ShowDialog();
+            Close();
+        }
     }
 }

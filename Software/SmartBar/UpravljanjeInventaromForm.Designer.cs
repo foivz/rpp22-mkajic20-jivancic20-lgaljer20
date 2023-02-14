@@ -30,6 +30,7 @@
         {
             this.dgvInventar = new System.Windows.Forms.DataGridView();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.btnLowProduct = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,15 +48,26 @@
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(171, 23);
             this.btnCreate.TabIndex = 2;
-            this.btnCreate.Text = "Kreiraj";
+            this.btnCreate.Text = "Kreiraj proizvod";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnLowProduct
+            // 
+            this.btnLowProduct.Location = new System.Drawing.Point(12, 416);
+            this.btnLowProduct.Name = "btnLowProduct";
+            this.btnLowProduct.Size = new System.Drawing.Size(171, 23);
+            this.btnLowProduct.TabIndex = 3;
+            this.btnLowProduct.Text = "Kreiraj narudžbenicu";
+            this.btnLowProduct.UseVisualStyleBackColor = true;
+            this.btnLowProduct.Click += new System.EventHandler(this.btnLowProduct_Click);
             // 
             // UpravljanjeInventaromForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 450);
+            this.Controls.Add(this.btnLowProduct);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dgvInventar);
             this.Name = "UpravljanjeInventaromForm";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.DataGridView dgvInventar;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnLowProduct;
     }
 }

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.inventoryRecordItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvZapisnik = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
@@ -53,35 +54,35 @@
             // 
             this.productBindingSource.DataSource = typeof(EntitiesLayer.Entities.Product);
             // 
-            // reportViewer1
+            // rvZapisnik
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DsInventory";
-            reportDataSource1.Value = this.inventoryRecordItemBindingSource;
-            reportDataSource2.Name = "DsRecord";
-            reportDataSource2.Value = this.inventoryRecordBindingSource;
-            reportDataSource3.Name = "DsProduct";
-            reportDataSource3.Value = this.productBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SmartBar.reportIzvjestaj.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(823, 477);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.rvZapisnik.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource4.Name = "DsInventory";
+            reportDataSource4.Value = this.inventoryRecordItemBindingSource;
+            reportDataSource5.Name = "DsRecord";
+            reportDataSource5.Value = this.inventoryRecordBindingSource;
+            reportDataSource6.Name = "DsProduct";
+            reportDataSource6.Value = this.productBindingSource;
+            this.rvZapisnik.LocalReport.DataSources.Add(reportDataSource4);
+            this.rvZapisnik.LocalReport.DataSources.Add(reportDataSource5);
+            this.rvZapisnik.LocalReport.DataSources.Add(reportDataSource6);
+            this.rvZapisnik.LocalReport.ReportEmbeddedResource = "SmartBar.reportIzvjestaj.rdlc";
+            this.rvZapisnik.Location = new System.Drawing.Point(0, 0);
+            this.rvZapisnik.Name = "rvZapisnik";
+            this.rvZapisnik.ServerReport.BearerToken = null;
+            this.rvZapisnik.Size = new System.Drawing.Size(823, 477);
+            this.rvZapisnik.TabIndex = 0;
             // 
-            // Izvjestaj
+            // FrmInventurniZapisnikProšli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(823, 477);
-            this.Controls.Add(this.reportViewer1);
-            this.Name = "Izvjestaj";
+            this.Controls.Add(this.rvZapisnik);
+            this.Name = "FrmInventurniZapisnikProšli";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Inventurni zapisnik";
-            this.Load += new System.EventHandler(this.Izvjestaj_Load);
+            this.Load += new System.EventHandler(this.FrmInventurniZapisnikProšli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
@@ -91,9 +92,10 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer rvZapisnik;
         private System.Windows.Forms.BindingSource inventoryRecordItemBindingSource;
         private System.Windows.Forms.BindingSource inventoryRecordBindingSource;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

@@ -13,8 +13,6 @@ namespace BusinessLogicLayer.Services
        private InventoryRecordRepository repo = new InventoryRecordRepository();
         public List<InventoryRecord> GetAllRecords()
         {
-           
-          
            return repo.GetAllRecords().ToList();
         }
 

@@ -18,6 +18,7 @@ namespace SmartBar
     {
         private InventoryRecordService servisiRecord = new InventoryRecordService();
         private InventoryRecordItemService servisiItem= new InventoryRecordItemService();
+        private ProductService productServices = new ProductService();
         private List<Product> listaProizvoda = new List<Product>();
         public FrmIzvjestajInventurniZapisnik()
         {
@@ -28,10 +29,10 @@ namespace SmartBar
             this.MinimizeBox = false;
         }
 
-        private void TestnaForma_Load(object sender, EventArgs e)
+        private void FrmIzvjestajInventurniZapisnik_Load(object sender, EventArgs e)
         {
-            ProductRepository repo = new ProductRepository(); 
-            listaProizvoda= repo.GetProducts();
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Chm files/Zapisnik.chm";
+            listaProizvoda = productServices.GetProducts();
             KreirajRecord();
           
             productBindingSource.DataSource = listaProizvoda;
@@ -43,7 +44,7 @@ namespace SmartBar
             InventoryRecord newRecord = new InventoryRecord
             {
                 Date = DateTime.Now,
-                UserId = CurrentUser.user.Id
+                UserId =  CurrentUser.user.Id
             };
             
             servisiRecord.AddRecord(newRecord);
@@ -65,9 +66,5 @@ namespace SmartBar
             }
         }
 
-        private void btnDodaj_Click(object sender, EventArgs e)
-        {
-         
-        }
     }
 }

@@ -1,9 +1,11 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
 using DataAccessLayer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,21 +18,22 @@ namespace SmartBar
     public partial class FrmGrafickiPrikazInventara : Form
     {
 
-        private ProductRepository repo = new ProductRepository();
-   
+        //private ProductRepository repo = new ProductRepository(); //private ProductService productServices = new ProductServices()
+        private ProductService productServices = new ProductService();
         public FrmGrafickiPrikazInventara()
         {
             InitializeComponent();
-         
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
         }
 
-        private void FrmGraphProduct_Load(object sender, EventArgs e)
+        private void FrmGrafickiPrikazInventara_Load(object sender, EventArgs e)
         {
-           
-            var products = repo.GetProducts();
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Chm files/Graf.chm";
+
+            var products = productServices.GetProducts();
 
             List<Tuple<string, int, string>> data = new List<Tuple<string, int, string>>();
 
@@ -40,7 +43,7 @@ namespace SmartBar
             }
 
             MakeChart(data);
-         
+
         }
 
         private void MakeChart(List<Tuple<string, int, string>> data)
@@ -53,11 +56,34 @@ namespace SmartBar
             for (int i = 0; i < chartProducts.Series[0].Points.Count; i++)
             {
                 DataPoint point = chartProducts.Series[0].Points[i];
-                point.ToolTip = string.Format("Količina: {0}", point.YValues[0]+" "+data[i].Item3);
+                point.ToolTip = string.Format("Količina: {0}", point.YValues[0] + " " + data[i].Item3);
             }
 
             chartProducts.Series[0].ChartType = SeriesChartType.Pie;
             chartProducts.DataBind();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            {
+                var loginService = new LoginService();
+                int role = loginService.CheckUserRole();
+
+                if (role == 1)
+                {
+                    var frmUser = new FrmUser();
+                    Hide();
+                    frmUser.ShowDialog();
+                    Close();
+                }
+                else
+                {
+                    var frmAdmin = new FrmAdmin();
+                    Hide();
+                    frmAdmin.ShowDialog();
+                    Close();
+                }
+            }
         }
     }
 }

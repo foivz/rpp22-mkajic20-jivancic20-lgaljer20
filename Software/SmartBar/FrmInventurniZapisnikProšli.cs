@@ -29,47 +29,16 @@ namespace SmartBar
 
         }
 
-        private void Izvjestaj_Load(object sender, EventArgs e)
+        private void FrmInventurniZapisnikProšli_Load(object sender, EventArgs e)
         {
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Chm files/Zapisnik.chm";
             inventoryRecordBindingSource.DataSource= servisiRecord.GetRecordById(selectedInventoryId);
             inventoryRecordItemBindingSource.DataSource = servisiItem.GetRecordById(selectedInventoryId);
             productBindingSource.DataSource = servisiItem.GetProductsFromId(selectedInventoryId);
-            //using (var context = new DataBaseModel())
-            //{
-            //    var query = from i in context.InventoryRecords
-            //                where i.Id == selectedInventoryId
-            //                select i;
-
-            //    InventoryRecord record = query.Single();
-            //    inventoryRecordBindingSource.DataSource = record;
-
-            //    var queryItem = from i in context.InventoryRecordItems
-            //                    where i.InventoryRecordId == selectedInventoryId
-            //                    select i;
-
-
-            //   List<InventoryRecordItem> itemRecord = queryItem.ToList();
-            //    inventoryRecordItemBindingSource.DataSource = itemRecord;
-
-
-            //    var queryProduct = from i in context.InventoryRecordItems
-            //                       where i.InventoryRecordId == selectedInventoryId
-            //                       select i.Product;
-                
-            //    List<Product> selectedProducts = queryProduct.ToList();
-
-            //    productBindingSource.DataSource = selectedProducts;
-
-
-            
-
-           // }
-            this.reportViewer1.RefreshReport();
+      
+            this.rvZapisnik.RefreshReport();
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

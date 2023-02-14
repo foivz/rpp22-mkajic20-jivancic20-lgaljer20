@@ -31,6 +31,9 @@
             this.dgIzvjestaji = new System.Windows.Forms.DataGridView();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnGeneriraj = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgIzvjestaji)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,19 +67,42 @@
             this.btnGeneriraj.UseVisualStyleBackColor = true;
             this.btnGeneriraj.Click += new System.EventHandler(this.btnGeneriraj_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Inventurni zapisnici:";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(23, 268);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(84, 31);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Povratak";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FrmPopisIzvjestaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 311);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGeneriraj);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.dgIzvjestaji);
             this.Name = "FrmPopisIzvjestaja";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Popis inventurnih zapisnika";
             this.Load += new System.EventHandler(this.FrmPopisIzvjestaja_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgIzvjestaji)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,5 +111,8 @@
         private System.Windows.Forms.DataGridView dgIzvjestaji;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnGeneriraj;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

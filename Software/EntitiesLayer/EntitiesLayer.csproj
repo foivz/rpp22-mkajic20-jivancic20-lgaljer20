@@ -51,11 +51,13 @@
     <Compile Include="Entities\OrderItem.cs" />
     <Compile Include="Entities\Product.code.cs" />
     <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Product.ext.cs" />
     <Compile Include="Entities\Receipt.cs" />
     <Compile Include="Entities\ReceiptItem.cs" />
     <Compile Include="Entities\ReceiptListItem.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\Supplier.ext.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
