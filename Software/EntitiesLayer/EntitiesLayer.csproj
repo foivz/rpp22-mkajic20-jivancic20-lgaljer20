@@ -55,6 +55,7 @@
     <Compile Include="Entities\ReceiptListItem.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\Supplier.ext.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

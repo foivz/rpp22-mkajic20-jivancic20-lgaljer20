@@ -17,7 +17,8 @@ namespace SmartBar
     {
         private DocketService servisiPrimke = new DocketService();
         private DocketItemService servisiStavkePrimke = new DocketItemService();
-        //servisiSupplier
+        private SupplierService servisiSupplier = new SupplierService();
+     
         public FrmPrimka()
         {
             InitializeComponent();
@@ -30,14 +31,16 @@ namespace SmartBar
         {
             OsvjeziPrimke();
             OsvjeziStavke();
-            //PopuniDobavljace();
+            PopuniDobavljace();
            
         }
 
         private void PopuniDobavljace()
         {
+            List<Supplier> suppliers = servisiSupplier.GetSuppliers();
+            cmbSuppliers.DataSource = suppliers;
             //vjv bude falela u dijagramu  kod KreirajDocket neka funkcija -> dohvatiSuppliera
-            throw new NotImplementedException();
+          
         }
 
         private void OsvjeziStavke()
@@ -68,11 +71,12 @@ namespace SmartBar
 
         private void KreirajDocket()
         {
+            Supplier supplier = cmbSuppliers.SelectedItem as Supplier;
             Docket newDocket = new Docket
             {
                 Date = DateTime.Now,
-                UserId = 1, //CurrentUser.user.Id,
-                SupplierId = 1 // dohvatit suppliere u combobox i onda dodat
+                UserId = 1, //CurrentUser.user.Id, //stavit dok se spaja
+                SupplierId = supplier.Id 
 
             };
             servisiPrimke.AddDocket(newDocket);

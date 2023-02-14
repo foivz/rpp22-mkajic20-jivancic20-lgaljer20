@@ -53,6 +53,12 @@ namespace BusinessLogicLayer.Services
             return true;
 
         }
+        //Luka Galjer
+        public List<OrderForm> GetAllOrders() //orderForm
+        {
+            OrderFormRepository repo = new OrderFormRepository();
+            return repo.GetAllOrders();
+        }
     }
 }
 

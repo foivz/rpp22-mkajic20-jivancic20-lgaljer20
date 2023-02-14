@@ -14,8 +14,10 @@ namespace SmartBar
 {
     public partial class FrmPopisPrimki : Form
     {
-        private TestniService servis = new TestniService(); //servisi za OrderForm i OrderItem
+       // private TestniService servis = new TestniService(); //servisi za OrderForm i OrderItem
         //servisNarudzbenica i servisStavkeNarudzbenice
+        private OrderFormService servisNarudzbenica = new OrderFormService();
+        private OrderItemService servisStavkeNarudzbenice = new OrderItemService();
         private DocketService servisiPrimke = new DocketService();
         private List<OrderItem> stavkeNarudzbenice = new List<OrderItem>();
         private DocketItemService docketServis = new DocketItemService();
@@ -34,7 +36,10 @@ namespace SmartBar
 
         private void PopuniNarudzbenice()
         {
-            dgNarudzbenice.DataSource = servis.GetAllNarudzbenice();
+            //  dgNarudzbenice.DataSource = servis.GetAllNarudzbenice();
+           //dgNarudzbenice.DataSource = servisNarudzbenica.GetOrderForms();
+            dgNarudzbenice.DataSource = servisNarudzbenica.GetAllOrders();
+            
             dgNarudzbenice.Columns[4].Visible = false;
             dgNarudzbenice.Columns[5].Visible = false;
             dgNarudzbenice.Columns[6].Visible = false;
@@ -71,7 +76,7 @@ namespace SmartBar
 
         private void ObradiKreiranje(int idNarudzbenice, int idPrimke)
         {
-            stavkeNarudzbenice = servis.GetOrderItems(idNarudzbenice);
+            stavkeNarudzbenice = servisStavkeNarudzbenice.GetOrderItemsById(idNarudzbenice);
 
             foreach (var stavka in stavkeNarudzbenice)
             {

@@ -121,10 +121,6 @@
             // cmbSuppliers
             // 
             this.cmbSuppliers.FormattingEnabled = true;
-            this.cmbSuppliers.Items.AddRange(new object[] {
-            "Test1",
-            "Test2",
-            "Test3"});
             this.cmbSuppliers.Location = new System.Drawing.Point(35, 58);
             this.cmbSuppliers.Name = "cmbSuppliers";
             this.cmbSuppliers.Size = new System.Drawing.Size(121, 24);

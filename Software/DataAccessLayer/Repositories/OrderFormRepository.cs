@@ -131,6 +131,14 @@ namespace DataAccessLayer.Repositories
 
             connection.Dispose();
         }
+        //Luka Galjer
+        public List<OrderForm> GetAllOrders()
+        {
+            using (var context = new DataBaseModel())
+            {
+                return context.OrderForms.ToList();
+            }
+        }
     }
 }
 
