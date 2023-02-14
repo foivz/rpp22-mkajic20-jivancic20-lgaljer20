@@ -32,6 +32,7 @@
             this.btnAutomatski = new System.Windows.Forms.Button();
             this.btnRučno = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,5 +99,6 @@
         private System.Windows.Forms.Button btnAutomatski;
         private System.Windows.Forms.Button btnRučno;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

@@ -32,6 +32,7 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnGeneriraj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgIzvjestaji)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,5 +99,6 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnGeneriraj;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

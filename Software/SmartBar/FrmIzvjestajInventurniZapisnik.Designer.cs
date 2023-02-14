@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewerInventura = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,9 +43,9 @@
             // reportViewerInventura
             // 
             this.reportViewerInventura.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DsProducts";
-            reportDataSource2.Value = this.productBindingSource;
-            this.reportViewerInventura.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DsProducts";
+            reportDataSource1.Value = this.productBindingSource;
+            this.reportViewerInventura.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerInventura.LocalReport.ReportEmbeddedResource = "SmartBar.reportAllProducts.rdlc";
             this.reportViewerInventura.Location = new System.Drawing.Point(0, 0);
             this.reportViewerInventura.Name = "reportViewerInventura";
@@ -70,5 +71,6 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerInventura;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

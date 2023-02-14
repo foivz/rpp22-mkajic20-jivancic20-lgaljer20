@@ -30,7 +30,7 @@ namespace SmartBar
 
         private void FrmGrafickiPrikazInventara_Load(object sender, EventArgs e)
         {
-            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Graf.chm";
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Chm files/Graf.chm";
       
             var products = productServices.GetProducts();
 

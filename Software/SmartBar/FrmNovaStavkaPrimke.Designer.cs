@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // cmbProizvodi
@@ -103,5 +104,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
