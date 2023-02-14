@@ -22,6 +22,7 @@ namespace SmartBar
         OrderFormService _orderFormService = new OrderFormService();
         OrderItemService _orderItemService = new OrderItemService();
         ProductService _productService = new ProductService();
+        UserService _userService = new UserService();
 
         List<KratkiProizvodVM> proizvodi = new List<KratkiProizvodVM>();
         private int orderFormId;
@@ -157,6 +158,10 @@ namespace SmartBar
                         item.OrderFormId = rpo;
                     }
                     _orderItemService.CreateOrderItems(orderItems);
+                    TwoFactorService mail = new TwoFactorService();
+                    ord.User = _userService.GetUserById(ord.UserId);
+                    ord.Id = rpo;
+                    mail.SendEmail(ord);
                 }
                 this.Close();
             }
