@@ -164,6 +164,12 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ReceiptReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptReportForm.Designer.cs">
+      <DependentUpon>ReceiptReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="FrmIzvjestajInventurniZapisnik.cs">
       <SubType>Form</SubType>
@@ -208,11 +214,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReceiptReportForm.resx">
+      <DependentUpon>ReceiptReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportAllProducts.rdlc" />
     <EmbeddedResource Include="FrmIzvjestajInventurniZapisnik.resx">
       <DependentUpon>FrmIzvjestajInventurniZapisnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportIzvjestaj.rdlc" />
+    <EmbeddedResource Include="rptReceipt.rdlc" />
     <EmbeddedResource Include="UpravljanjeInventaromForm.resx">
       <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +233,8 @@
     <None Include="Properties\DataSources\EntitiesLayer.Entities.InventoryRecord.datasource" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.InventoryRecordItem.datasource" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.Product.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.Receipt.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.ReceiptListItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
