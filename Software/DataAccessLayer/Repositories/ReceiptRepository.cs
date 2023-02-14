@@ -75,5 +75,40 @@ namespace DataAccessLayer.Repositories
                 return receiptItem.Product as Product;
             }
         }
+
+        public int CreateReceipt(DateTime Date, double Price, double PDV, int UserId)
+        {
+            using (var context = new DataBaseModel())
+            {
+                var receipt = new Receipt
+                {
+                    Date = Date,
+                    Price = Price,
+                    PDV = PDV,
+                    UserId = UserId
+                };
+                context.Receipts.Add(receipt);
+                context.SaveChanges();
+
+                return receipt.Id;
+            }
+        }
+
+        public void CreateReceiptItem(ReceiptItem receiptItem)
+        {
+            using (var context = new DataBaseModel())
+            {
+                context.ReceiptItems.Add(receiptItem);
+                context.SaveChanges();
+            }
+        }
+
+        public Receipt GetReceipt(int Id)
+        {
+            using (var context = new DataBaseModel())
+            {
+                return context.Receipts.Where(r => r.Id == Id).FirstOrDefault();
+            }
+        }
     }
 }

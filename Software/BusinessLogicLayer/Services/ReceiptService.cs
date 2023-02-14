@@ -52,5 +52,10 @@ namespace BusinessLogicLayer.Services
             ProductRepository productRepository = new ProductRepository();
             return productRepository.GetProducts();
         }
+
+        public Receipt GetReceipt(int id)
+        {
+            return repo.GetReceipt(id);
+        }
     }
 }

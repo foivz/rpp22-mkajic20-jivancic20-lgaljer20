@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,10 +46,31 @@ namespace SmartBar
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            //TODO kreiraj racun
-            var frmReceipts = new FrmReceipts();
+            double PDV;
+            if (double.TryParse(txtPDV.Text, out PDV))
+            {
+                if(PDV < 0 || PDV > 1)
+                {
+                    MessageBox.Show("PDV mora biti između 0 i 1.");
+                    return;
+                }
+                int id = CreateReceiptService.CreateReceipt(PDV, double.Parse(txtPrice.Text));
+                DisplayReceipt(id);
+            }
+            else
+            {
+                MessageBox.Show("PDV mora biti broj.");
+                return;
+            }   
+        }
+
+        private void DisplayReceipt(int id)
+        {
+            var service = new ReceiptService();
+            var receipt = service.GetReceipt(id);
+            var frmReceiptDetails = new FrmReceiptDetails(receipt);
             Hide();
-            frmReceipts.ShowDialog();
+            frmReceiptDetails.ShowDialog();
             Close();
         }
 

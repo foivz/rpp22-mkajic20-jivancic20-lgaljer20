@@ -1,4 +1,5 @@
-﻿using EntitiesLayer.Entities;
+﻿using DataAccessLayer.Repositories;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,25 @@ namespace BusinessLogicLayer.Services
         public static void RemoveItem(AddReceiptItem item)
         {
             items.Remove(item);
+        }
+
+        public static int CreateReceipt(double PDV, double price)
+        {
+            DateTime date = DateTime.Now;
+            var repo = new ReceiptRepository();
+            int id = repo.CreateReceipt(date, price, PDV, CurrentUser.user.Id);
+
+            foreach(var i in items)
+            {
+                repo.CreateReceiptItem(new ReceiptItem()
+                {
+                    ReceiptId= id,
+                    ProductId = i.product.Id,
+                    Amount= i.amount
+                });
+            }
+            items.Clear();
+            return id;
         }
     }
 }
