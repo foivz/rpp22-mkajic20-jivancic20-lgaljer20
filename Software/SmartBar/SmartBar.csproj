@@ -260,7 +260,22 @@
     <EmbeddedResource Include="UpravljanjeStavkomNarudzbeniceForm.resx">
       <DependentUpon>UpravljanjeStavkomNarudzbeniceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Graf.chm">
+    <None Include="Chm files\Graf.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Chm files\NovaStavka.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Chm files\PopisPrimki.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Chm files\Popis_inventurnih_zapisnika.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Chm files\Primka.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Chm files\Zapisnik.chm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

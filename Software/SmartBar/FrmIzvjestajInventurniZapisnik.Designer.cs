@@ -32,6 +32,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewerInventura = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.ClientSize = new System.Drawing.Size(740, 414);
             this.Controls.Add(this.reportViewerInventura);
             this.Name = "FrmIzvjestajInventurniZapisnik";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Trenutni inventurni zapisnik";
             this.Load += new System.EventHandler(this.FrmIzvjestajInventurniZapisnik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
@@ -70,5 +72,6 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerInventura;
         private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

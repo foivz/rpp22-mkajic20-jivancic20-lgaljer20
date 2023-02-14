@@ -29,6 +29,7 @@ namespace SmartBar
 
         private void FrmPrimka_Load(object sender, EventArgs e)
         {
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Chm files/Primka.chm";
             OsvjeziPrimke();
             OsvjeziStavke();
             PopuniDobavljace();

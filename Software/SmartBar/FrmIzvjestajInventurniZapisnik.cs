@@ -31,8 +31,8 @@ namespace SmartBar
 
         private void FrmIzvjestajInventurniZapisnik_Load(object sender, EventArgs e)
         {
-           
-            listaProizvoda= productServices.GetProducts();
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Chm files/Zapisnik.chm";
+            listaProizvoda = productServices.GetProducts();
             KreirajRecord();
           
             productBindingSource.DataSource = listaProizvoda;

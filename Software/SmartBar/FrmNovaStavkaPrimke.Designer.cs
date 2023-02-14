@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // cmbProizvodi
@@ -72,7 +73,7 @@
             // 
             this.btnDodaj.Location = new System.Drawing.Point(72, 196);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(130, 23);
+            this.btnDodaj.Size = new System.Drawing.Size(130, 36);
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "Dodaj stavku";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -82,13 +83,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 231);
+            this.ClientSize = new System.Drawing.Size(297, 244);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.txtKolicina);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbProizvodi);
             this.Name = "FrmNovaStavkaPrimke";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Nova stavka";
             this.Load += new System.EventHandler(this.FrmNovaStavkaPrimke_Load);
             this.ResumeLayout(false);
@@ -103,5 +105,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

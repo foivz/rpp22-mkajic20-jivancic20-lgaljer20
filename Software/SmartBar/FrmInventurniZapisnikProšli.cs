@@ -31,6 +31,7 @@ namespace SmartBar
 
         private void FrmInventurniZapisnikProšli_Load(object sender, EventArgs e)
         {
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Chm files/Zapisnik.chm";
             inventoryRecordBindingSource.DataSource= servisiRecord.GetRecordById(selectedInventoryId);
             inventoryRecordItemBindingSource.DataSource = servisiItem.GetRecordById(selectedInventoryId);
             productBindingSource.DataSource = servisiItem.GetProductsFromId(selectedInventoryId);
