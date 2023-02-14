@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogicLayer.Services;
+using EntitiesLayer.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +23,14 @@ namespace SmartBar
         {
             var frmAddReceiptItem = new FrmAddReceiptItem();
             frmAddReceiptItem.ShowDialog();
+            LoadItems();
+        }
+
+        private void LoadItems()
+        {
+            var service = new ReceiptService();
+            List<AddReceiptItem> list = service.GetAddedItems();
+            dgvItems.DataSource = list;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

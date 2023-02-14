@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AddReceiptItem.cs" />
     <Compile Include="Entities\Docket.cs" />
     <Compile Include="Entities\DocketItem.cs" />
     <Compile Include="Entities\InventoryRecord.cs" />

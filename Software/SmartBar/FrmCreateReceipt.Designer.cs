@@ -30,7 +30,7 @@
         {
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvItems = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPDV = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
             // txtPrice
@@ -58,15 +58,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cijena:";
             // 
-            // dataGridView1
+            // dgvItems
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 72);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 286);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Location = new System.Drawing.Point(12, 72);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.RowHeadersWidth = 51;
+            this.dgvItems.RowTemplate.Height = 24;
+            this.dgvItems.Size = new System.Drawing.Size(776, 286);
+            this.dgvItems.TabIndex = 2;
             // 
             // label2
             // 
@@ -144,12 +144,12 @@
             this.Controls.Add(this.txtPDV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrice);
             this.Name = "FrmCreateReceipt";
             this.Text = "Kreiraj račun";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +159,7 @@
 
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvItems;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPDV;
