@@ -36,6 +36,29 @@ namespace SmartBar
             dtpOrderDate.Value = DateTime.Now;
             dgvProducts.CellClick += dgvProducts_CellClick;
         }
+        public UpravljanjeStavkomNarudzbeniceForm(List<KratkiProizvodVM> kratkiProizvodi)
+        {
+            InitializeComponent();
+            
+            List<Product> products = _productService.GetProducts().ToList();
+            cbProducts.DataSource = _productService.GetProducts().Select(x => x.Name).ToList();
+            cbSuppliers.DataSource = _supplierService.GetSuppliers().Select(x => x.Name).ToList();
+            nudAmount.Value = 1;
+            dtpOrderDate.Value = (DateTime.Now).AddDays(1);
+            cbProducts.SelectedIndex = 0;
+            cbSuppliers.SelectedIndex =0;
+            proizvodi = kratkiProizvodi;
+            dgvProducts.DataSource = kratkiProizvodi;
+
+            dgvProducts.Columns.Add(new DataGridViewButtonColumn
+            {
+                Text = "Izbriši",
+                Width = 60,
+                UseColumnTextForButtonValue = true
+            });
+            dgvProducts.CellClick += dgvProducts_CellClick;
+            RefreshGUI();
+        }
         public UpravljanjeStavkomNarudzbeniceForm(UpravljanjeNarudzbenicamaVM model)
         {
             InitializeComponent();
@@ -141,21 +164,21 @@ namespace SmartBar
 
         private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != dgvProducts.Columns.Count - 1)
+            if (e.ColumnIndex == 3 || e.ColumnIndex == 0)
             {
-                return;
+                KratkiProizvodVM proizvod = (KratkiProizvodVM)dgvProducts.Rows[e.RowIndex].DataBoundItem;
+
+                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite obrisati ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    proizvodi.Remove(proizvod);
+
+                    RefreshGUI();
+                }
             }
+            return;
 
-            KratkiProizvodVM proizvod = (KratkiProizvodVM)dgvProducts.Rows[e.RowIndex].DataBoundItem;
-
-            DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite obrisati ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                proizvodi.Remove(proizvod);
-
-                RefreshGUI();
             }
-        }
         private void RefreshGUI()
         {
 

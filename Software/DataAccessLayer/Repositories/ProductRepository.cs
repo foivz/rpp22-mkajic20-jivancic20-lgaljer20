@@ -90,6 +90,18 @@ namespace DataAccessLayer.Repositories
 
         public void DeleteProduct(int id)
         {
+            using (SqlCommand command = new SqlCommand("DELETE FROM [dbo].[ReceiptItem] WHERE ProductId = @Id", connection))
+            {
+                command.Parameters.AddWithValue("@Id", id);
+
+                command.ExecuteNonQuery();
+            }
+            using (SqlCommand command = new SqlCommand("DELETE FROM [dbo].[DocketItem] WHERE ProductId = @Id", connection))
+            {
+                command.Parameters.AddWithValue("@Id", id);
+
+                command.ExecuteNonQuery();
+            }
             using (SqlCommand command = new SqlCommand("DELETE FROM [dbo].[InventoryRecordItem] WHERE ProductId = @Id", connection))
             {
                 command.Parameters.AddWithValue("@Id", id);
