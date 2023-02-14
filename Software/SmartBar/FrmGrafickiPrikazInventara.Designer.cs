@@ -55,7 +55,7 @@
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "C:\\Users\\student\\Desktop\\chm\\Graf.chm";
+            this.helpProvider1.HelpNamespace = "";
             // 
             // FrmGrafickiPrikazInventara
             // 
@@ -64,6 +64,7 @@
             this.ClientSize = new System.Drawing.Size(1070, 578);
             this.Controls.Add(this.chartProducts);
             this.Name = "FrmGrafickiPrikazInventara";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Grafički prikaz stanja inventara";
             this.Load += new System.EventHandler(this.FrmGrafickiPrikazInventara_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartProducts)).EndInit();

@@ -89,7 +89,7 @@
     </Compile>
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="FrmGrafickiPrikazInventara.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,13 +102,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-
     <Compile Include="FrmNovaStavkaPrimke.cs">
       <SubType>Form</SubType>
     </Compile>
-	  <Compile Include="FrmNovaStavkaPrimke.Designer.cs">
-		  <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
-	  </Compile>
+    <Compile Include="FrmNovaStavkaPrimke.Designer.cs">
+      <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReceiptDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +125,6 @@
     </Compile>
     <Compile Include="FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
-
     </Compile>
     <Compile Include="FrmPopisIzvjestaja.cs">
       <SubType>Form</SubType>
@@ -205,10 +203,9 @@
     </Compile>
     <Compile Include="ViewModels\NarudzbenicaVM.cs" />
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
-
-		<EmbeddedResource Include="FrmNovaStavkaPrimke.resx">
-			<DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
-		</EmbeddedResource>
+    <EmbeddedResource Include="FrmNovaStavkaPrimke.resx">
+      <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReceiptDetails.resx">
       <DependentUpon>FrmReceiptDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,7 +214,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
@@ -264,6 +260,9 @@
     <EmbeddedResource Include="UpravljanjeStavkomNarudzbeniceForm.resx">
       <DependentUpon>UpravljanjeStavkomNarudzbeniceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Graf.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.OrderForm.datasource" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.OrderItem.datasource" />

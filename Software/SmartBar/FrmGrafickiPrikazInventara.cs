@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,8 @@ namespace SmartBar
 
         private void FrmGrafickiPrikazInventara_Load(object sender, EventArgs e)
         {
-           
+            helpProvider1.HelpNamespace = System.Windows.Forms.Application.StartupPath + "\\Graf.chm";
+      
             var products = productServices.GetProducts();
 
             List<Tuple<string, int, string>> data = new List<Tuple<string, int, string>>();
