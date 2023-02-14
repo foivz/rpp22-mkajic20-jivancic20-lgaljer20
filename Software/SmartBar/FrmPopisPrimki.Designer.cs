@@ -33,6 +33,7 @@
             this.btnRučno = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,11 +76,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Popis narudžbenica:";
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(39, 335);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(91, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Povratak";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FrmPopisPrimki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 391);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRučno);
             this.Controls.Add(this.btnAutomatski);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.Button btnRučno;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

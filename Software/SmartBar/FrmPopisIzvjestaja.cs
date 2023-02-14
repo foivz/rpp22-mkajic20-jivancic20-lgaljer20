@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
 using DataAccessLayer;
 using EntitiesLayer.Entities;
 using System;
@@ -61,6 +62,29 @@ namespace SmartBar
             form.ShowDialog();
 
             UcitajIzvjestaj();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            {
+                var loginService = new LoginService();
+                int role = loginService.CheckUserRole();
+
+                if (role == 1)
+                {
+                    var frmUser = new FrmUser();
+                    Hide();
+                    frmUser.ShowDialog();
+                    Close();
+                }
+                else
+                {
+                    var frmAdmin = new FrmAdmin();
+                    Hide();
+                    frmAdmin.ShowDialog();
+                    Close();
+                }
+            }
         }
     }
 }

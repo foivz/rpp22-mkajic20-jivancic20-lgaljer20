@@ -73,7 +73,7 @@
             // 
             this.btnDodaj.Location = new System.Drawing.Point(72, 196);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(130, 23);
+            this.btnDodaj.Size = new System.Drawing.Size(130, 36);
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "Dodaj stavku";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(290, 231);
+            this.ClientSize = new System.Drawing.Size(297, 244);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.txtKolicina);
             this.Controls.Add(this.label2);

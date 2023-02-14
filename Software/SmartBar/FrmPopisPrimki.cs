@@ -15,7 +15,7 @@ namespace SmartBar
 {
     public partial class FrmPopisPrimki : Form
     {
-       // private TestniService servis = new TestniService(); //servisi za OrderForm i OrderItem
+        // private TestniService servis = new TestniService(); //servisi za OrderForm i OrderItem
         //servisNarudzbenica i servisStavkeNarudzbenice
         private OrderFormService servisNarudzbenica = new OrderFormService();
         private OrderItemService servisStavkeNarudzbenice = new OrderItemService();
@@ -39,10 +39,10 @@ namespace SmartBar
 
         private void PopuniNarudzbenice()
         {
-           
-           //dgNarudzbenice.DataSource = servisNarudzbenica.GetOrderForms();
+
+            //dgNarudzbenice.DataSource = servisNarudzbenica.GetOrderForms();
             dgNarudzbenice.DataSource = servisNarudzbenica.GetAllOrders();
-            
+
             dgNarudzbenice.Columns[4].Visible = false;
             dgNarudzbenice.Columns[5].Visible = false;
             dgNarudzbenice.Columns[6].Visible = false;
@@ -67,7 +67,7 @@ namespace SmartBar
             {
                 Date = DateTime.Now,
                 UserId = CurrentUser.user.Id,
-                SupplierId = selektiranaNarudzbenica.SupplierId,    
+                SupplierId = selektiranaNarudzbenica.SupplierId,
 
             };
             servisiPrimke.AddDocket(newDocket);
@@ -95,6 +95,27 @@ namespace SmartBar
             }
         }
 
-       
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            {
+                var loginService = new LoginService();
+                int role = loginService.CheckUserRole();
+
+                if (role == 1)
+                {
+                    var frmUser = new FrmUser();
+                    Hide();
+                    frmUser.ShowDialog();
+                    Close();
+                }
+                else
+                {
+                    var frmAdmin = new FrmAdmin();
+                    Hide();
+                    frmAdmin.ShowDialog();
+                    Close();
+                }
+            }
+        }
     }
 }
