@@ -74,7 +74,7 @@ namespace BusinessLogicLayer.Services
         //Luka Galjer
         public void DodajProizvode(int id, int kolicina)
         {
-            Product selectedProduct = repo.GetProductById(id); //mozda jan ima getProductById
+            Product selectedProduct = repo.GetProductById(id);
             int trenutnaKolicina = (int)selectedProduct.Amount;
             int novaKolicina = trenutnaKolicina + kolicina;
             selectedProduct.Amount = novaKolicina;

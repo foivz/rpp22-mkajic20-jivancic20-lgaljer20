@@ -17,7 +17,7 @@ namespace SmartBar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UpravljanjeNarudzbenicamaForm());
+            Application.Run(new FrmLogin());
         }
     }
 }

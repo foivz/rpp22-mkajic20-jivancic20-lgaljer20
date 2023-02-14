@@ -34,36 +34,7 @@ namespace SmartBar
             inventoryRecordBindingSource.DataSource= servisiRecord.GetRecordById(selectedInventoryId);
             inventoryRecordItemBindingSource.DataSource = servisiItem.GetRecordById(selectedInventoryId);
             productBindingSource.DataSource = servisiItem.GetProductsFromId(selectedInventoryId);
-            //using (var context = new DataBaseModel())
-            //{
-            //    var query = from i in context.InventoryRecords
-            //                where i.Id == selectedInventoryId
-            //                select i;
-
-            //    InventoryRecord record = query.Single();
-            //    inventoryRecordBindingSource.DataSource = record;
-
-            //    var queryItem = from i in context.InventoryRecordItems
-            //                    where i.InventoryRecordId == selectedInventoryId
-            //                    select i;
-
-
-            //   List<InventoryRecordItem> itemRecord = queryItem.ToList();
-            //    inventoryRecordItemBindingSource.DataSource = itemRecord;
-
-
-            //    var queryProduct = from i in context.InventoryRecordItems
-            //                       where i.InventoryRecordId == selectedInventoryId
-            //                       select i.Product;
-                
-            //    List<Product> selectedProducts = queryProduct.ToList();
-
-            //    productBindingSource.DataSource = selectedProducts;
-
-
-            
-
-           // }
+      
             this.rvZapisnik.RefreshReport();
         }
 

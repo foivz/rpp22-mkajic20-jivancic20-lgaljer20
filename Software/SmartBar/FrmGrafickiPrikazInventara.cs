@@ -16,8 +16,8 @@ namespace SmartBar
     public partial class FrmGrafickiPrikazInventara : Form
     {
 
-        private ProductRepository repo = new ProductRepository(); //private ProductService productServices = new ProductServices()
-   
+        //private ProductRepository repo = new ProductRepository(); //private ProductService productServices = new ProductServices()
+        private ProductService productServices = new ProductService();
         public FrmGrafickiPrikazInventara()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace SmartBar
         private void FrmGrafickiPrikazInventara_Load(object sender, EventArgs e)
         {
            
-            var products = repo.GetProducts(); // productServices.GetProducts()
+            var products = productServices.GetProducts();
 
             List<Tuple<string, int, string>> data = new List<Tuple<string, int, string>>();
 

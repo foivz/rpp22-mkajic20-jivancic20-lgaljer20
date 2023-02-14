@@ -73,7 +73,6 @@
     <Compile Include="Repositories\ReceiptRepository.cs" />
     <Compile Include="Repositories\InventoryRecordItemRepository.cs" />
     <Compile Include="Repositories\InventoryRecordRepository.cs" />
-    <Compile Include="Repositories\PomocniRepo.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\DataBaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -53,7 +53,6 @@
     <Compile Include="Services\ReceiptService.cs" />
     <Compile Include="Services\InventoryRecordItemService.cs" />
     <Compile Include="Services\InventoryRecordService.cs" />
-    <Compile Include="Services\TestniService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\UserService.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace SmartBar
 
         private void PopuniNarudzbenice()
         {
-            //  dgNarudzbenice.DataSource = servis.GetAllNarudzbenice();
+           
            //dgNarudzbenice.DataSource = servisNarudzbenica.GetOrderForms();
             dgNarudzbenice.DataSource = servisNarudzbenica.GetAllOrders();
             
@@ -63,14 +64,15 @@ namespace SmartBar
             Docket newDocket = new Docket
             {
                 Date = DateTime.Now,
-                UserId = 1, //CurrentUser.user.Id,
+                UserId = CurrentUser.user.Id,
                 SupplierId = selektiranaNarudzbenica.SupplierId,    
 
             };
             servisiPrimke.AddDocket(newDocket);
             ObradiKreiranje(selektiranaNarudzbenica.Id, newDocket.Id);
-   
-          
+
+            var forma = new FrmPrimka();
+            forma.ShowDialog();
 
         }
 

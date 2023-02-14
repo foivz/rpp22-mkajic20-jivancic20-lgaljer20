@@ -75,7 +75,7 @@ namespace SmartBar
             Docket newDocket = new Docket
             {
                 Date = DateTime.Now,
-                UserId = 1, //CurrentUser.user.Id, //stavit dok se spaja
+                UserId = CurrentUser.user.Id, //stavit dok se spaja
                 SupplierId = supplier.Id 
 
             };

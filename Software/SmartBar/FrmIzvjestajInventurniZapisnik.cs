@@ -18,6 +18,7 @@ namespace SmartBar
     {
         private InventoryRecordService servisiRecord = new InventoryRecordService();
         private InventoryRecordItemService servisiItem= new InventoryRecordItemService();
+        private ProductService productServices = new ProductService();
         private List<Product> listaProizvoda = new List<Product>();
         public FrmIzvjestajInventurniZapisnik()
         {
@@ -30,8 +31,8 @@ namespace SmartBar
 
         private void FrmIzvjestajInventurniZapisnik_Load(object sender, EventArgs e)
         {
-            ProductRepository repo = new ProductRepository(); // dodaj private servis ProductServis i zamijeni ovo servisiProduct
-            listaProizvoda= repo.GetProducts();
+           
+            listaProizvoda= productServices.GetProducts();
             KreirajRecord();
           
             productBindingSource.DataSource = listaProizvoda;
@@ -43,7 +44,7 @@ namespace SmartBar
             InventoryRecord newRecord = new InventoryRecord
             {
                 Date = DateTime.Now,
-                UserId =  1//CurrentUser.user.Id
+                UserId =  CurrentUser.user.Id
             };
             
             servisiRecord.AddRecord(newRecord);
