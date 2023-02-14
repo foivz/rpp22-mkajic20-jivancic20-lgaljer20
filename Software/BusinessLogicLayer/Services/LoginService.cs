@@ -40,5 +40,10 @@ namespace BusinessLogicLayer
         {
             CurrentUser.user = user;
         }
+
+        public void LogoutUser()
+        {
+            CurrentUser.user = null;
+        }
     }
 }

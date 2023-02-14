@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,6 +40,17 @@ namespace SmartBar
             Hide();
             frm.ShowDialog();
             Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+                var service = new LoginService();
+                service.LogoutUser();
+
+                var frmLogin = new FrmLogin();
+                Hide();
+                frmLogin.ShowDialog();
+                Close();
         }
     }
 }

@@ -33,22 +33,25 @@
             this.btnPrimke = new System.Windows.Forms.Button();
             this.btnGraf = new System.Windows.Forms.Button();
             this.btnInventura = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(84, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 16);
+            this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Prijavljeni ste kao admin";
             // 
             // btnReceipts
             // 
-            this.btnReceipts.Location = new System.Drawing.Point(12, 47);
+            this.btnReceipts.Location = new System.Drawing.Point(67, 30);
+            this.btnReceipts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReceipts.Name = "btnReceipts";
-            this.btnReceipts.Size = new System.Drawing.Size(96, 28);
+            this.btnReceipts.Size = new System.Drawing.Size(155, 28);
             this.btnReceipts.TabIndex = 1;
             this.btnReceipts.Text = "Računi";
             this.btnReceipts.UseVisualStyleBackColor = true;
@@ -56,9 +59,10 @@
             // 
             // btnPrimke
             // 
-            this.btnPrimke.Location = new System.Drawing.Point(379, 47);
+            this.btnPrimke.Location = new System.Drawing.Point(67, 94);
+            this.btnPrimke.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrimke.Name = "btnPrimke";
-            this.btnPrimke.Size = new System.Drawing.Size(111, 42);
+            this.btnPrimke.Size = new System.Drawing.Size(155, 28);
             this.btnPrimke.TabIndex = 5;
             this.btnPrimke.Text = "Popis primki";
             this.btnPrimke.UseVisualStyleBackColor = true;
@@ -66,9 +70,10 @@
             // 
             // btnGraf
             // 
-            this.btnGraf.Location = new System.Drawing.Point(223, 47);
+            this.btnGraf.Location = new System.Drawing.Point(67, 62);
+            this.btnGraf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGraf.Name = "btnGraf";
-            this.btnGraf.Size = new System.Drawing.Size(111, 42);
+            this.btnGraf.Size = new System.Drawing.Size(155, 28);
             this.btnGraf.TabIndex = 4;
             this.btnGraf.Text = "Grafički prikaz inventara";
             this.btnGraf.UseVisualStyleBackColor = true;
@@ -76,24 +81,37 @@
             // 
             // btnInventura
             // 
-            this.btnInventura.Location = new System.Drawing.Point(548, 47);
+            this.btnInventura.Location = new System.Drawing.Point(67, 126);
+            this.btnInventura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInventura.Name = "btnInventura";
-            this.btnInventura.Size = new System.Drawing.Size(111, 42);
+            this.btnInventura.Size = new System.Drawing.Size(155, 28);
             this.btnInventura.TabIndex = 6;
             this.btnInventura.Text = "Popis inventurnih zapisnika";
             this.btnInventura.UseVisualStyleBackColor = true;
             this.btnInventura.Click += new System.EventHandler(this.btnInventura_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(67, 159);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(155, 28);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Odjava";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // FrmAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(309, 355);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnInventura);
             this.Controls.Add(this.btnPrimke);
             this.Controls.Add(this.btnGraf);
             this.Controls.Add(this.btnReceipts);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAdmin";
             this.Text = "SmartBar";
             this.ResumeLayout(false);
@@ -108,5 +126,6 @@
         private System.Windows.Forms.Button btnPrimke;
         private System.Windows.Forms.Button btnGraf;
         private System.Windows.Forms.Button btnInventura;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
