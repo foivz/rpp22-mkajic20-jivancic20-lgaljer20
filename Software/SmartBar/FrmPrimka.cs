@@ -141,5 +141,7 @@ namespace SmartBar
         {
             return dgvStavkePrimke.CurrentRow.DataBoundItem as DocketItem;
         }
+
+      
     }
 }

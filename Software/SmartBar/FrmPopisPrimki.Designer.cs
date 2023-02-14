@@ -31,6 +31,7 @@
             this.dgNarudzbenice = new System.Windows.Forms.DataGridView();
             this.btnAutomatski = new System.Windows.Forms.Button();
             this.btnRučno = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +65,21 @@
             this.btnRučno.UseVisualStyleBackColor = true;
             this.btnRučno.Click += new System.EventHandler(this.btnRučno_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Popis narudžbenica:";
+            // 
             // FrmPopisPrimki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 391);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRučno);
             this.Controls.Add(this.btnAutomatski);
             this.Controls.Add(this.dgNarudzbenice);
@@ -77,6 +88,7 @@
             this.Load += new System.EventHandler(this.FrmPopisPrimki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,5 +97,6 @@
         private System.Windows.Forms.DataGridView dgNarudzbenice;
         private System.Windows.Forms.Button btnAutomatski;
         private System.Windows.Forms.Button btnRučno;
+        private System.Windows.Forms.Label label1;
     }
 }

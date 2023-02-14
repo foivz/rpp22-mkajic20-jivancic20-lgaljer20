@@ -37,6 +37,8 @@
             this.btnIzbrišiPrimku = new System.Windows.Forms.Button();
             this.cmbSuppliers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrimke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimke)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -45,7 +47,7 @@
             // dgvPrimke
             // 
             this.dgvPrimke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrimke.Location = new System.Drawing.Point(12, 21);
+            this.dgvPrimke.Location = new System.Drawing.Point(12, 32);
             this.dgvPrimke.Name = "dgvPrimke";
             this.dgvPrimke.RowHeadersWidth = 51;
             this.dgvPrimke.RowTemplate.Height = 24;
@@ -137,11 +139,31 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Izaberite dobavljača: ";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Popis primki:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 243);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Popis stavki:";
+            // 
             // FrmPrimka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(883, 476);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDeleteStavka);
             this.Controls.Add(this.btnAddStavka);
@@ -155,6 +177,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -169,5 +192,7 @@
         private System.Windows.Forms.ComboBox cmbSuppliers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnIzbrišiPrimku;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

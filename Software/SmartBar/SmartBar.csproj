@@ -106,9 +106,9 @@
     <Compile Include="FrmNovaStavkaPrimke.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNovaStavkaPrimke.Designer.cs">
-      <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
-
+	  <Compile Include="FrmNovaStavkaPrimke.Designer.cs">
+		  <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+	  </Compile>
     <Compile Include="FrmReceiptDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,9 +187,9 @@
     </Compile>
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
 
-    <EmbeddedResource Include="FrmNovaStavkaPrimke.resx">
-      <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
-
+		<EmbeddedResource Include="FrmNovaStavkaPrimke.resx">
+			<DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+		</EmbeddedResource>
     <EmbeddedResource Include="FrmReceiptDetails.resx">
       <DependentUpon>FrmReceiptDetails.cs</DependentUpon>
     </EmbeddedResource>
