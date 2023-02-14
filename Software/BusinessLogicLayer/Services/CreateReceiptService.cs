@@ -47,6 +47,10 @@ namespace BusinessLogicLayer.Services
 
             foreach(var i in items)
             {
+                var prodRepo = new ProductRepository();
+                int amount = (int)i.product.Amount - i.amount;
+                prodRepo.UpdateAmount(i.product, amount);
+
                 repo.CreateReceiptItem(new ReceiptItem()
                 {
                     ReceiptId= id,
