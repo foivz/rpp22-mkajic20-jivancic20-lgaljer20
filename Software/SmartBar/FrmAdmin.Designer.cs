@@ -34,6 +34,8 @@
             this.btnGraf = new System.Windows.Forms.Button();
             this.btnInventura = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.btnInventar = new System.Windows.Forms.Button();
+            this.btnNarudzbenice = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@
             // btnReceipts
             // 
             this.btnReceipts.Location = new System.Drawing.Point(67, 30);
-            this.btnReceipts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReceipts.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceipts.Name = "btnReceipts";
             this.btnReceipts.Size = new System.Drawing.Size(155, 28);
             this.btnReceipts.TabIndex = 1;
@@ -60,7 +62,7 @@
             // btnPrimke
             // 
             this.btnPrimke.Location = new System.Drawing.Point(67, 94);
-            this.btnPrimke.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPrimke.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrimke.Name = "btnPrimke";
             this.btnPrimke.Size = new System.Drawing.Size(155, 28);
             this.btnPrimke.TabIndex = 5;
@@ -71,7 +73,7 @@
             // btnGraf
             // 
             this.btnGraf.Location = new System.Drawing.Point(67, 62);
-            this.btnGraf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraf.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraf.Name = "btnGraf";
             this.btnGraf.Size = new System.Drawing.Size(155, 28);
             this.btnGraf.TabIndex = 4;
@@ -82,7 +84,7 @@
             // btnInventura
             // 
             this.btnInventura.Location = new System.Drawing.Point(67, 126);
-            this.btnInventura.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInventura.Margin = new System.Windows.Forms.Padding(2);
             this.btnInventura.Name = "btnInventura";
             this.btnInventura.Size = new System.Drawing.Size(155, 28);
             this.btnInventura.TabIndex = 6;
@@ -92,7 +94,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(67, 159);
+            this.btnLogout.Location = new System.Drawing.Point(67, 240);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(155, 28);
             this.btnLogout.TabIndex = 7;
@@ -100,18 +102,42 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // btnInventar
+            // 
+            this.btnInventar.Location = new System.Drawing.Point(67, 158);
+            this.btnInventar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInventar.Name = "btnInventar";
+            this.btnInventar.Size = new System.Drawing.Size(155, 28);
+            this.btnInventar.TabIndex = 8;
+            this.btnInventar.Text = "Inventar";
+            this.btnInventar.UseVisualStyleBackColor = true;
+            this.btnInventar.Click += new System.EventHandler(this.btnInventar_Click);
+            // 
+            // btnNarudzbenice
+            // 
+            this.btnNarudzbenice.Location = new System.Drawing.Point(67, 190);
+            this.btnNarudzbenice.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNarudzbenice.Name = "btnNarudzbenice";
+            this.btnNarudzbenice.Size = new System.Drawing.Size(155, 28);
+            this.btnNarudzbenice.TabIndex = 9;
+            this.btnNarudzbenice.Text = "Narudžbenice";
+            this.btnNarudzbenice.UseVisualStyleBackColor = true;
+            this.btnNarudzbenice.Click += new System.EventHandler(this.btnNarudzbenice_Click);
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 355);
+            this.Controls.Add(this.btnNarudzbenice);
+            this.Controls.Add(this.btnInventar);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnInventura);
             this.Controls.Add(this.btnPrimke);
             this.Controls.Add(this.btnGraf);
             this.Controls.Add(this.btnReceipts);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAdmin";
             this.Text = "SmartBar";
             this.ResumeLayout(false);
@@ -127,5 +153,7 @@
         private System.Windows.Forms.Button btnGraf;
         private System.Windows.Forms.Button btnInventura;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnInventar;
+        private System.Windows.Forms.Button btnNarudzbenice;
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using BusinessLogicLayer.Services;
 using System.Drawing;
+using BusinessLogicLayer;
 
 namespace SmartBar
 {
@@ -140,6 +141,28 @@ namespace SmartBar
             UpravljanjeStavkomNarudzbeniceForm narudzbenicaForm = new UpravljanjeStavkomNarudzbeniceForm(kratkiProizvodi);
             narudzbenicaForm.ShowDialog();
             RefreshGUI();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var loginService = new LoginService();
+            int role = loginService.CheckUserRole();
+
+            if (role == 1)
+            {
+                var frmUser = new FrmUser();
+                Hide();
+                frmUser.ShowDialog();
+                Close();
+            }
+            else
+            {
+                var frmAdmin = new FrmAdmin();
+                Hide();
+                frmAdmin.ShowDialog();
+                Close();
+            }
+
         }
     }
 }

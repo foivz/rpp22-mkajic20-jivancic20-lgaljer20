@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Services;
 using DataAccessLayer.Repositories;
 using EntitiesLayer.Entities;
 using SmartBar.ViewModels;
@@ -21,7 +22,7 @@ namespace SmartBar
         OrderFormService _orderFormService = new OrderFormService();
         OrderItemService _orderItemService = new OrderItemService();
         ProductService _productService = new ProductService();
-
+        UserService _userService = new UserService();
         public UpravljanjeNarudzbenicamaForm()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace SmartBar
                     
                     Supplier = _supplierService.GetSupplierById(orderForm.Id),
                     OrderItems = _orderItemService.GetOrderItemsById(orderForm.Id),
-                    //User = _userService.GetUserById(orderForm.Id)
+                    User = _userService.GetUserById(orderForm.Id)
 
                 };
                 UpravljanjeStavkomNarudzbeniceForm upravljanjeStavkomNarudzbenice = new UpravljanjeStavkomNarudzbeniceForm(upravljanjeNarudzbenicamaVM);
@@ -83,16 +84,12 @@ namespace SmartBar
                 NarudzbenicaReport report = new NarudzbenicaReport(orderForm,orderItems1);
                 report.Show();
                 
-
             }
-
         }
 
         private void UpravljanjeNarudzbenicamaForm_Load(object sender, EventArgs e)
         {
-
             RefreshGUI();
-
         }
 
         private void btnKreiraj_Click(object sender, EventArgs e)
@@ -112,7 +109,7 @@ namespace SmartBar
                 NarudzbenicaVM upravljanjeInvantaromVM = new NarudzbenicaVM
                 {
                     Id = product.Id,
-                    UserName = "Mirko", //maknut ime, dodat dohvacanje imena
+                    UserName = _userService.GetUserById(product.UserId).Username,
                     SupplierName = product.Supplier.Name,
                     OrderDate = product.Date
                     
@@ -151,5 +148,26 @@ namespace SmartBar
 
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var loginService = new LoginService();
+            int role = loginService.CheckUserRole();
+
+            if (role == 1)
+            {
+                var frmUser = new FrmUser();
+                Hide();
+                frmUser.ShowDialog();
+                Close();
+            }
+            else
+            {
+                var frmAdmin = new FrmAdmin();
+                Hide();
+                frmAdmin.ShowDialog();
+                Close();
+            }
+
+        }
     }
 }

@@ -60,6 +60,22 @@ namespace SmartBar
             frmLogin.ShowDialog();
             Close();
         }
+
+        private void btnInventar_Click(object sender, EventArgs e)
+        {
+            UpravljanjeInventaromForm inventar = new UpravljanjeInventaromForm();
+            Hide();
+            inventar.ShowDialog();
+            Close();
+        }
+
+        private void btnNarudzbenice_Click(object sender, EventArgs e)
+        {
+            UpravljanjeNarudzbenicamaForm narudzbenice = new UpravljanjeNarudzbenicamaForm();
+            Hide();
+            narudzbenice.ShowDialog();
+            Close();
+        }
     }
   }
 

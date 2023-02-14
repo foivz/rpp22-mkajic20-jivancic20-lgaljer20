@@ -31,6 +31,7 @@
             this.dgvInventar = new System.Windows.Forms.DataGridView();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnLowProduct = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,11 +63,22 @@
             this.btnLowProduct.UseVisualStyleBackColor = true;
             this.btnLowProduct.Click += new System.EventHandler(this.btnLowProduct_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(205, 416);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(171, 23);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Povratak";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // UpravljanjeInventaromForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(915, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnLowProduct);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dgvInventar);
@@ -83,5 +95,6 @@
         private System.Windows.Forms.DataGridView dgvInventar;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnLowProduct;
+        private System.Windows.Forms.Button btnBack;
     }
 }

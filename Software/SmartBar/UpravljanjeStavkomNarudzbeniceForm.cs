@@ -124,11 +124,7 @@ namespace SmartBar
                 orderItems.Add(oi);
             }
             ord.OrderItems = orderItems;
-
-            //ord.UserId = CurrentUser.user.Id;
-            ord.UserId = 1;
-
-           
+            ord.UserId = CurrentUser.user.Id;
             ord.Id = orderFormId;
             if (!_orderFormService.ValidateData(ord))
             {
@@ -231,7 +227,6 @@ namespace SmartBar
                 MessageBox.Show("Unesite količinu", "", MessageBoxButtons.OK);
                 return;
             }
-
             proizvodi.Add(kratkiProizvodVM);
             RefreshGUI();
         }
