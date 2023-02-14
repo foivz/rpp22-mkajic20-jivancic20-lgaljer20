@@ -15,9 +15,9 @@ namespace SmartBar
 {
     public partial class FrmAddReceiptItem : Form
     {
-
         public List<Product> Products { get; set; }
         public ReceiptService Service { get; set; }
+       
         public FrmAddReceiptItem()
         {
             InitializeComponent();
@@ -74,7 +74,7 @@ namespace SmartBar
                     return;
                 }
 
-                Service.AddReceiptItem(selectedProduct, amount);
+                CreateReceiptService.AddReceiptItem(selectedProduct, amount);
                 Close();
             }
             else

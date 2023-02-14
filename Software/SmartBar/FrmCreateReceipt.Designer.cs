@@ -111,6 +111,7 @@
             this.btnRemove.TabIndex = 7;
             this.btnRemove.Text = "Ukloni";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnCreate
             // 

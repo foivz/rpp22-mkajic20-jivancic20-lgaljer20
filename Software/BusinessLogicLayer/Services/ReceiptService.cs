@@ -12,11 +12,9 @@ namespace BusinessLogicLayer.Services
     {
         public ReceiptRepository repo { get; set; }
 
-        public List<AddReceiptItem> items { get; set; }
         public ReceiptService()
         {
             repo = new ReceiptRepository();
-            items = new List<AddReceiptItem>();
         }
         public List<Receipt> GetAllReceipts()
         {
@@ -53,19 +51,6 @@ namespace BusinessLogicLayer.Services
         {
             ProductRepository productRepository = new ProductRepository();
             return productRepository.GetProducts();
-        }
-
-        public void AddReceiptItem(Product product, int amount)
-        {
-            AddReceiptItem item = new AddReceiptItem();
-            item.amount = amount;
-            item.product = product;
-            items.Add(item);
-        }
-
-        public List<AddReceiptItem> GetAddedItems()
-        {
-            return items;
         }
     }
 }

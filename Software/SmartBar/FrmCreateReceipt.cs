@@ -28,9 +28,11 @@ namespace SmartBar
 
         private void LoadItems()
         {
-            var service = new ReceiptService();
-            List<AddReceiptItem> list = service.GetAddedItems();
+            List<AddReceiptItem> list = CreateReceiptService.GetAddedItems();
+            dgvItems.DataSource = null;
             dgvItems.DataSource = list;
+
+            txtPrice.Text = CreateReceiptService.GetTotalPrice().ToString();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -48,6 +50,21 @@ namespace SmartBar
             Hide();
             frmReceipts.ShowDialog();
             Close();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if(dgvItems.SelectedCells.Count == 0) 
+            {
+                MessageBox.Show("Niste odabrali račun.");
+            } 
+            else
+            {
+                int selectedRowIndex = dgvItems.SelectedCells[0].RowIndex;
+                AddReceiptItem selectedItem = (AddReceiptItem)dgvItems.Rows[selectedRowIndex].DataBoundItem;
+                CreateReceiptService.RemoveItem(selectedItem);
+                LoadItems();
+            }
         }
     }
 }
