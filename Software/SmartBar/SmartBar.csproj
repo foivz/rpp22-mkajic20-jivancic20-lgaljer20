@@ -84,11 +84,23 @@
     <Compile Include="Frm2FA.Designer.cs">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddReceiptItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddReceiptItem.Designer.cs">
+      <DependentUpon>FrmAddReceiptItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreateReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreateReceipt.Designer.cs">
+      <DependentUpon>FrmCreateReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGrafickiPrikazInventara.cs">
       <SubType>Form</SubType>
@@ -155,8 +167,14 @@
     <EmbeddedResource Include="Frm2FA.resx">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddReceiptItem.resx">
+      <DependentUpon>FrmAddReceiptItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreateReceipt.resx">
+      <DependentUpon>FrmCreateReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGrafickiPrikazInventara.resx">
       <DependentUpon>FrmGrafickiPrikazInventara.cs</DependentUpon>
@@ -164,6 +182,12 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ReceiptReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptReportForm.Designer.cs">
+      <DependentUpon>ReceiptReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="FrmIzvjestajInventurniZapisnik.cs">
       <SubType>Form</SubType>
@@ -239,12 +263,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReceiptReportForm.resx">
+      <DependentUpon>ReceiptReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptNarudzbenicaDetalji.rdlc" />
     <EmbeddedResource Include="reportAllProducts.rdlc" />
     <EmbeddedResource Include="FrmIzvjestajInventurniZapisnik.resx">
       <DependentUpon>FrmIzvjestajInventurniZapisnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportIzvjestaj.rdlc" />
+    <EmbeddedResource Include="rptReceipt.rdlc" />
     <EmbeddedResource Include="FrmPopisPrimki.resx">
       <DependentUpon>FrmPopisPrimki.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,6 +314,9 @@
     <None Include="Properties\DataSources\EntitiesLayer.Entities.User.datasource" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.InventoryRecord.datasource" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.InventoryRecordItem.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.Product.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.Receipt.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.ReceiptListItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

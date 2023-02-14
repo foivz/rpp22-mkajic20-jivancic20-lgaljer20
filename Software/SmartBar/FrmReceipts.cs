@@ -87,5 +87,13 @@ namespace SmartBar
                 Close();
             }
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            var frmCreateReceipt = new FrmCreateReceipt();
+            Hide();
+            frmCreateReceipt.ShowDialog();
+            Close();
+        }
     }
 }

@@ -42,12 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AddReceiptItem.cs" />
     <Compile Include="Entities\Docket.cs" />
     <Compile Include="Entities\DocketItem.cs" />
     <Compile Include="Entities\InventoryRecord.cs" />
     <Compile Include="Entities\InventoryRecordItem.cs" />
     <Compile Include="Entities\OrderForm.cs" />
     <Compile Include="Entities\OrderItem.cs" />
+    <Compile Include="Entities\Product.code.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Product.ext.cs" />
     <Compile Include="Entities\Receipt.cs" />

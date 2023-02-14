@@ -11,6 +11,7 @@ namespace BusinessLogicLayer.Services
     public class ReceiptService
     {
         public ReceiptRepository repo { get; set; }
+
         public ReceiptService()
         {
             repo = new ReceiptRepository();
@@ -44,6 +45,17 @@ namespace BusinessLogicLayer.Services
         public List<ReceiptListItem> GetReceiptItems(Receipt receipt)
         {
             return repo.GetReceiptListItems(receipt);
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            ProductRepository productRepository = new ProductRepository();
+            return productRepository.GetProducts();
+        }
+
+        public Receipt GetReceipt(int id)
+        {
+            return repo.GetReceipt(id);
         }
     }
 }

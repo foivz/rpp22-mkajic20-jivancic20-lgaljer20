@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,10 @@ namespace SmartBar
     public partial class FrmReceiptDetails : Form
     {
         public Receipt receipt { get; set; }
+        public string username { get; set; }
+        public List<ReceiptListItem> items { get; set; }
+
+
         public FrmReceiptDetails(Receipt r)
         {
             InitializeComponent();
@@ -32,25 +37,35 @@ namespace SmartBar
 
         private void FrmReceiptDetails_Load(object sender, EventArgs e)
         {
+            LoadData();
             DisplayData();
+        }
+
+        private void LoadData()
+        {
+            var service = new ReceiptService();
+            username = service.GetReceiptUsername(receipt);
+            items = service.GetReceiptItems(receipt);
         }
 
         private void DisplayData()
         {
-            var service = new ReceiptService();
-            txtEmployee.Text = service.GetReceiptUsername(receipt);
+            txtEmployee.Text = username;
             txtDate.Text = receipt.Date.ToString();
             txtPrice.Text = receipt.Price.ToString();
             txtPDV.Text = receipt.PDV.ToString();
-
-            List<ReceiptListItem> items = new List<ReceiptListItem>();
-            items = service.GetReceiptItems(receipt);
 
             dgvReceiptItems.DataSource = items;
 
             dgvReceiptItems.Columns["Name"].HeaderText = "Proizvod";
             dgvReceiptItems.Columns["Price"].HeaderText = "Cijena";
             dgvReceiptItems.Columns["Amount"].HeaderText = "Količina";
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            var receiptReportForm = new ReceiptReportForm(receipt, items);
+            receiptReportForm.ShowDialog();
         }
     }
 }
