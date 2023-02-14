@@ -14,9 +14,9 @@ namespace BusinessLogicLayer.Services
         {
             return new OrderFormRepository().GetOrderForms();
         }
-        public void CreateOrderForm(OrderForm orderForm)
+        public int CreateOrderForm(OrderForm orderForm)
         {
-            new OrderFormRepository().CreateOrderForm(orderForm);
+            return new OrderFormRepository().CreateOrderForm(orderForm);
         }
 
         public void UpdateOrderForm(OrderForm orderForm)
@@ -49,6 +49,7 @@ namespace BusinessLogicLayer.Services
             {
                 if (item.Amount <= 0) return false;
             }
+
             return true;
 
         }

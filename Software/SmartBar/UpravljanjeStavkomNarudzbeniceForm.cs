@@ -24,7 +24,6 @@ namespace SmartBar
         ProductService _productService = new ProductService();
 
         List<KratkiProizvodVM> proizvodi = new List<KratkiProizvodVM>();
-
         private int orderFormId;
         public UpravljanjeStavkomNarudzbeniceForm()
         {
@@ -41,18 +40,32 @@ namespace SmartBar
         {
             InitializeComponent();
             List<Product> products = _productService.GetProducts().ToList();
-
             cbProducts.DataSource = _productService.GetProducts().Select(x => x.Name).ToList();
-
             cbSuppliers.DataSource = _supplierService.GetSuppliers().Select(x => x.Name).ToList();
-
             nudAmount.Value = 1;
             dtpOrderDate.Value = (DateTime)model.OrderDate;
             cbProducts.SelectedIndex = 0;
             cbSuppliers.SelectedItem = model.Supplier.Name;
-           
             orderFormId = model.OrderFormId;
+            List<KratkiProizvodVM> kratkiProizvodi = new List<KratkiProizvodVM>();
+            foreach (var item in model.OrderItems)
+            {
+                KratkiProizvodVM kratkiProizvod = new KratkiProizvodVM();
+                kratkiProizvod.Name = products.Where(x => x.Id == item.ProductId).FirstOrDefault().Name;
+                kratkiProizvod.OrderAmount = item.Amount;
+                kratkiProizvod.Amount = products.Where(x => x.Id == item.ProductId).FirstOrDefault().Amount;
+                kratkiProizvodi.Add(kratkiProizvod);
+            }
+            proizvodi = kratkiProizvodi;
+            dgvProducts.DataSource = kratkiProizvodi;
             dgvProducts.CellClick += dgvProducts_CellClick;
+
+            dgvProducts.Columns.Add(new DataGridViewButtonColumn
+            {
+                Text = "Izbriši",
+                Width = 60,
+                UseColumnTextForButtonValue = true
+            });
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -64,7 +77,18 @@ namespace SmartBar
         {
             OrderForm ord = new OrderForm();
             ord.Date = dtpOrderDate.Value;
-            ord.Supplier = _supplierService.GetSupplierByName(cbSuppliers.SelectedItem.ToString());
+            if (cbSuppliers.SelectedItem != null)
+            {
+                ord.Supplier = _supplierService.GetSupplierByName(cbSuppliers.SelectedItem.ToString());
+                ord.SupplierId = ord.Supplier.Id;
+                
+            }
+            else
+            {
+                MessageBox.Show("Unesite dobavljača!", "", MessageBoxButtons.OK);
+                return;
+            }
+
             List<OrderItem> orderItems = new List<OrderItem>();
             foreach (var item in proizvodi)
             {
@@ -79,7 +103,8 @@ namespace SmartBar
 
             //ord.UserId = CurrentUser.user.Id;
             ord.UserId = 1;
-            ord.SupplierId = _supplierService.GetSupplierByName(cbSuppliers.SelectedItem.ToString()).Id;
+
+           
             ord.Id = orderFormId;
             if (!_orderFormService.ValidateData(ord))
             {
@@ -89,11 +114,26 @@ namespace SmartBar
             {
                 if (ord.Id != 0)
                 {
+                    OrderForm ppp = _orderFormService.GetOrderFormById(orderFormId);
+                    foreach (var item in orderItems)
+                    {
+                        item.OrderForm = ppp;
+                        item.OrderFormId = orderFormId;
+                    }
                     _orderFormService.UpdateOrderForm(ord);
+                    _orderItemService.DeleteOrderItems(orderFormId);
+                    _orderItemService.CreateOrderItems(orderItems);
                 }
                 else
                 {
-                    _orderFormService.CreateOrderForm(ord);
+                    int rpo = _orderFormService.CreateOrderForm(ord);
+                    OrderForm ppp = _orderFormService.GetOrderFormById(rpo);
+                    foreach (var item in orderItems)
+                    {
+                        item.OrderForm = ppp;
+                        item.OrderFormId = rpo;
+                    }
+                    _orderItemService.CreateOrderItems(orderItems);
                 }
                 this.Close();
             }
@@ -118,21 +158,26 @@ namespace SmartBar
         }
         private void RefreshGUI()
         {
+
             dgvProducts.Columns.Clear();
             dgvProducts.DataSource = null;
             dgvProducts.DataSource = proizvodi;
             dgvProducts.Refresh();
-
+            //proizvodi.Clear();
             while (dgvProducts.Columns.Count > 4)
             {
-                dgvProducts.Columns.RemoveAt(4);
+                dgvProducts.Columns.Remove("Izbrisi");
+                //dgvProducts.Columns.RemoveAt(4);
             }
             dgvProducts.Columns.Add(new DataGridViewButtonColumn
             {
                 Text = "Izbriši",
                 Width = 60,
-                UseColumnTextForButtonValue = true
+                UseColumnTextForButtonValue = true,
+                Name = "Izbrisi"
             });
+
+
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -145,9 +190,41 @@ namespace SmartBar
             Product v1 = _productService.GetProductByName(v);
             kratkiProizvodVM.Amount = v1.Amount;
 
+            foreach (var item in proizvodi)
+            {
+                if (item.Name == kratkiProizvodVM.Name)
+                {
+                    MessageBox.Show("Proizvod je već dodan", "", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            if (nudAmount.Value == 0)
+            {
+                MessageBox.Show("Unesite količinu", "", MessageBoxButtons.OK);
+                return;
+            }
+
             proizvodi.Add(kratkiProizvodVM);
             RefreshGUI();
         }
 
+        private void dgvProducts_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            foreach (DataGridViewRow row in dgvProducts.Rows)
+            {
+                KratkiProizvodVM kvm = new KratkiProizvodVM();
+
+                string naziv = (string)row.Cells[0].Value;
+                int kns = (int)row.Cells[1].Value;
+                int kn = (int)row.Cells[2].Value;
+                kvm.Name = naziv;
+                kvm.Amount = kns;
+                kvm.OrderAmount = kn;
+
+                proizvodi.Add(kvm);
+            }
+
+        }
     }
 }

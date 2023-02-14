@@ -31,5 +31,21 @@ namespace BusinessLogicLayer.Services
                 return orderItemRepository.GetOrderItemById(id);
             }
         }
+
+        public void CreateOrderItems(List<OrderItem> orderItems)
+        {
+            using (OrderItemRepository orderItemRepository = new OrderItemRepository())
+            {
+                orderItemRepository.CreateOrderItems(orderItems);
+            }
+        }
+
+        public void DeleteOrderItems(int orderFormId)
+        {
+            using (OrderItemRepository orderItemRepository = new OrderItemRepository())
+            {
+                orderItemRepository.DeleteOrderItems(orderFormId);
+            }
+        }
     }
 }

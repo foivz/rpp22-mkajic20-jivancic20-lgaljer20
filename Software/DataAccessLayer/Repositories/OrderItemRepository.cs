@@ -20,6 +20,19 @@ namespace DataAccessLayer.Repositories
             connection.Open();
         }
 
+        public void CreateOrderItems(List<OrderItem> orderItems)
+        {
+            foreach (var item in orderItems)
+            {
+                using (SqlCommand command = new SqlCommand("INSERT INTO [dbo].[OrderItem] (OrderFormId, ProductId, Amount) VALUES (@OrderFormId, @ProductId, @Amount)", connection))
+                {
+                    command.Parameters.AddWithValue("@OrderFormId", item.OrderFormId);
+                    command.Parameters.AddWithValue("@ProductId", item.ProductId);
+                    command.Parameters.AddWithValue("@Amount", item.Amount);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
         public List<OrderItem> GetOrderItems()
         {
 
@@ -52,10 +65,10 @@ namespace DataAccessLayer.Repositories
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     List<OrderItem> products = new List<OrderItem>();
-                    OrderItem product = new OrderItem();
 
                     while (reader.Read())
                     {
+                        OrderItem product = new OrderItem();
                         product.OrderFormId = reader.GetInt32(0);
                         product.ProductId = reader.GetInt32(1);
                         product.Amount = reader.GetInt32(2);
@@ -65,6 +78,7 @@ namespace DataAccessLayer.Repositories
                 }
             }
         }
+
         public OrderItem GetOrderItemById(int id)
         {
             using (SqlCommand command = new SqlCommand("SELECT * FROM [dbo].[OrderItem] WHERE OrderFormId = @id", connection))
@@ -84,6 +98,14 @@ namespace DataAccessLayer.Repositories
                 }
             }
         }
+        public void DeleteOrderItems(int orderFormId)
+        {
+            using (SqlCommand command = new SqlCommand("DELETE FROM [dbo].[OrderItem] WHERE OrderFormId = @orderFormId", connection))
+            {
+                command.Parameters.AddWithValue("@orderFormId", orderFormId);
+                command.ExecuteNonQuery();
+            }
+        }
         public void Dispose()
         {
             if (connection.State != ConnectionState.Closed)
@@ -94,6 +116,7 @@ namespace DataAccessLayer.Repositories
             connection.Dispose();
         }
 
+        
     }
 }
 

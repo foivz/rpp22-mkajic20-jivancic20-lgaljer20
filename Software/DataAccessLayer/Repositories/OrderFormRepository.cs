@@ -49,18 +49,19 @@ namespace DataAccessLayer.Repositories
 
         }
 
-        public void CreateOrderForm(OrderForm product)
+        public int CreateOrderForm(OrderForm product)
         {
-
-            using (SqlCommand command = new SqlCommand("INSERT INTO [dbo].[OrderForm] (Date, UserId, SupplierId) VALUES (@Date, @UserId, @SupplierId)", connection))
+            int orderId;
+            using (SqlCommand command = new SqlCommand("INSERT INTO [dbo].[OrderForm] (Date, UserId, SupplierId) OUTPUT INSERTED.Id VALUES (@Date, @UserId, @SupplierId)", connection))
             {
                 command.Parameters.AddWithValue("@Date", product.Date);
                 command.Parameters.AddWithValue("@UserId", product.UserId);
                 command.Parameters.AddWithValue("@SupplierId", product.SupplierId);
-                command.ExecuteNonQuery();
+                orderId = (int)command.ExecuteScalar();
             }
-
+            return orderId;
         }
+
 
         public void UpdateOrderForm(OrderForm product)
         {

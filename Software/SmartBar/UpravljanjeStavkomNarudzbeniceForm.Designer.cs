@@ -137,6 +137,7 @@
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.Size = new System.Drawing.Size(470, 208);
             this.dgvProducts.TabIndex = 18;
+            this.dgvProducts.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellValueChanged);
             // 
             // btnAddProduct
             // 
