@@ -16,5 +16,28 @@ namespace SmartBar
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var frmAddReceiptItem = new FrmAddReceiptItem();
+            frmAddReceiptItem.ShowDialog();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var frmReceipts = new FrmReceipts();
+            Hide();
+            frmReceipts.ShowDialog();
+            Close();
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            //TODO kreiraj racun
+            var frmReceipts = new FrmReceipts();
+            Hide();
+            frmReceipts.ShowDialog();
+            Close();
+        }
     }
 }

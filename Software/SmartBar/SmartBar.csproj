@@ -84,6 +84,12 @@
     <Compile Include="Frm2FA.Designer.cs">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddReceiptItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddReceiptItem.Designer.cs">
+      <DependentUpon>FrmAddReceiptItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm2FA.resx">
       <DependentUpon>Frm2FA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddReceiptItem.resx">
+      <DependentUpon>FrmAddReceiptItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>

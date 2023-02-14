@@ -101,6 +101,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
@@ -119,6 +120,7 @@
             this.btnCreate.TabIndex = 8;
             this.btnCreate.Text = "Kreiraj";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnBack
             // 
@@ -128,6 +130,7 @@
             this.btnBack.TabIndex = 9;
             this.btnBack.Text = "Povratak";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FrmCreateReceipt
             // 
