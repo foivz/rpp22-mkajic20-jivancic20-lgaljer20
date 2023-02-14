@@ -68,8 +68,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="DocketItemRepository.cs" />
     <Compile Include="DocketRepository.cs" />
+
+    <Compile Include="Repositories\ReceiptRepository.cs" />
+
     <Compile Include="InventoryRecordItemRepository.cs" />
     <Compile Include="InventoryRecordRepository.cs" />
     <Compile Include="PomocniRepo.cs" />

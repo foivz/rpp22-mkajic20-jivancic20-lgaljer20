@@ -84,11 +84,17 @@
     <Compile Include="Frm2FA.Designer.cs">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmGraphProduct.cs">
+    <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmGraphProduct.Designer.cs">
-      <DependentUpon>FrmGraphProduct.cs</DependentUpon>
+    <Compile Include="FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+      </Compile>
+    <Compile Include="FrmGrafickiPrikazInventara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGrafickiPrikazInventara.Designer.cs">
+      <DependentUpon>FrmGrafickiPrikazInventara.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -96,11 +102,31 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+
     <Compile Include="FrmNovaStavkaPrimke.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmNovaStavkaPrimke.Designer.cs">
       <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+
+    <Compile Include="FrmReceiptDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceiptDetails.Designer.cs">
+      <DependentUpon>FrmReceiptDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReceipts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceipts.Designer.cs">
+      <DependentUpon>FrmReceipts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+
     </Compile>
     <Compile Include="FrmPopisIzvjestaja.cs">
       <SubType>Form</SubType>
@@ -125,8 +151,11 @@
     <EmbeddedResource Include="Frm2FA.resx">
       <DependentUpon>Frm2FA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmGraphProduct.resx">
-      <DependentUpon>FrmGraphProduct.cs</DependentUpon>
+    <EmbeddedResource Include="FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGrafickiPrikazInventara.resx">
+      <DependentUpon>FrmGrafickiPrikazInventara.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -157,8 +186,19 @@
       <DependentUpon>UpravljanjeProizvodomForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\UpravljanjeInvantaromVM.cs" />
+
     <EmbeddedResource Include="FrmNovaStavkaPrimke.resx">
       <DependentUpon>FrmNovaStavkaPrimke.cs</DependentUpon>
+
+    <EmbeddedResource Include="FrmReceiptDetails.resx">
+      <DependentUpon>FrmReceiptDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReceipts.resx">
+      <DependentUpon>FrmReceipts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>

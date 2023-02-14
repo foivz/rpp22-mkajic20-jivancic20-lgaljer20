@@ -111,6 +111,7 @@ namespace DataAccessLayer.Repositories
             }
         }
 
+
         //Luka Galjer
         public Product GetProductFromId(int id)
         {
@@ -125,5 +126,16 @@ namespace DataAccessLayer.Repositories
         }
         
 
+
+        //Autor: Mladen Kajić
+        public void UpdateAmount(Product product, int amount)
+        {
+            using(var context = new DataBaseModel())
+            {
+                context.Products.Attach(product);
+                product.Amount = amount;
+                context.SaveChanges();
+            }
+        }
     }
 }
