@@ -85,6 +85,7 @@
             this.Controls.Add(this.btnAutomatski);
             this.Controls.Add(this.dgNarudzbenice);
             this.Name = "FrmPopisPrimki";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Popis primki";
             this.Load += new System.EventHandler(this.FrmPopisPrimki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).EndInit();

@@ -90,6 +90,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbProizvodi);
             this.Name = "FrmNovaStavkaPrimke";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Nova stavka";
             this.Load += new System.EventHandler(this.FrmNovaStavkaPrimke_Load);
             this.ResumeLayout(false);

@@ -167,6 +167,7 @@
             this.Controls.Add(this.dgvStavkePrimke);
             this.Controls.Add(this.dgvPrimke);
             this.Name = "FrmPrimka";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Primke";
             this.Load += new System.EventHandler(this.FrmPrimka_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrimke)).EndInit();
