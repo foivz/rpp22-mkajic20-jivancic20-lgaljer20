@@ -138,11 +138,11 @@
     <Compile Include="FrmIzvjestajInventurniZapisnik.Designer.cs">
       <DependentUpon>FrmIzvjestajInventurniZapisnik.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestnaForma.cs">
+    <Compile Include="FrmPopisPrimki.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestnaForma.Designer.cs">
-      <DependentUpon>TestnaForma.cs</DependentUpon>
+    <Compile Include="FrmPopisPrimki.Designer.cs">
+      <DependentUpon>FrmPopisPrimki.cs</DependentUpon>
     </Compile>
     <Compile Include="UpravljanjeInventaromForm.cs">
       <SubType>Form</SubType>
@@ -184,8 +184,8 @@
       <DependentUpon>FrmIzvjestajInventurniZapisnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportIzvjestaj.rdlc" />
-    <EmbeddedResource Include="TestnaForma.resx">
-      <DependentUpon>TestnaForma.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPopisPrimki.resx">
+      <DependentUpon>FrmPopisPrimki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpravljanjeInventaromForm.resx">
       <DependentUpon>UpravljanjeInventaromForm.cs</DependentUpon>

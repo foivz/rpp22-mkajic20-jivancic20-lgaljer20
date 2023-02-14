@@ -18,7 +18,7 @@ namespace BusinessLogicLayer.Services
             return repo.GetAllNarudzbenice();
         }
 
-        public List<OrderItem> GetOrderItems(int id) //orderItem
+        public List<OrderItem> GetOrderItems(int id) //orderItem trebal bi oboje imat kod jana
         {
             return repo.GetOrderStavkaId(id);
         }

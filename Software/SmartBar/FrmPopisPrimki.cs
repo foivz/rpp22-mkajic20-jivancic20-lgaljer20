@@ -12,13 +12,14 @@ using System.Windows.Forms;
 
 namespace SmartBar
 {
-    public partial class TestnaForma : Form
+    public partial class FrmPopisPrimki : Form
     {
-        private TestniService servis = new TestniService();
+        private TestniService servis = new TestniService(); //servisi za OrderForm i OrderItem
+        //servisNarudzbenica i servisStavkeNarudzbenice
         private DocketService servisiPrimke = new DocketService();
         private List<OrderItem> stavkeNarudzbenice = new List<OrderItem>();
         private DocketItemService docketServis = new DocketItemService();
-        public TestnaForma()
+        public FrmPopisPrimki()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -26,7 +27,7 @@ namespace SmartBar
             this.MinimizeBox = false;
         }
 
-        private void TestnaForma_Load(object sender, EventArgs e)
+        private void FrmPopisPrimki_Load(object sender, EventArgs e)
         {
             PopuniNarudzbenice();
         }

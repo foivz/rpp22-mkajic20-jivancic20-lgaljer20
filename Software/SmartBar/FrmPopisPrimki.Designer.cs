@@ -1,6 +1,6 @@
 ﻿namespace SmartBar
 {
-    partial class TestnaForma
+    partial class FrmPopisPrimki
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             // 
             // btnAutomatski
             // 
-            this.btnAutomatski.Location = new System.Drawing.Point(372, 287);
+            this.btnAutomatski.Location = new System.Drawing.Point(387, 287);
             this.btnAutomatski.Name = "btnAutomatski";
             this.btnAutomatski.Size = new System.Drawing.Size(123, 71);
             this.btnAutomatski.TabIndex = 1;
@@ -60,11 +60,11 @@
             this.btnRučno.Name = "btnRučno";
             this.btnRučno.Size = new System.Drawing.Size(123, 71);
             this.btnRučno.TabIndex = 2;
-            this.btnRučno.Text = "Ručno generiranje primke";
+            this.btnRučno.Text = "Ručno kreiranje primke";
             this.btnRučno.UseVisualStyleBackColor = true;
             this.btnRučno.Click += new System.EventHandler(this.btnRučno_Click);
             // 
-            // TestnaForma
+            // FrmPopisPrimki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,9 +72,9 @@
             this.Controls.Add(this.btnRučno);
             this.Controls.Add(this.btnAutomatski);
             this.Controls.Add(this.dgNarudzbenice);
-            this.Name = "TestnaForma";
-            this.Text = "TestnaForma";
-            this.Load += new System.EventHandler(this.TestnaForma_Load);
+            this.Name = "FrmPopisPrimki";
+            this.Text = "Popis primki";
+            this.Load += new System.EventHandler(this.FrmPopisPrimki_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgNarudzbenice)).EndInit();
             this.ResumeLayout(false);
 

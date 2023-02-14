@@ -17,6 +17,7 @@ namespace SmartBar
     {
         private DocketService servisiPrimke = new DocketService();
         private DocketItemService servisiStavkePrimke = new DocketItemService();
+        //servisiSupplier
         public FrmPrimka()
         {
             InitializeComponent();
@@ -29,7 +30,14 @@ namespace SmartBar
         {
             OsvjeziPrimke();
             OsvjeziStavke();
+            //PopuniDobavljace();
            
+        }
+
+        private void PopuniDobavljace()
+        {
+            //vjv bude falela u dijagramu  kod KreirajDocket neka funkcija -> dohvatiSuppliera
+            throw new NotImplementedException();
         }
 
         private void OsvjeziStavke()

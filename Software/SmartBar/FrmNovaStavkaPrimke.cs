@@ -20,7 +20,7 @@ namespace SmartBar
 
         DocketItemService docketServis = new DocketItemService();
 
-        ProductRepository repo = new ProductRepository();
+        ProductRepository repo = new ProductRepository(); //productService = new ProductService()
         public FrmNovaStavkaPrimke(Docket docket)
         {
             InitializeComponent();
@@ -81,7 +81,7 @@ namespace SmartBar
 
         private void DohvatiProizvode()
         {
-            cmbProizvodi.DataSource = repo.GetProducts();
+            cmbProizvodi.DataSource = repo.GetProducts(); // service.GetProducts() ili tak nekaj
         }
     }
 }
