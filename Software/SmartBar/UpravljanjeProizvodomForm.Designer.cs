@@ -42,6 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -160,11 +161,20 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(92, 273);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(122, 20);
+            this.txtId.TabIndex = 14;
+            this.txtId.Visible = false;
+            // 
             // UpravljanjeProizvodomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 305);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtMeasurementUnit);
@@ -203,5 +213,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

@@ -4,14 +4,12 @@ using SmartBar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-
+using BusinessLogicLayer.Services;
 namespace SmartBar
 {
     public partial class UpravljanjeInventaromForm : Form
     {
-        private readonly ProductRepository _productRepository = new ProductRepository();
-
-
+        ProductService _productService = new ProductService();
         public UpravljanjeInventaromForm()
         {
             InitializeComponent();
@@ -38,10 +36,10 @@ namespace SmartBar
             else if (e.ColumnIndex == 8)
             {
                 UpravljanjeInvantaromVM product = (UpravljanjeInvantaromVM)dgvInventar.Rows[e.RowIndex].DataBoundItem;
-                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite da obrišete ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Jeste li ste sigurni da želite obrisati ovaj proizvod?", "Upozorenje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result==DialogResult.Yes)
                 {
-                    _productRepository.DeleteProduct(product.Id);
+                    _productService.DeleteProduct(product.Id);
                     RefreshGUI();
                 }
                 else if (result == DialogResult.No)
@@ -53,8 +51,9 @@ namespace SmartBar
         }
 
         private void RefreshGUI() {
+            dgvInventar.Columns.Clear();
             List<UpravljanjeInvantaromVM> upravljanjeInvantaromVMs = new List<UpravljanjeInvantaromVM>();
-            List<Product> products = _productRepository.GetProducts();
+            List<Product> products = _productService.GetProducts();
             foreach (Product product in products)
             {
                 UpravljanjeInvantaromVM upravljanjeInvantaromVM = new UpravljanjeInvantaromVM
@@ -69,25 +68,32 @@ namespace SmartBar
                 };
                 upravljanjeInvantaromVMs.Add(upravljanjeInvantaromVM);
             }
-            dgvInventar.DataSource = upravljanjeInvantaromVMs;
+            dgvInventar.DataSource = upravljanjeInvantaromVMs; 
+            
+            while (dgvInventar.Columns.Count > 7)
+            {
+                string v1 = dgvInventar.Columns.Count.ToString();
+                dgvInventar.Columns.RemoveAt(7);
+            }
 
-        }
-        
-        private void UpravljanjeInventaromForm_Load(object sender, EventArgs e)
-        {
-            RefreshGUI();
             dgvInventar.Columns.Add(new DataGridViewButtonColumn
             {
                 Text = "Uredi",
                 Width = 60,
                 UseColumnTextForButtonValue = true
             });
+
             dgvInventar.Columns.Add(new DataGridViewButtonColumn
             {
                 Text = "Izbriši",
                 Width = 60,
                 UseColumnTextForButtonValue = true
             });
+        }
+        
+        private void UpravljanjeInventaromForm_Load(object sender, EventArgs e)
+        {
+            RefreshGUI();
         }
     }
 }
