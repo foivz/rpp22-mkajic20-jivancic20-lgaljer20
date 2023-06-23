@@ -36,7 +36,7 @@ namespace BusinessLogicLayer.Services
 
         public bool ValidateData(OrderForm orderForm)
         {
-            if (orderForm.Date < DateTime.Now)
+            if (orderForm.Date < (DateTime.Now).AddDays(-1))
             {
                 return false;
             }

@@ -1,9 +1,12 @@
 ﻿using EntitiesLayer.Entities;
 using SmartBar;
 using System;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BusinessLogicLayer
 {
@@ -19,11 +22,13 @@ namespace BusinessLogicLayer
 
         }
 
-        public async void SendEmail()
+        public async Task SendEmail()
         {
             Code = GenerateCode();
+            Console.WriteLine(Code);
+            MessageBox.Show("Kod za dvofaktorsku autentifikaciju je: " + Code, " ", MessageBoxButtons.OK);
             string message = "Kod za dvofaktorsku autentifikaciju: " + Code;
-            string apiKey = "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";
+            string apiKey = "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";
 
             var client = new HttpClient();
             var content = new StringContent(
@@ -32,12 +37,16 @@ namespace BusinessLogicLayer
                 "\"email\":\"mkajic20@student.foi.hr\"}," +
                 "\"to\":[{\"email\":\"" + LoggedUser.Email +
                 "\",\"name\":\"" + LoggedUser.Username +
-                "\"}],\"subject\":\"Dvofaktorska autentifikacija\"," +
+                "\"}],\"subject\":\"Dvofaktorska autentifikaciju\"," +
                 "\"htmlContent\":\"" + message + "\"}",
                 Encoding.UTF8, "application/json");
             client.DefaultRequestHeaders.Add("api-key", apiKey);
-            await client.PostAsync("https://api.sendinblue.com/v3/smtp/email", content);
+
+            HttpResponseMessage response = await client.PostAsync("https://api.brevo.com/v3/smtp/email", content);
+            Console.WriteLine("Status code: " + response.StatusCode);
+            Console.WriteLine("Response content: " + await response.Content.ReadAsStringAsync());
         }
+
 
         public async void SendEmail(OrderForm model)
         {
@@ -49,21 +58,20 @@ namespace BusinessLogicLayer
             {
                 message += item.Product.Name +":  "+ item.Amount + " komada<br>";
             }
-            
-            string apiKey = "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";
+            string apiKey = "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";
 
             var client = new HttpClient();
             var content = new StringContent(
                 "{\"sender\":" +
                 "{\"name\":\"SmartBar\"," +
                 "\"email\":\"jivancic20@student.foi.hr\"}," +
-                "\"to\":[{\"email\":\"mkajic20@student.foi.hr" +
+                "\"to\":[{\"email\":\"" + LoggedUser.Email +
                 "\",\"name\":\"" + model.Supplier.Name +
                 "\"}],\"subject\":\"Narudžbenica: " + model.Id +"\"," +
                 "\"htmlContent\":\"" + message + "\"}",
                 Encoding.UTF8, "application/json");
             client.DefaultRequestHeaders.Add("api-key", apiKey);
-            await client.PostAsync("https://api.sendinblue.com/v3/smtp/email", content);
+            await client.PostAsync("https://api.brevo.com/v3/smtp/email", content);
         }
 
         public int CheckCode(string code)

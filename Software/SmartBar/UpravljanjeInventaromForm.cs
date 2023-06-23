@@ -107,6 +107,8 @@ namespace SmartBar
                 Width = 60,
                 UseColumnTextForButtonValue = true
             });
+
+            dgvInventar.Columns[0].Visible = false;
         }
 
         private void UpravljanjeInventaromForm_Load(object sender, EventArgs e)

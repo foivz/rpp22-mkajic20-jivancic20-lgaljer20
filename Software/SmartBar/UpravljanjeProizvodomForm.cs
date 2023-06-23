@@ -59,14 +59,8 @@ namespace SmartBar
             }
 
             product.MeasurementUnit = txtMeasurementUnit.Text;
-            
-            if(product.UserId == 0)
-            {
-                MessageBox.Show("Niste prijavljeni", " ", MessageBoxButtons.OKCancel);
-            }
-            
             product.UserId = CurrentUser.user.Id;
-            product.Id = int.Parse(txtId.Text);
+            product.Id = int.TryParse(txtId.Text, out int temp) ? temp : 0;
             if (_productService.ValidateData(product))
             {
                 if (product.Id == 0)
