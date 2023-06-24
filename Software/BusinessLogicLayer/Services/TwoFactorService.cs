@@ -26,7 +26,6 @@ namespace BusinessLogicLayer
         {
             Code = GenerateCode();
             Console.WriteLine(Code);
-            MessageBox.Show("Kod za dvofaktorsku autentifikaciju je: " + Code, " ", MessageBoxButtons.OK);
             string message = "Kod za dvofaktorsku autentifikaciju: " + Code;
             string apiKey = "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";
 
